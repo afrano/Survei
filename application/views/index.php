@@ -16,7 +16,7 @@
                             <b> Selamat Datang <?php echo $nama; ?> di Web Pengolahan Data Survei</b>
                             <br>
                         </h3>
-                         <img src="<?php echo base_url(); ?>assets/img/Homelogin.png" />
+                        <img src="<?php echo base_url(); ?>assets/img/Homelogin.png" />
                     </center>
                     <br>    
                 </section>
