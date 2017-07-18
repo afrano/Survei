@@ -93,8 +93,3 @@ class Kategori extends CI_Controller {
     }
 
 }
-
-// Developed by Muhammad Ridho
-// Email: kenduanything23@gmail.com
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

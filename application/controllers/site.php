@@ -188,6 +188,3 @@ class Site extends CI_Controller {
     }
 
 }
-
-/* End of file site.php */
-/* Location: ./application/controllers/site.php */
