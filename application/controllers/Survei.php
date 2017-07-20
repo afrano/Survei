@@ -17,20 +17,16 @@ class Survei extends CI_Controller {
     }
 
     public function index() {
+        
         $data = array(
             'nama' => $this->session->userdata('nama'),
-            'status' => 'baru',
-            'id_pertanyaan' => '',
-            'pertanyaan' => '',
-            'id_kriteria' => '',
-            'FormSurvei' => $this->model->GetPertanyaan("order by id_pertanyaan asc")->result_array(),
+            'data_survei' => $this->model->GetPertanyaan()->result_array(),
         );
-
         $this->load->view('User/FormSurvei', $data);
     }
-
+        
     function savedatasurvei() {
-        $id_outlet = '0101';
+        $id_outlet = '';
         $nama_outlet = $_POST['nama_outlet'];
         $cabang_outlet = $_POST['cabang_outlet'];
         $channel = $_POST['channel'];
@@ -48,19 +44,19 @@ class Survei extends CI_Controller {
             'tahun_survei' => $tahun_survei,
             'semester' => $semester,
         );
-
         $result = $this->model->Simpan('data_outlet', $data);
-        if ($result == 1) {
-            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Simpan data BERHASIL dilakukan</strong></div>");
-            header('location:' . base_url() . 'produk');
-        } else {
-            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Simpan data GAGAL di lakukan</strong></div>");
-            header('location:' . base_url() . 'produk');
-        }
+        
+//        if ($result == 1) {
+//            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Simpan data BERHASIL dilakukan</strong></div>");
+//            header('location:' . base_url() . 'Survei');
+//        } else {
+//            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Simpan data GAGAL di lakukan</strong></div>");
+//            header('location:' . base_url() . 'Survei');
+//        }
     }
 
     function savepoin() {
-        $id_outlet = '121232';
+        $id_outlet = '';
         $kepuasan1 = $_POST['kepuasan1'];
         $kepuasan2 = $_POST['kepuasan2'];
         $kepuasan3 = $_POST['kepuasan3'];
@@ -151,7 +147,7 @@ class Survei extends CI_Controller {
             header('location:' . base_url() . 'Survei');
         } else {
             $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Simpan data GAGAL di lakukan</strong></div>");
-            header('location:' . base_url() . 'produk');
+            header('location:' . base_url() . 'Survei');
         }
     }
 

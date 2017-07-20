@@ -11,9 +11,13 @@
             <div class="content-wrapper">
                 <section class="content-header">
                     <center>
-                        <font color="#B22222">
+                        <font color="#008000">
                         <h3>
-                            <b> Selamat Datang <?php echo $nama; ?> di Web Pengolahan Data Survei</b>
+                            <b>                                
+                                <?php
+                                $this->load->view('inc/time');
+                                ?>
+                                <?php echo $nama; ?>, Selamat Datang  di Web Pengolahan Data Survei</b>
                             <br>
                         </h3>
                         <img src="<?php echo base_url(); ?>assets/img/Homelogin.png" />
@@ -24,7 +28,7 @@
             <footer class="main-footer">
                 <div class="pull-right hidden-xs">
                 </div>
-                <strong>Copyright &copy; 2017 <a href="#"></a></strong>
+                <strong>Copyright &copy; 2017. &emsp14; PT Enseval Putera Megatrading Tbk.<a href="#"></a></strong>
             </footer>
         </div>
         <?php $this->load->view('inc/footer', TRUE); ?>

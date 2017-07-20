@@ -39,14 +39,15 @@
                                                         <td><b>POIN</b></td>
                                                     </tr>
                                                     <tr>
+                                                        <?php foreach ($rekap_data as $row){?>
                                                         <td>Pertanyaan 1</td>
-                                                        <td>pilih 1 ada berapa orang</td>
-                                                        <td></td>
+                                                        <td><?php echo $row['jumlah']; ?></td>
+                                                        <td>3</td>
                                                         <td>3</td>
                                                         <td>4</td>
                                                         <td>Nilainya</td>
                                                         <td>POIN</td>
-                                                    </tr>
+                                                        </tr><?php } ?>
                                                     <tr>
                                                         <td>Pertanyaan 2</td>
                                                         <td>1</td>

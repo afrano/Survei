@@ -18,8 +18,8 @@ class Model extends CI_Model {
     }
 
     // ambil pertanyaan dari database
-    public function GetPertanyaan($where = "") {
-        $data = $this->db->query('select * FROM kuesioner ' . $where);
+    public function GetPertanyaan() {
+        $data = $this->db->query('SELECT * FROM `kuesioner` WHERE id_pertanyaan = "Q01"');
         return $data;
     }
 
@@ -28,8 +28,12 @@ class Model extends CI_Model {
         $data = $this->db->query('select * from tb_kategori ' . $where);
         return $data;
     }
+    
+    public function GetRekap(){
+        $data = $this->db->query('SELECT Q01, SUM(IF(Q01=2,1,0)) AS Q01, COUNT(*) AS jumlah FROM hasilsurvei where Q01=1');
+        return $data;
+    }
 
-    //ambil data tabel merk
     public function GetMerk($where = "") {
         $data = $this->db->query('select * from tb_merk ' . $where);
         return $data;
@@ -53,8 +57,15 @@ class Model extends CI_Model {
     public function count_all() {
         return $this->db->count_all('tb_produk');
     }
+    
+    public function Getdatasurvei(){
+        $data = $this->db->query('SELECT p.*, q.nama_outlet, q.tahun_survei, q.semester, q.cabang_outlet, q.channel
+                                FROM hasilsurvei p
+                                LEFT JOIN data_outlet q
+                                ON(p.id_outlet = q.id_outlet) order by id_outlet desc');
+        return $data;
+    }
 
-    //ambil data dari 3 tabel
     public function GetProdukKatMerko($where = "") {
         $data = $this->db->query('SELECT p.*, q.kategori, c.merk
                                 FROM tb_produk p
@@ -64,6 +75,7 @@ class Model extends CI_Model {
                                 ON(p.id_merk = c.id_merk)' . $where);
         return $data;
     }
+
     public function Simpan($table, $data) {
         return $this->db->insert($table, $data);
     }

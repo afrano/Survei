@@ -90,5 +90,8 @@
                 </select> 
             </div>
         </div>
+        <div class>
+            <button type="submit" class="btn btn-primary btn-block btn-flat">Simpan</button>
+        </div>      
     </div>
 </form>

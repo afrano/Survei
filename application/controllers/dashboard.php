@@ -18,8 +18,6 @@ class Dashboard extends CI_Controller {
 
     public function index() {
         $data = array(
-            'total_product' => $this->model->GetProduk()->num_rows(),
-            'product_view' => $this->model->GetProductView()->result_array(),
             'nama' => $this->session->userdata('nama'),
         );
 

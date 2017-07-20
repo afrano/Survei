@@ -3,49 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/User/FormSurvei.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/index.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/backend.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/login/login.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/produk/add_produk.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/assets/site/js/contact.js</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/site/Welcome.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/assets/bootstrap/css/bootstrap.css</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/index.html</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/detail_produk.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/Survei.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/slider.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/merk.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/assets/bootstrap/js/bootstrap.min.js</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/merk/data_merk.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/footer.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/sidebarEnseval.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/assets/bootstrap/css/bootstrap.css.map</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/index.html</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/produk.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/headEnseval.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/kategori.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/footer.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/sidebar.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/footer.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/index.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/footer2.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/dashboard.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/produk/data_produk.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/site/kategori.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/assets/site/images/hero.jpg</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/head.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/assets/site/js/gmaps.js</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/produk.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/site/Welcome.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/head2.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/kategori/data_kategori.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/models/m_login.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/site/detail.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/slider.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/time.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/head.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/site/index.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/site.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/models/model.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/sidebar.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/assets/bootstrap/css/bootstrap.min.css</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/footer.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/sidebarEnseval.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/headEnseval.php</file>
         </group>
     </open-files>
 </project-private>

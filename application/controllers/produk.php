@@ -22,7 +22,7 @@ class Produk extends CI_Controller {
 			'data_produk' => $this->model->GetProdukKatMerko("order by id_produk desc")->result_array(),
 		);
 
-		$this->load->view('produk/data_produk', $data);
+		$this->load->view('Hasil/data_survei', $data);
 	}
 
 	function addproduk()
