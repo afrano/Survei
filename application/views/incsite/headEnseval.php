@@ -10,8 +10,8 @@
             </a>
             <div class="collapse navbar-collapse" id="bs-navbar-collapse">
                 <ul class="nav navbar-nav main-navbar-nav">
-                    <li class="active"><a href="index.php" title=""><b>HOME</b></a></li>
-                    <li><a href="#" title=""><b>About Us</b></a></li>
+                    <li class="active"><?php echo anchor('index.php', '<b>Homee</b>') ?></li>
+                    <li><?php echo anchor('http://www.enseval.com/tentang-kami/tata-kelola-perusahaan/struktur/', '<b>About Us</b>') ?></li>
                     <li><?php echo anchor('login', '<b>Login</b>') ?></li>
                 </ul>   					
             </div>
@@ -19,8 +19,6 @@
     </nav> 
 </header>
 <style>
-    /* Base */
-
     * {outline:none;}
     html, body {height: 100%;}
     body {font-family: 'Open Sans', sans-serif;font-size: 13px;line-height: 1.6;color: #8c8c8c;background-color: #008000;}
@@ -70,17 +68,11 @@
 
     @media screen and (max-width: 992px) {.navbar-toggle {display: block;}.navbar-collapse.collapse {display: none !important;}.main-navbar-nav.navbar-nav,.main-navbar-nav.navbar-nav > li {float: none !important;}.navbar-collapse.collapse.in {display: block !important;overflow-y: auto !important;}}
 
-    /* Background */
-    .hero_area {background-image: url(http://www.enseval.com/wp-content/uploads/2014/03/feature-image-IT-21.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;height: 570px;padding: 0;}
+    .hero_area {background-image: url(assets/img/feature-image-IT-21.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;height: 570px;padding: 0;}
     .hero_content {padding: 120px 0;}
     .hero_content h1 {text-shadow: 1px 1px 2px rgba(0,0,0,0.75);color: #000000;font-weight: 700;font-size: 60px;}
     .hero_content h2 {text-shadow: 1px 1px 2px rgba(0,0,0,0.25);color: #000000;font-weight: 700;font-size: 32px; margin-top: 0;width: 45%;line-height: 38px;}
 
-    /* Home 
-    .home_content h2:after,.box h3:after {content: '';position: absolute;width: 30px;background-color: #32CD32;height: 2px;left: 0;bottom: 0;}
-    .box i {position: absolute;right: 0;top: 0;margin: 0;color: #32CD32;font-size: 45px;}
-    .boxes_area h3 {font-size: 16px;font-weight: 500;margin-top: 0;margin-bottom: 18px;} */
-    /* Footer */
     #copyright {background: #008000;color: #ccc;padding: 0px 0;font-size: 12px;margin-top: 20px;}
     #copyright p, #copyright ul {margin: 0;float: left;font-size: 12px;}
     #copyright a {color: #fff;font-size: 22px;}

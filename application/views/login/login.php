@@ -14,9 +14,10 @@
     <body class="login-page" style=" background-image: url(assets/img/hero.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;padding: 0;">
         <div class="login-box">
             <div class="login-logo">
-                <b><font color="00 80 00">Welcome</b>
+                <b><font color="000000"><br><br> </b>
             </div>
             <div class="login-box-body">
+                <center><b><font color="191970">Form Login Enseval</b></center>
             <!-- <span><?php echo $id_user; ?></span> -->
                 <p class="login-box-msg" class="uppercase"><?php echo $info; ?></p>
 

@@ -7,9 +7,9 @@ $a = date("H");
 if (($a >= 6) && ($a <= 11)) {
     echo " <b>Selamat Pagi </b>";
 } else if (($a >= 11) && ($a <= 15)) {
-    echo " , Selamat  Pagi ";
+    echo "Selamat  Siang ";
 } elseif (($a > 15) && ($a <= 18)) {
-    echo "Selamat Siang ";
+    echo "Selamat Sore ";
 } else {
     echo "<b> Selamat Malam </b>";
 }

@@ -98,7 +98,7 @@
                                             <?php } ?>
                                         </tbody>
                                     </table>
-                                    <table id="example1" class="table table-bordered table-striped">
+                                    <table id="example2" class="table table-bordered table-striped">
                                         <thead>
                                         <center><h4><b>Tabel Kepentingan</b></h4></center>
                                         <tr>
@@ -159,6 +159,10 @@
                                             <?php } ?>
                                         </tbody>
                                     </table>
+                                    <div class>
+                                        <a href="<?php echo base_url('Rekap/export_excel') ?>"/> <button type="text" class="btn btn-primary btn-block btn-flat">Export Data kes Excel</button></a>
+                                    </div>                                               
+
                                 </div>
                             </div>
                         </div>

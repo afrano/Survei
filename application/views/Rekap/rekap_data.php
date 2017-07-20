@@ -39,14 +39,14 @@
                                                         <td><b>POIN</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <?php foreach ($rekap_data as $row){?>
-                                                        <td>Pertanyaan 1</td>
-                                                        <td><?php echo $row['jumlah']; ?></td>
-                                                        <td>3</td>
-                                                        <td>3</td>
-                                                        <td>4</td>
-                                                        <td>Nilainya</td>
-                                                        <td>POIN</td>
+                                                        <?php foreach ($rekap_data as $row) { ?>
+                                                            <td>Pertanyaan 1</td>
+                                                            <td><?php echo $row['jumlah']; ?></td>
+                                                            <td>3</td>
+                                                            <td>3</td>
+                                                            <td>4</td>
+                                                            <td>Nilainya</td>
+                                                            <td>POIN</td>
                                                         </tr><?php } ?>
                                                     <tr>
                                                         <td>Pertanyaan 2</td>
@@ -495,5 +495,5 @@
         <?php $this->load->view('inc/footer'); ?>
         <script src="<?php echo base_url(); ?>assets/dist/datatables/jquery.dataTables.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>assets/dist/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
-           </body>
+    </body>
 </html>

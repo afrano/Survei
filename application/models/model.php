@@ -23,14 +23,14 @@ class Model extends CI_Model {
         return $data;
     }
 
+    public function GetRekap() {
+        $data = $this->db->query('SELECT Q02, SUM(IF(Q02=2,1,0)) AS Q01, COUNT(*) AS jumlah FROM hasilsurvei where Q01=2');
+        return $data;
+    }
+
     //ambil data tabel kategori
     public function GetKat($where = "") {
         $data = $this->db->query('select * from tb_kategori ' . $where);
-        return $data;
-    }
-    
-    public function GetRekap(){
-        $data = $this->db->query('SELECT Q01, SUM(IF(Q01=2,1,0)) AS Q01, COUNT(*) AS jumlah FROM hasilsurvei where Q01=1');
         return $data;
     }
 
@@ -57,8 +57,15 @@ class Model extends CI_Model {
     public function count_all() {
         return $this->db->count_all('tb_produk');
     }
-    
-    public function Getdatasurvei(){
+
+    public function getAll() {
+        $this->db->select('*');
+        $this->db->from('tbl_buku');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function Getdatasurvei() {
         $data = $this->db->query('SELECT p.*, q.nama_outlet, q.tahun_survei, q.semester, q.cabang_outlet, q.channel
                                 FROM hasilsurvei p
                                 LEFT JOIN data_outlet q
