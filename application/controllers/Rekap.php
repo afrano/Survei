@@ -25,13 +25,6 @@ class Rekap extends CI_Controller {
         $this->load->view('Rekap/rekap_data', $data);
     }
 
-    public function export_excel() {
-        $data = array('title' => 'Laporan Excel | Tutorial Export ke excel CodeIgniter @ https://recodeku.blogspot.com',
-            'buku' => $this->model->getAll());
-
-        $this->load->view('vw_laporan_excel', $data);
-    }
-
     function editmerk($kode = 0) {
         $tampung = $this->model->GetMerk("where id_merk = '$kode'")->result_array();
         $data = array(

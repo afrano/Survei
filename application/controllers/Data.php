@@ -26,6 +26,13 @@ class Data extends CI_Controller {
         $this->load->view('Hasil/data_survei', $data);
     }
 
+    public function export_excel() {
+        $data = array('title' => 'Database',
+            'data_survei' => $this->model->Getdatasurvei()->result_array(),);
+
+        $this->load->view('Hasil/Excel', $data);
+    }
+
     function addproduk() {
         $data = array(
             'nama' => $this->session->userdata('nama'),

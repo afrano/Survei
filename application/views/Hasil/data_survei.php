@@ -160,7 +160,7 @@
                                         </tbody>
                                     </table>
                                     <div class>
-                                        <a href="<?php echo base_url('Rekap/export_excel') ?>"/> <button type="text" class="btn btn-primary btn-block btn-flat">Export Data kes Excel</button></a>
+                                        <a href="<?php echo base_url('Data/export_excel') ?>"/> <button type="text" class="btn btn-primary btn-block btn-flat">Export Data to Excel</button></a>
                                     </div>                                               
 
                                 </div>
