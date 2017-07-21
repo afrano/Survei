@@ -18,9 +18,7 @@
             </div>
             <div class="login-box-body">
                 <center><b><font color="191970">Form Login Enseval</b></center>
-            <!-- <span><?php echo $id_user; ?></span> -->
                 <p class="login-box-msg" class="uppercase"><?php echo $info; ?></p>
-
                 <form action="<?php echo base_url(); ?>login/proseslog" id="form-login" method="post" accept-charset="utf-8">
                     <div class="form-group has-feedback">
                         <input type="text" class="form-control" name="nama_user" id="nama_user" placeholder="Nama Pengguna" required/>
@@ -33,11 +31,11 @@
                     <div class="row">
                         <div class="col-xs-4">
                             <input type="submit" name="login" value="Login" id="submit-login" class="btn btn-primary btn-block btn-flat" />
-                        </div><!-- /.col -->
+                        </div>
                     </div>
                 </form>
-            </div><!-- /.login-box-body -->
-        </div><!-- /.login-box -->
+            </div>
+        </div>
     </body>
     <script src="<?php echo base_url(); ?>assets/plugins/jQuery/jQuery-2.1.3.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>    

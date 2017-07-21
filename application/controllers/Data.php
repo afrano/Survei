@@ -89,6 +89,39 @@ class Data extends CI_Controller {
         }
     }
 
+    function Edit($kode = 0) {
+        $data_produk = $this->model->GetProduk("where id_outlet = '$kode'")->result_array();
+
+        /* menjadikan kategori ke array */
+        $kategori_post_array = array();
+        foreach ($this->model->GetProduk("where id_outlet = '$kode'")->result_array() as $kat) {
+            $kategori_post_array[] = $kat['id_kat'];
+        }
+
+        $merk_post_array = array();
+        foreach ($this->model->GetProduk("where id_produk = '$kode'")->result_array() as $merk) {
+            $merk_post_array[] = $merk['id_merk'];
+        }
+
+        $data = array(
+            'nama' => $this->session->userdata('nama'),
+            'id_produk' => $data_produk[0]['id_produk'],
+            'judul' => $data_produk[0]['judul'],
+            'harga' => $data_produk[0]['harga'],
+            'jumlah' => $data_produk[0]['jumlah'],
+            'status' => $data_produk[0]['status'],
+            'ket' => $data_produk[0]['ket'],
+            'foto' => $data_produk[0]['foto'],
+            'tgl_input_pro' => $data_produk[0]['tgl_input_pro'],
+            'status' => $data_produk[0]['status'],
+            'kategori' => $this->model->GetKat()->result_array(),
+            'merk' => $this->model->GetMerk()->result_array(),
+            'label_post' => $kategori_post_array,
+            'merk_post' => $merk_post_array,
+        );
+        $this->load->view('produk/edit_produk', $data);
+    }
+    
     function editproduk($kode = 0) {
         $data_produk = $this->model->GetProduk("where id_produk = '$kode'")->result_array();
 
@@ -157,18 +190,18 @@ class Data extends CI_Controller {
         }
     }
 
-    function hapuspro($kode = 1) {
+    function Hapus($kode = 1) {
 
-        $result = $this->model->Hapus('tb_produk', array('id_produk' => $kode));
+        $result = $this->model->Hapus('hasilsurvei', array('id_outlet' => $kode));
         if ($result == 1) {
             $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Hapus data BERHASIL dilakukan</strong></div>");
-            header('location:' . base_url() . 'produk');
+            header('location:' . base_url() . 'Data');
         } else {
             $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Hapus data GAGAL di lakukan</strong></div>");
-            header('location:' . base_url() . 'produk');
+            header('location:' . base_url() . 'Data');
         }
     }
-
+    
     function updateproduk() {
         if ($_FILES['file_upload']['error'] == 0):
             $config = array(

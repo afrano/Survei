@@ -23,8 +23,18 @@ class Model extends CI_Model {
         return $data;
     }
 
+    public function GetHitungOutlet() {
+        $data = $this->db->query('select d.channel, count(*) as jumlah from data_outlet d, hasilsurvei h where h.id_outlet = d.id_outlet and d.tahun_survei = "2017" and Semester = "S1"');
+        return $data;
+    }
+
     public function GetRekap() {
-        $data = $this->db->query('SELECT Q02, SUM(IF(Q02=2,1,0)) AS Q01, COUNT(*) AS jumlah FROM hasilsurvei where Q01=2');
+        $data = $this->db->query('SELECT Q01 as range_nilainya, COUNT(*) AS jumlah FROM hasilsurvei where Q01=1');
+        return $data;
+    }
+
+    public function GetRekapdata($Tahun = '2017', $Cabang = 'PTK', $Channel = 'Apotek', $semester = 'S1') {
+        $data = $this->db->query('select h.Q01 from data_outlet d, hasilsurvei h where d.tahun_survei = "' + $Tahun + '" and d.cabang_outlet like "' + $Cabang + '" and d.channel like "' + $Channel + '" and d.semester like "' + $semester + '"');
         return $data;
     }
 
@@ -100,8 +110,6 @@ class Model extends CI_Model {
         $this->db->update('tb_produk', $data);
     }
 
-    //batas crud data
-    //model untuk visitor/pengunjung
     function GetVisitor($where = "") {
         return $this->db->query("select * from tb_visitor $where");
     }

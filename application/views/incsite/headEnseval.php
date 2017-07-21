@@ -10,7 +10,7 @@
             </a>
             <div class="collapse navbar-collapse" id="bs-navbar-collapse">
                 <ul class="nav navbar-nav main-navbar-nav">
-                    <li class="active"><?php echo anchor('index.php', '<b>Homee</b>') ?></li>
+                    <li class="active"><?php echo anchor('index.php', '<b>Home</b>') ?></li>
                     <li><?php echo anchor('http://www.enseval.com/tentang-kami/tata-kelola-perusahaan/struktur/', '<b>About Us</b>') ?></li>
                     <li><?php echo anchor('login', '<b>Login</b>') ?></li>
                 </ul>   					

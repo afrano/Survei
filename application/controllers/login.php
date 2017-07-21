@@ -6,7 +6,7 @@ if (!defined('BASEPATH'))
 class Login extends CI_Controller {
 
     function index() {
-        if ($this->session->userdata('dashboard') OR $this->session->userdata('kategori')) {
+        if ($this->session->userdata('Home') OR $this->session->userdata('kategori')) {
             redirect(base_url() . 'backend');
         } else {
             $db = 'm_login';
@@ -34,7 +34,7 @@ class Login extends CI_Controller {
         $hasil = $this->model->GetUser($data);
         if ($hasil->num_rows() == 1) {
             foreach ($hasil->result() as $sess) {
-                // $sess_data['logged_in'] = 'Sudah Loggin';
+                //$sess_data['logged_in'] = 'Sudah Loggin';
                 $sess_data['id_user'] = $sess->id_user;
                 $sess_data['nama_user'] = $sess->nama_user;
                 $sess_data['nama'] = $sess->nama;
@@ -44,7 +44,7 @@ class Login extends CI_Controller {
             }
             if ($this->session->userdata('level') == '1') {
                 $this->session->set_userdata('useradmin', $sess_data);
-                redirect(base_url() . "dashboard");
+                redirect(base_url() . "Home");
             } else {
                 $this->session->set_userdata('Web_Survei', $sess_data);
                 redirect(base_url());

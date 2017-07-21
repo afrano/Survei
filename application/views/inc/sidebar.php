@@ -11,8 +11,13 @@
     <ul class="sidebar-menu">
         <li class="header">MENU</li>
         <li>
-            <a href="<?php echo base_url(); ?>dashboard">
+            <a href="<?php echo base_url(); ?>Home">
                 <i class="fa fa-home"></i> <span>Home</span>  </a>
+        </li>
+        <li>
+            <a href="<?php echo base_url(); ?>Survei">
+                <i class="fa fa-circle-o"></i> <span>Form Survei</span> 
+            </a>
         </li>
         <li>
             <a href="<?php echo base_url(); ?>Rekap">
@@ -26,12 +31,12 @@
         </li>
         <li>
             <a href="<?php echo base_url(); ?>Data">
-                <i class="fa fa-windows"></i> <span>Data Hasil Survei</span> 
+                <i class="fa fa-table"></i> <span>Data Hasil Survei</span> 
             </a>
         </li>
         <li>
-            <a href="<?php echo base_url(); ?>Survei">
-                <i class="fa fa-circle-o"></i> <span>Form Survei</span> 
+            <a href="<?php echo base_url(); ?>Survei/Draft">
+                <i class="fa fa-windows"></i> <span>Draft</span> 
             </a>
         </li>
         <li>

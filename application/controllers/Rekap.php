@@ -25,6 +25,15 @@ class Rekap extends CI_Controller {
         $this->load->view('Rekap/rekap_data', $data);
     }
 
+//    public function index() {
+//        $data = array(
+//            'nama' => $this->session->userdata('nama'),
+//            'rekap_data' => $this->model->GetRekapdata('Tahun', 'cabang_outlet', 'Channel', 'Semester')->result_array(),
+//        );
+//
+//        $this->load->view('Rekap/rekap_data', $data);
+//    }
+
     function editmerk($kode = 0) {
         $tampung = $this->model->GetMerk("where id_merk = '$kode'")->result_array();
         $data = array(

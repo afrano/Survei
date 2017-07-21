@@ -17,14 +17,22 @@ class Survei extends CI_Controller {
     }
 
     public function index() {
-        
+
         $data = array(
             'nama' => $this->session->userdata('nama'),
-            'data_survei' => $this->model->GetPertanyaan()->result_array(),
+            'data_survei' => $this->model->Getdatasurvei()->result_array(),
         );
         $this->load->view('User/FormSurvei', $data);
     }
-        
+
+    public function Draft() {
+         $data = array(
+            'nama' => $this->session->userdata('nama'),
+            'data_survei' => $this->model->Getdatasurvei()->result_array(),
+        );
+        $this->load->view('Hasil/Draft',$data);
+    }
+
     function savedatasurvei() {
         $id_outlet = '';
         $nama_outlet = $_POST['nama_outlet'];
@@ -45,18 +53,17 @@ class Survei extends CI_Controller {
             'semester' => $semester,
         );
         $result = $this->model->Simpan('data_outlet', $data);
-        
-//        if ($result == 1) {
-//            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Simpan data BERHASIL dilakukan</strong></div>");
-//            header('location:' . base_url() . 'Survei');
-//        } else {
-//            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Simpan data GAGAL di lakukan</strong></div>");
-//            header('location:' . base_url() . 'Survei');
-//        }
     }
 
     function savepoin() {
         $id_outlet = '';
+        $nama_outlet = $_POST['nama_outlet'];
+        $cabang_outlet = $_POST['cabang_outlet'];
+        $channel = $_POST['channel'];
+        $alamat_outlet = $_POST['alamat_outlet'];
+        $telpon_outlet = $_POST['telpon_outlet'];
+        $tahun_survei = $_POST['tahun_survei'];
+        $semester = $_POST['semester'];
         $kepuasan1 = $_POST['kepuasan1'];
         $kepuasan2 = $_POST['kepuasan2'];
         $kepuasan3 = $_POST['kepuasan3'];
@@ -140,9 +147,18 @@ class Survei extends CI_Controller {
             'K19' => $kepentingan19,
             'K20' => $kepentingan20,
         );
+        $Outlet = array(
+            'nama_outlet' => $nama_outlet,
+            'cabang_outlet' => $cabang_outlet,
+            'channel' => $channel,
+            'alamat_outlet' => $alamat_outlet,
+            'telpon_outlet' => $telpon_outlet,
+            'tahun_survei' => $tahun_survei,
+            'semester' => $semester,);
 
-        $result = $this->model->Simpan('hasilsurvei', $data);
-        if ($result == 1) {
+        $result = $this->model->Simpan('data_outlet', $Outlet);
+        $result1 = $this->model->Simpan('hasilsurvei', $data);
+        if ($result == 1 && $result1 == 1) {
             $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Simpan data BERHASIL dilakukan</strong></div>");
             header('location:' . base_url() . 'Survei');
         } else {
