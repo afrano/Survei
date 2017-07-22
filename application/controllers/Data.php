@@ -26,21 +26,62 @@ class Data extends CI_Controller {
         $this->load->view('Hasil/data_survei', $data);
     }
 
+    function Edit($kode = 0) {
+        $data_produk = $this->model->Getdatasurvei("where q.id_outlet = '$kode'")->result_array();
+        
+        $data = array(
+            'nama' => $this->session->userdata('nama'),
+            'id_outlet' => $data_produk[0]['id_outlet'],
+            'cabang_outlet' => $data_produk[0]['cabang_outlet'],
+            'kepuasan1' => $data_produk[0]['Q01'],
+            'kepuasan2' => $data_produk[0]['Q02'],
+            'kepuasan3' => $data_produk[0]['Q03'],
+            'kepuasan4' => $data_produk[0]['Q04'],
+            'kepuasan5' => $data_produk[0]['Q05'],
+            'kepuasan6' => $data_produk[0]['Q06'],
+            'kepuasan7' => $data_produk[0]['Q07'],
+            'kepuasan8' => $data_produk[0]['Q08'],
+            'kepuasan9' => $data_produk[0]['Q09'],
+            'kepuasan10' => $data_produk[0]['Q10'],
+            'kepuasan11' => $data_produk[0]['Q11'],
+            'kepuasan12' => $data_produk[0]['Q12'],
+            'kepuasan13' => $data_produk[0]['Q13'],
+            'kepuasan14' => $data_produk[0]['Q14'],
+            'kepuasan15' => $data_produk[0]['Q15'],
+            'kepuasan16' => $data_produk[0]['Q16'],
+            'kepuasan17' => $data_produk[0]['Q17'],
+            'kepuasan18' => $data_produk[0]['Q18'],
+            'kepuasan19' => $data_produk[0]['Q19'],
+            'kepuasan20' => $data_produk[0]['Q20'],
+            'kepentingan1' => $data_produk[0]['K01'],
+            'kepentingan2' => $data_produk[0]['K02'],
+            'kepentingan3' => $data_produk[0]['K03'],
+            'kepentingan4' => $data_produk[0]['K04'],
+            'kepentingan5' => $data_produk[0]['K05'],
+            'kepentingan6' => $data_produk[0]['K06'],
+            'kepentingan7' => $data_produk[0]['K07'],
+            'kepentingan8' => $data_produk[0]['K08'],
+            'kepentingan9' => $data_produk[0]['K09'],
+            'kepentingan10' => $data_produk[0]['K10'],
+            'kepentingan11' => $data_produk[0]['K11'],
+            'kepentingan12' => $data_produk[0]['K12'],
+            'kepentingan13' => $data_produk[0]['K13'],
+            'kepentingan14' => $data_produk[0]['K14'],
+            'kepentingan15' => $data_produk[0]['K15'],
+            'kepentingan16' => $data_produk[0]['K16'],
+            'kepentingan17' => $data_produk[0]['K17'],
+            'kepentingan18' => $data_produk[0]['K18'],
+            'kepentingan19' => $data_produk[0]['K19'],
+            'kepentingan20' => $data_produk[0]['K20'],
+        );
+        $this->load->view('User/FormEdit', $data);
+    }
+
     public function export_excel() {
         $data = array('title' => 'Database',
             'data_survei' => $this->model->Getdatasurvei()->result_array(),);
 
         $this->load->view('Hasil/Excel', $data);
-    }
-
-    function addproduk() {
-        $data = array(
-            'nama' => $this->session->userdata('nama'),
-            'optkategori' => $this->model->GetKat()->result_array(),
-            'optmerk' => $this->model->GetMerk()->result_array(),
-        );
-
-        $this->load->view('produk/add_produk', $data);
     }
 
     function savedata() {
@@ -88,108 +129,7 @@ class Data extends CI_Controller {
             header('location:' . base_url() . 'produk');
         }
     }
-
-    function Edit($kode = 0) {
-        $data_produk = $this->model->GetProduk("where id_outlet = '$kode'")->result_array();
-
-        /* menjadikan kategori ke array */
-        $kategori_post_array = array();
-        foreach ($this->model->GetProduk("where id_outlet = '$kode'")->result_array() as $kat) {
-            $kategori_post_array[] = $kat['id_kat'];
-        }
-
-        $merk_post_array = array();
-        foreach ($this->model->GetProduk("where id_produk = '$kode'")->result_array() as $merk) {
-            $merk_post_array[] = $merk['id_merk'];
-        }
-
-        $data = array(
-            'nama' => $this->session->userdata('nama'),
-            'id_produk' => $data_produk[0]['id_produk'],
-            'judul' => $data_produk[0]['judul'],
-            'harga' => $data_produk[0]['harga'],
-            'jumlah' => $data_produk[0]['jumlah'],
-            'status' => $data_produk[0]['status'],
-            'ket' => $data_produk[0]['ket'],
-            'foto' => $data_produk[0]['foto'],
-            'tgl_input_pro' => $data_produk[0]['tgl_input_pro'],
-            'status' => $data_produk[0]['status'],
-            'kategori' => $this->model->GetKat()->result_array(),
-            'merk' => $this->model->GetMerk()->result_array(),
-            'label_post' => $kategori_post_array,
-            'merk_post' => $merk_post_array,
-        );
-        $this->load->view('produk/edit_produk', $data);
-    }
     
-    function editproduk($kode = 0) {
-        $data_produk = $this->model->GetProduk("where id_produk = '$kode'")->result_array();
-
-        /* menjadikan kategori ke array */
-        $kategori_post_array = array();
-        foreach ($this->model->GetProduk("where id_produk = '$kode'")->result_array() as $kat) {
-            $kategori_post_array[] = $kat['id_kat'];
-        }
-
-        $merk_post_array = array();
-        foreach ($this->model->GetProduk("where id_produk = '$kode'")->result_array() as $merk) {
-            $merk_post_array[] = $merk['id_merk'];
-        }
-
-        $data = array(
-            'nama' => $this->session->userdata('nama'),
-            'id_produk' => $data_produk[0]['id_produk'],
-            'judul' => $data_produk[0]['judul'],
-            'harga' => $data_produk[0]['harga'],
-            'jumlah' => $data_produk[0]['jumlah'],
-            'status' => $data_produk[0]['status'],
-            'ket' => $data_produk[0]['ket'],
-            'foto' => $data_produk[0]['foto'],
-            'tgl_input_pro' => $data_produk[0]['tgl_input_pro'],
-            'status' => $data_produk[0]['status'],
-            'kategori' => $this->model->GetKat()->result_array(),
-            'merk' => $this->model->GetMerk()->result_array(),
-            'label_post' => $kategori_post_array,
-            'merk_post' => $merk_post_array,
-        );
-        $this->load->view('produk/edit_produk', $data);
-    }
-
-    function updateproduki() {
-        $config = array(
-            'upload_path' => './assets/upload',
-            'allowed_types' => 'gif|jpg|JPG|png',
-            'max_size' => '2048',
-        );
-        $this->load->library('upload', $config);
-        $this->upload->do_upload('file_upload');
-        $upload_data = $this->upload->data();
-        $file_name = $upload_data['file_name'];
-
-        $data = array(
-            'id_produk' => $this->input->post('id_produk'),
-            'judul' => $this->input->post('judul'),
-            'harga' => $this->input->post('harga'),
-            'jumlah' => $this->input->post('jumlah'),
-            'kondisi' => $this->input->post('kondisi'),
-            'id_merk' => $this->input->post('id_merk'),
-            'id_kat' => $this->input->post('id_kat'),
-            'tgl_input_pro' => $this->input->post('tgl_input_pro'),
-            'status' => $this->input->post('status'),
-            'ket' => $this->input->post('ket'),
-            'foto' => $file_name,
-        );
-
-        $res = $this->model->UpdateProduk($data);
-        if ($res >= 0) {
-            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Update data BERHASIL di lakukan</strong></div>");
-            header('location:' . base_url() . 'produk');
-        } else {
-            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Update data GAGAL di lakukan</strong></div>");
-            header('location:' . base_url() . 'produk');
-        }
-    }
-
     function Hapus($kode = 1) {
 
         $result = $this->model->Hapus('hasilsurvei', array('id_outlet' => $kode));
@@ -201,7 +141,7 @@ class Data extends CI_Controller {
             header('location:' . base_url() . 'Data');
         }
     }
-    
+
     function updateproduk() {
         if ($_FILES['file_upload']['error'] == 0):
             $config = array(

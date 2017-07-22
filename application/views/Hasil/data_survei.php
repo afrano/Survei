@@ -4,7 +4,7 @@
         <link href="<?php echo base_url(); ?>assets/dist/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
         <?php $this->load->view('inc/head'); ?>
     </head>
-    <body class="skin-blue">
+    <body class="skin-green">
         <div class="wrapper">
             <?php $this->load->view('inc/head2'); ?>
             <aside class="main-sidebar">

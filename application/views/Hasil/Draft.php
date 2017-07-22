@@ -4,7 +4,7 @@
         <link href="<?php echo base_url(); ?>assets/dist/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
         <?php $this->load->view('inc/head'); ?>
     </head>
-    <body class="skin-blue">
+    <body class="skin-green">
         <div class="wrapper">
             <?php $this->load->view('inc/head2'); ?>
             <aside class="main-sidebar">
@@ -17,8 +17,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="box">
-                                <div class="box">
-                                    <div class="box-body">
+                                <div class="box" >
+                                    <div class="box-body" >
                                         <table id="example2" class="table table-bordered table-striped">
                                             <thead>
                                             <center><h4><b>Grafik Outlet yang disurvei</b></h4></center>

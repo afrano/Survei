@@ -26,11 +26,11 @@ class Survei extends CI_Controller {
     }
 
     public function Draft() {
-         $data = array(
+        $data = array(
             'nama' => $this->session->userdata('nama'),
             'data_survei' => $this->model->Getdatasurvei()->result_array(),
         );
-        $this->load->view('Hasil/Draft',$data);
+        $this->load->view('Hasil/Draft', $data);
     }
 
     function savedatasurvei() {

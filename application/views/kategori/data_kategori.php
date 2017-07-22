@@ -5,7 +5,7 @@
         <?php $this->load->view('inc/head'); ?>
 
     </head>
-    <body class="skin-blue">
+    <body class="skin-green">
         <!-- wrapper di bawah footer -->
         <div class="wrapper">
 

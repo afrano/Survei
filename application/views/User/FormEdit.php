@@ -40,7 +40,7 @@
                                     <div class="form-group">
                                         <label for="">Cabang</label> 
                                         <select name="cabang_outlet" class="form-control" required="">
-                                            <option value="">Pilih Cabang</option>
+                                            <option <?php echo $cabang_outlet; ?> ><?php echo $cabang_outlet; ?></option>
                                             <option value="BAC">Banda Aceh</option>
                                             <option value="BD2">Bandung 2</option>
                                             <option value="BDG">Bandung</option>
@@ -148,21 +148,13 @@
                                                         <td>Ketepatan Waktu  kunjungan Salesman mengambil Order</td>
                                                         <td>
                                                             <div class="form-group" >
-                                                                <input type="radio" name="kepuasan1" value="1"> 1 &emsp14; 
-                                                                <input type="radio" name="kepuasan1" value="2"> 2 &emsp14; 
-                                                                <input type="radio" name="kepuasan1" value="3"> 3 &emsp14; 
-                                                                <input type="radio" name="kepuasan1" value="4"> 4 
-                                                                <input type="radio" name="kepuasan1" value="" required="" hidden="">
+                                                                <input type="number" min="1" max="4" value="<?php echo $kepuasan1; ?>" name="kepuasan1">
                                                             </div>                                 
                                                         </td>
                                                         <td>
-                                                            <div class="form-group">
-                                                                <input type="radio" name="kepentingan1" value="1"> 1 &emsp14; 
-                                                                <input type="radio" name="kepentingan1" value="2"> 2 &emsp14; 
-                                                                <input type="radio" name="kepentingan1" value="3"> 3 &emsp14; 
-                                                                <input type="radio" name="kepentingan1" value="4"> 4 
-                                                                <input type="radio" name="kepentingan1" value="" hidden="" required="">  
-                                                            </div>
+                                                            <div class="form-group" >
+                                                                <input type="number" min="1" max="4" value="<?php echo $kepentingan1; ?>" name="kepentingan1">
+                                                            </div>  
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -174,7 +166,7 @@
                                                                 <input type="radio" name="kepuasan2" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan2" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan2" value="4"> 4 
-                                                                <input type="radio" name="kepuasan2" value="" required="" hidden="">
+                                                                <input type="radio" name="kepuasan2" value="<?php echo $Q02; ?>"  required="" hidden="">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -183,7 +175,7 @@
                                                                 <input type="radio" name="kepentingan2" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepentingan2" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepentingan2" value="4"> 4 
-                                                                <input type="radio" name="kepentingan2" value="" hidden="" required="">
+                                                                <input type="radio" name="kepentingan2" value="<?php echo $K03; ?>"  hidden="" required="">
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -196,7 +188,7 @@
                                                                 <input type="radio" name="kepuasan3" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan3" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan3" value="4"> 4 
-                                                                <input type="radio" name="kepuasan3" value="" required="" hidden="">
+                                                                <input type="radio" name="kepuasan3" value="<?php echo $Q03; ?>"  required="" hidden="">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -205,7 +197,7 @@
                                                                 <input type="radio" name="Kepentingan3" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan3" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan3" value="4"> 4 
-                                                                <input type="radio" name="kepentingan3" value="" hidden="" required="">
+                                                                <input type="radio" name="kepentingan3" value="<?php echo $K03; ?>"  hidden="" required="">
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -218,7 +210,7 @@
                                                                 <input type="radio" name="kepuasan4" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan4" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan4" value="4"> 4 
-                                                                <input type="radio" name="kepuasan4" value="" required="" hidden="">
+                                                                <input type="radio" name="kepuasan4" value="<?php echo $Q04; ?>"  required="" hidden="">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -227,7 +219,7 @@
                                                                 <input type="radio" name="Kepentingan4" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan4" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan4" value="4"> 4 
-                                                                <input type="radio" name="kepentingan4" value="" hidden="" required="">
+                                                                <input type="radio" name="kepentingan4" value="<?php echo $K04; ?>"  hidden="" required="">
                                                             </div>
                                                         </td>
                                                     </tr>

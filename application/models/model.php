@@ -75,11 +75,11 @@ class Model extends CI_Model {
         return $query->result();
     }
 
-    public function Getdatasurvei() {
+    public function Getdatasurvei($where = "") {
         $data = $this->db->query('SELECT p.*, q.nama_outlet, q.tahun_survei, q.semester, q.cabang_outlet, q.channel
                                 FROM hasilsurvei p
                                 LEFT JOIN data_outlet q
-                                ON(p.id_outlet = q.id_outlet) order by id_outlet desc');
+                                ON(p.id_outlet = q.id_outlet) '.$where);
         return $data;
     }
 
