@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Survei extends CI_Controller {
+class User extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
@@ -22,7 +22,7 @@ class Survei extends CI_Controller {
             'nama' => $this->session->userdata('nama'),
                 //  'data_survei' => $this->model->Getdatasurvei()->result_array(),
         );
-        $this->load->view('User/FormInput', $data);
+        $this->load->view('User/FormInputUser', $data);
     }
 
     public function Draft() {
@@ -66,15 +66,14 @@ class Survei extends CI_Controller {
     }
 
     public function SaveSurvei() {
-        $id_outlet = '2';
+        $id_outlet = '3';
         $id_hasil = '';
-        $id_cabang = '2';
         $komentar = $_POST['komentar'];
-        $nama_outlet = $_POST['nama_outlet'];
-        $cabang_outlet = $_POST['cabang_outlet'];
-        $channel = $_POST['channel'];
-        $alamat_outlet = $_POST['alamat_outlet'];
-        $telpon_outlet = $_POST['telpon_outlet'];
+        // $nama_outlet = $_POST['nama_outlet'];
+        //  $cabang_outlet = $_POST['cabang_outlet'];
+        // $channel = $_POST['channel'];
+        // $alamat_outlet = $_POST['alamat_outlet'];
+        // $telpon_outlet = $_POST['telpon_outlet'];
         $tahun_survei = $_POST['tahun_survei'];
         $semester = $_POST['semester'];
         $kepuasan1 = $_POST['kepuasan1'];
@@ -175,7 +174,7 @@ class Survei extends CI_Controller {
 
         $result = $this->model->Simpan('outlet', $Outlet);
         $result1 = $this->model->Simpan('hasilsurvei', $data);
-        if ($result == 1 && $result1 == 1) {
+        if ($result1 == 1) {
             $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Simpan data BERHASIL dilakukan</strong></div>");
             header('location:' . base_url() . 'Survei');
         } else {

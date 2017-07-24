@@ -1,4 +1,4 @@
-<html>
+<!--<html>
     <head>
         <link href="<?php echo base_url(); ?>assets/dist/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
         <?php $this->load->view('inc/head'); ?>
@@ -537,7 +537,8 @@
                                                 <textarea style="height:90px"  class="form-control" name="komentar" placeholder="Kritikan dan Saran"></textarea>                
                                             </div>
                                         </td>
-                                    </tr><tr>
+                                    </tr>
+                                    <tr>
                                         <td></td>
                                         <td></td>
                                         <td> 
@@ -572,4 +573,4 @@
             $('#pesan-error-flash').delay(5000).fadeOut();
         });
     </script>
-</html>
+</html>-->

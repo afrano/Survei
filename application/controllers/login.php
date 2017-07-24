@@ -44,7 +44,9 @@ class Login extends CI_Controller {
             if ($this->session->userdata('level') == '1') {
                 $this->session->set_userdata('useradmin', $sess_data);
                 redirect(base_url() . "Home");
-            } else {
+            } else if ($this->session->userdata('level') == '2') {
+                $this->session->set_userdata('useradmin', $sess_data);
+                redirect(base_url() . "User");
                 $this->session->set_userdata('Web_Survei', $sess_data);
                 redirect(base_url());
             }

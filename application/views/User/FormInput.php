@@ -10,29 +10,37 @@
                 <?php $this->load->view('inc/sidebar'); ?>
             </aside>
             <div class="content-wrapper">
-                <section class="content-header">
-                    <h1>
-                        <b>Form Input Survei Kepuasan Pelangan</b>
-                    </h1>
-                </section>
+
                 <section class="content">
                     <form  role="form" action="<?php echo base_url(); ?>Survei/SaveSurvei" method="POST" enctype="multipart/form-data">
                         <div class="box">
                             <span id="pesan-flash"><?php echo $this->session->flashdata('sukses'); ?></span>
                             <span id="pesan-error-flash"><?php echo $this->session->flashdata('alert'); ?></span>
                             <div class="box-title">
-                            </div>
-                            <div class="box-header">
-                                <i class="fa fa-plus"></i>
-                                <h3 class="box-title">FORM INPUT DATA OUTLET</h3>
+                                <br>
+                                <center>
+                                    <font color="#008000">
+                                    <h2><b>PT ENSEVAL PUTERA MEGATRADING Tbk.</b> <br></h2>
+                                    <hr color="black">
+                                    <h4><b>Form Input Data Survei</b>
+                                    </h4> <hr color="black">
+                                    </font><br>
+                                </center>
                             </div>
                             <div class="box-body chat" id="chat-box">
                                 <div class="col-lg-6">
                                     <div class="form-group">
+                                        <?php $tahun = getdate(); ?>
                                         <label for="">Tahun Survei</label>
-                                        <input type="number"  class="form-control" value="" id="" name="tahun_survei" placeholder="YYYY" required>
+                                        <input type="number"  class="form-control" value="<?php echo $tahun['year']; ?>" id="" name="tahun_survei" readonly="" required>
                                     </div>
-
+                                    <div class="form-group">
+                                        <label for="">Periode Kuesioner</label>
+                                        <select name="semester" class="form-control" required="">
+                                            <option value="S1">S1</option>
+                                            <option value="S2">S2</option>
+                                        </select> 
+                                    </div>
                                     <div class="form-group">
                                         <label for="">Nama Outlet</label>
                                         <input type="text" class="form-control" value="" id="" name="nama_outlet" placeholder="Masukan Nama Outlet" required>                        
@@ -89,16 +97,6 @@
                                             <option value="YOG">Yogyakarta</option>
                                         </select>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="">Channel</label>
-                                        <select name="channel" class="form-control" required="">
-                                            <option value="">Pilih Channel</option>
-                                            <option value="Apotek">Apotek</option>
-                                            <option value="Rumah Sakit">Rumah Sakit</option>
-                                            <option value="Subdis">Subdis</option>
-                                            <option value="other">Other</option>
-                                        </select> 
-                                    </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
@@ -110,10 +108,13 @@
                                         <input type="number" class="form-control" value="" id="" name="telpon_outlet" placeholder="Masukan No Telpon" required>                        
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Periode Kuesioner</label>
-                                        <select name="semester" class="form-control" required="">
-                                            <option value="S1">S1</option>
-                                            <option value="S2">S2</option>
+                                        <label for="">Channel</label>
+                                        <select name="channel" class="form-control" required="">
+                                            <option value="">Pilih Channel</option>
+                                            <option value="Apotek">Apotek</option>
+                                            <option value="Rumah Sakit">Rumah Sakit</option>
+                                            <option value="Subdis">Subdis</option>
+                                            <option value="other">Other</option>
                                         </select> 
                                     </div>
                                 </div>
@@ -122,6 +123,13 @@
                                 <div class="col-md-12">
                                     <div class="box">
                                         <div class="box-title">
+                                            <center>
+                                                 <hr color="black">
+                                                <font color="#008000">
+                                                <h4><b>KUESIONER PELAYANAN</b> <br></h4>
+                                                 <hr color="black">
+                                                </font>
+                                            </center>
                                         </div>
                                         <div class="box-body">
                                             <table id="example1" class="table table-bordered table-striped">
@@ -136,7 +144,7 @@
 
                                                 <tbody>
                                                     <tr>
-                                                        <td></td>
+                                                        <td><i class="fa fa-archive"></i></td>
                                                         <td><b>PEMESANAN BARANG MELALUI SALESMAN</b></td>
                                                         <td>   
                                                         </td>
@@ -224,7 +232,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td></td>
+                                                        <td><i class="fa fa-refresh"></i></td>
                                                         <td><b>PENANGANAN RETUR BARANG</b></td>
                                                         <td>   
                                                         </td>
@@ -272,7 +280,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td></td>
+                                                        <td><i class="fa fa-send"></i></td>
                                                         <td><b>PENGIRIMAN BARANG</b></td>
                                                         <td>   
                                                         </td>
@@ -381,7 +389,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td></td>
+                                                        <td><i class="fa fa-refresh"></i></td>
                                                         <td><b>PENAGIHAN</b></td>
                                                         <td>   
                                                         </td>
@@ -449,7 +457,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td></td>
+                                                        <td><i class="fa fa-phone-square"></i></td>
                                                         <td><b>ENSEVAL CUSTOMER CARE ( ECC )</b></td>
                                                         <td>   
                                                         </td>
@@ -577,16 +585,25 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
+                                                        <td>21</td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <label for="">Tuliskan beberapa hal penting terhadap pelayanan kami :</label>
+                                                                <textarea style="height:90px"  class="form-control" name="komentar" placeholder="Tuliskan kritikan dan saran . . ."></textarea>                
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
                                                         <td></td>
                                                         <td></td>
                                                         <td> 
                                                             <div class=""> 
-                                                                <a href="<?php echo base_url(); ?>Data" class="btn btn-warning btn-block btn-flat">Batal</a>
+                                                                <a href="<?php echo base_url(); ?>Home" class="btn btn-warning btn-block btn-flat"><i class="fa fa-close"></i> Batal </a>
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class>
-                                                                <button type="submit" class="btn btn-primary btn-block btn-flat">Simpan</button>
+                                                                <button type="submit" class="btn btn-primary btn-block btn-flat"><i class="fa fa-save"></i>  Simpan</button>
                                                             </div>                                               
                                                         </td>
                                                     </tr>

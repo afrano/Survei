@@ -12,7 +12,6 @@ class Backend extends CI_Controller {
 
     private function cek_login() {
         if ($this->session->userdata('useradmin')) {
-
             redirect(base_url() . 'dashboard');
         } else {
             redirect(base_url() . 'login');
