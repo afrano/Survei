@@ -22,7 +22,7 @@ class Survei extends CI_Controller {
             'nama' => $this->session->userdata('nama'),
                 //  'data_survei' => $this->model->Getdatasurvei()->result_array(),
         );
-        $this->load->view('User/FormInputOutlet', $data);
+        $this->load->view('User/FormInput', $data);
     }
 
     public function Draft() {

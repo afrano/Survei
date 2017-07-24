@@ -69,8 +69,8 @@ header("Expires: 0");
             <tr>
                 <td></td>    
                 <td><?php echo $row['semester']; ?></td>
-                <td><?php echo $row['tahun_survei']; ?></td>
-                <td><?php echo $row['cabang_outlet']; ?></td>
+                <td><?php echo $row['tahun']; ?></td>
+                <td><?php echo $row['nama_cabang']; ?></td>
                 <td><?php echo $row['nama_outlet']; ?></td>
                 <td><?php echo $row['channel']; ?></td>
                 <td><?php echo $row['Q01']; ?></td>
@@ -96,8 +96,8 @@ header("Expires: 0");
                 <td></td>  
                 <td></td>    
                 <td><?php echo $row['semester']; ?></td>
-                <td><?php echo $row['tahun_survei']; ?></td>
-                <td><?php echo $row['cabang_outlet']; ?></td>
+                <td><?php echo $row['tahun']; ?></td>
+                <td><?php echo $row['nama_cabang']; ?></td>
                 <td><?php echo $row['nama_outlet']; ?></td>
                 <td><?php echo $row['channel']; ?></td>
                 <td><?php echo $row['K01']; ?></td>

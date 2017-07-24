@@ -22,7 +22,6 @@ class Data extends CI_Controller {
             'nama' => $this->session->userdata('nama'),
             'data_survei' => $this->model->Getdatasurvei()->result_array(),
         );
-
         $this->load->view('Hasil/data_survei', $data);
     }
 
@@ -94,7 +93,7 @@ class Data extends CI_Controller {
     function updatedata() {
         $outlet = array(
             'id_outlet' => $this->input->post('id_outlet'),
-            'nama_outlet' => $this->input->post('cabang_outlet'),
+            'nama_outlet' => $this->input->post('nama_outlet'),
             'alamat' => $this->input->post('alamat_outlet'),
             'telpon' => $this->input->post('telpon_outlet'),
             'channel' => $this->input->post('channel'),

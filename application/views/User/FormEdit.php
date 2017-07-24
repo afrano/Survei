@@ -140,7 +140,7 @@
 
                                                 <tbody>
                                                     <tr>
-                                                        <td></td>
+                                                        <td><i class="fa fa-archive"></i></td>
                                                         <td><b>PEMESANAN BARANG MELALUI SALESMAN</b></td>
                                                         <td>   
                                                         </td>
@@ -204,7 +204,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td></td>
+                                                        <td><i class="fa fa-refresh"></i></td>
                                                         <td><b>PENANGANAN RETUR BARANG</b></td>
                                                         <td>   
                                                         </td>
@@ -240,7 +240,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td></td>
+                                                        <td><i class="fa fa-send"></i></td>
                                                         <td><b>PENGIRIMAN BARANG</b></td>
                                                         <td>   
                                                         </td>
@@ -318,7 +318,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td></td>
+                                                        <td><i class="fa fa-refresh"></i></td>
                                                         <td><b>PENAGIHAN</b></td>
                                                         <td>   
                                                         </td>
@@ -368,7 +368,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td></td>
+                                                        <td><i class="fa fa-phone-square"></i></td>
                                                         <td><b>ENSEVAL CUSTOMER CARE ( ECC )</b></td>
                                                         <td>   
                                                         </td>
