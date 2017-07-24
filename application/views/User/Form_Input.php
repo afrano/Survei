@@ -12,7 +12,7 @@
             <div class="content-wrapper">
                 <section class="content-header">
                     <h1>
-                        <b>Form Edit Data Survei Kepuasan Pelangan</b>
+                        <b>Form Input Survei Kepuasan Pelangan</b>
                     </h1>
                 </section>
                 <section class="content">
@@ -24,10 +24,8 @@
                             </div>
                             <div class="box-header">
                                 <i class="fa fa-plus"></i>
-                                <h3 class="box-title">FORM EDIT DATA OUTLET</h3>
+                                <h3 class="box-title">FORM INPUT DATA OUTLET</h3>
                                 <input type="text" name="id_hasil" hidden="" value="<?php echo $id_outlet; ?>">
-                                <input type="text" name="id_cabang" hidden="" value="<?php echo $id_cabang; ?>">
-                                <input type="text" name="id_outlet" hidden="" value="<?php echo $id_outlet; ?>">
                             </div>
                             <div class="box-body chat" id="chat-box">
                                 <div class="col-lg-6">

@@ -68,8 +68,8 @@
                                                     <td><?php echo $no; ?></td>    
                                                     <td><?php echo $row['nama_outlet']; ?></td>
                                                     <td><?php echo $row['channel']; ?></td>
-                                                    <td><?php echo $row['cabang_outlet']; ?></td>
-                                                    <td><?php echo $row['tahun_survei']; ?></td>
+                                                    <td><?php echo $row['nama_cabang']; ?></td>
+                                                    <td><?php echo $row['tahun']; ?></td>
                                                     <td><?php echo $row['semester']; ?></td>
                                                     <td><?php echo $row['Q01']; ?></td>
                                                     <td><?php echo $row['Q02']; ?></td>

@@ -13,7 +13,7 @@ class Model extends CI_Model {
 
     //ambil data user
     function GetUser($data) {
-        $query = $this->db->get_where('tb_login', $data);
+        $query = $this->db->get_where('login', $data);
         return $query;
     }
 
@@ -68,18 +68,16 @@ class Model extends CI_Model {
         return $this->db->count_all('tb_produk');
     }
 
-    public function getAll() {
-        $this->db->select('*');
-        $this->db->from('tbl_buku');
-        $query = $this->db->get();
-        return $query->result();
+    public function Getdatasurvei($where = "") {
+        $data = $this->db->query(' SELECT p.*, q.nama_outlet, q.channel, c.nama_cabang
+                                FROM hasilsurvei p, outlet q, cabang c 
+                                where q.id_outlet = p.id_outlet and q.id_cabang = c.id_cabang ' . $where);
+        return $data;
     }
 
-    public function Getdatasurvei($where = "") {
-        $data = $this->db->query('SELECT p.*, q.nama_outlet, q.tahun_survei, q.semester, q.cabang_outlet, q.channel
-                                FROM hasilsurvei p
-                                LEFT JOIN data_outlet q
-                                ON(p.id_outlet = q.id_outlet) '.$where);
+    public function GetEdit($where = "") {
+        $data = $this->db->query(' SELECT p.*, q.nama_outlet, q.channel,q.id_outlet, c.nama_cabang,c.id_cabang, q.alamat,q.telpon,p.semester
+                                FROM hasilsurvei p, outlet q, cabang c ' . $where);
         return $data;
     }
 
@@ -103,6 +101,21 @@ class Model extends CI_Model {
 
     public function Hapus($table, $where) {
         return $this->db->delete($table, $where);
+    }
+
+    function Updatedata($data) {
+        $this->db->where('id_hasil', $data['id_hasil']);
+        $this->db->update('hasilsurvei', $data);
+    }
+
+    function UpdateOutlet($data) {
+        $this->db->where('id_outlet', $data['id_outlet']);
+        $this->db->update('outlet', $data);
+    }
+    
+    function UpdateCabang($data) {
+        $this->db->where('id_outlet', $data['id_outlet']);
+        $this->db->update('cabang', $data);
     }
 
     function UpdateProduk($data) {

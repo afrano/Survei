@@ -16,7 +16,7 @@
                     </h1>
                 </section>
                 <section class="content">
-                    <form  role="form" action="<?php echo base_url(); ?>Survei/savepoin" method="POST" enctype="multipart/form-data">
+                    <form  role="form" action="<?php echo base_url(); ?>Survei/Tes" method="POST" enctype="multipart/form-data">
                         <div class="box">
                             <span id="pesan-flash"><?php echo $this->session->flashdata('sukses'); ?></span>
                             <span id="pesan-error-flash"><?php echo $this->session->flashdata('alert'); ?></span>
@@ -133,7 +133,6 @@
                                                         <th>Kepuasan</th>
                                                     </tr>
                                                 </thead>
-
                                                 <tbody>
                                                     <tr>
                                                         <td></td>
@@ -611,7 +610,7 @@
                                                                 <input type="radio" name="Kepentingan20" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan20" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan20" value="4"> 4 
-                                                                <input type="radio" name="kepentingan20" value="" hidden="" required="">
+                                                                <input type="radio" name="kepentingan20" value=""  required="">
                                                             </div>                                            
                                                         </td>
                                                     </tr>
@@ -623,8 +622,7 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <div class>
-                                                                <button type="submit" class="btn btn-primary btn-block btn-flat">Simpan</button>
+                                                            <div class=""> <button type="submit" class="btn btn-primary btn-block btn-flat">Simpan</button>
                                                             </div>                                               
                                                         </td>
                                                     </tr>
@@ -633,7 +631,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </form>

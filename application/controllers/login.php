@@ -34,7 +34,6 @@ class Login extends CI_Controller {
         $hasil = $this->model->GetUser($data);
         if ($hasil->num_rows() == 1) {
             foreach ($hasil->result() as $sess) {
-                //$sess_data['logged_in'] = 'Sudah Loggin';
                 $sess_data['id_user'] = $sess->id_user;
                 $sess_data['nama_user'] = $sess->nama_user;
                 $sess_data['nama'] = $sess->nama;

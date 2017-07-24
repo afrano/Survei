@@ -6,7 +6,7 @@
                 <i class="fa fa-bars"></i>
             </button>
             <a href="index.php" class="navbar-brand">
-                <img src="<?php echo base_url(); ?>assets/img/logo.png" alt="" width="100" high="100" alt="Post">
+                <img src="<?php echo base_url(); ?>assets/img/Logoen.png" alt="" width="90" high="90" alt="Post" >
             </a>
             <div class="collapse navbar-collapse" id="bs-navbar-collapse">
                 <ul class="nav navbar-nav main-navbar-nav">
@@ -23,8 +23,8 @@
     html, body {height: 100%;}
     body {font-family: 'Open Sans', sans-serif;font-size: 13px;line-height: 1.6;color: #8c8c8c;background-color: #008000;}
     h1, h2, h3, h4, h5, h6 {font-family: 'Open Sans', sans-serif;}
-    a {color: #32CD32;}
-    a:hover {color: #32CD32;transition-property: all;transition-duration: 0.3s;transition-timing-function: linear;}
+    a {color: #FFFFFF;}
+    a:hover {color: #FFFFFF;transition-property: all;transition-duration: 0.3s;transition-timing-function: linear;}
     a.none:hover {text-decoration: none;}
 
     /* Header */
@@ -39,11 +39,11 @@
     /* Navigation */
     .navbar {-moz-border-radius: 0;-webkit-border-radius: 0;border-radius: 0;margin-bottom: 0;}
     .navbar .container {position: relative;}
-    .navbar-default {-moz-transition: all 0.3s ease-out;-o-transition: all 0.3s ease-out;-webkit-transition: all 0.3s ease-out;transition: all 0.3s ease-out;width: 100%;border: none;border-bottom: 1px solid #e7e7e7;background-color: #98FB98 ;} /*Menu Warna*/
+    .navbar-default {-moz-transition: all 0.3s ease-out;-o-transition: all 0.3s ease-out;-webkit-transition: all 0.3s ease-out;transition: all 0.3s ease-out;width: 100%;border: none;border-bottom: 1px solid #e7e7e7;background-color: #32CD32 ;} /*Menu Warna*/
     .navbar-default .navbar-nav > li > a {color: #404040;font-weight: normal;font-size: 15px;} /*Tulisan*/
     .navbar-default .navbar-nav > li > a:hover {background-color: #32CD32;color: #FFFFFF;} /*Warna Pada pilihan*/
     .navbar-default .navbar-nav > .open > a,.navbar-default .navbar-nav > .open > a:hover,.navbar-default .navbar-nav > .open > a:focus {background-color: transparent;color: #005FA6;}
-    .navbar-default .navbar-nav .active > a,.navbar-default .navbar-nav .active > a:hover,.navbar-default .navbar-nav .active > a:focus {color: #32CD32;background-color: transparent;}
+    .navbar-default .navbar-nav .active > a,.navbar-default .navbar-nav .active > a:hover,.navbar-default .navbar-nav .active > a:focus {color: #FFFFFF;background-color: transparent;}
     .navbar-default .navbar-toggle {margin: 10px 0 0 15px;}
     .navbar-default .navbar-toggle,.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus {border: none;background: #32CD32;}
     .navbar-default .navbar-toggle i {font-size: 31px;}

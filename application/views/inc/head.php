@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-    <title>Halaman Login</title>
+    <title>Web Survei Enseval</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
     <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />    

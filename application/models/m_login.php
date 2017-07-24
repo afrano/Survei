@@ -15,7 +15,7 @@ class M_login extends CI_Model {
         $nama = $this->input->post('nama');
         $pass_user = ($_POST['pass_user']);
 
-        $query = $this->db->query("Select * from tb_login Where nama_user = '$nama_user' and (pass_user = '$pass_user' or nama = '$nama')");
+        $query = $this->db->query("Select * from login Where nama_user = '$nama_user' and (pass_user = '$pass_user' or nama = '$nama')");
         if ($query->num_rows() > 0) {
 
             $row = $query->row();
@@ -27,7 +27,7 @@ class M_login extends CI_Model {
 
             if ($pass_user == $pass_user AND $status == 1) {
                 //ambil nama
-                $q = "SELECT * FROM tb_login where id_user='" . $id_user . "'";
+                $q = "SELECT * FROM login where id_user='" . $id_user . "'";
                 $bidang = $this->db->query($q)->row();
                 $c = '";s:1:"';
                 $sql = "SELECT * FROM ci_sessions WHERE user_data LIKE '%id_user" . $c . $id_user . "%'";
@@ -92,7 +92,7 @@ class M_login extends CI_Model {
 
         //ambil database
         $temp = $this->buku_model->GetUser("WHERE nama_user = '$nama_user' AND pass_user = '$pass_user'")->result_array();
-        $query = $this->db->query("Select * from tb_login Where nama_user = '$nama_user' and (pass_user = '$pass_user' or nama = '$nama')");
+        $query = $this->db->query("Select * from login Where nama_user = '$nama_user' and (pass_user = '$pass_user' or nama = '$nama')");
         if ($query->num_rows() > 0 && $temp != NULL) {
 
             $data = array(
@@ -113,7 +113,7 @@ class M_login extends CI_Model {
 
             if ($pass_user == $pass_user AND $status == 1) {
                 //ambil nama
-                $q = "SELECT * FROM tb_login where id_user='" . $id_user . "'";
+                $q = "SELECT * FROM login where id_user='" . $id_user . "'";
                 $bidang = $this->db->query($q)->row();
                 $c = '";s:1:"';
                 $sql = "SELECT * FROM ci_sessions WHERE user_data LIKE '%id_user" . $c . $id_user . "%'";

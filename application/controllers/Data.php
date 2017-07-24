@@ -27,12 +27,19 @@ class Data extends CI_Controller {
     }
 
     function Edit($kode = 0) {
-        $data_produk = $this->model->Getdatasurvei("where q.id_outlet = '$kode'")->result_array();
-        
+        $data_produk = $this->model->GetEdit("where q.id_outlet = '$kode'")->result_array();
+
         $data = array(
             'nama' => $this->session->userdata('nama'),
             'id_outlet' => $data_produk[0]['id_outlet'],
-            'cabang_outlet' => $data_produk[0]['cabang_outlet'],
+            'id_cabang' => $data_produk[0]['id_cabang'],
+            'cabang_outlet' => $data_produk[0]['nama_cabang'],
+            'nama_outlet' => $data_produk[0]['nama_outlet'],
+            'tahun_survei' => $data_produk[0]['tahun'],
+            'channel' => $data_produk[0]['channel'],
+            'semester' => $data_produk[0]['semester'],
+            'alamat' => $data_produk[0]['alamat'],
+            'telpon' => $data_produk[0]['telpon'],
             'kepuasan1' => $data_produk[0]['Q01'],
             'kepuasan2' => $data_produk[0]['Q02'],
             'kepuasan3' => $data_produk[0]['Q03'],
@@ -84,52 +91,71 @@ class Data extends CI_Controller {
         $this->load->view('Hasil/Excel', $data);
     }
 
-    function savedata() {
-        $config = array(
-            'upload_path' => './assets/upload',
-            'allowed_types' => 'gif|jpg|JPG|png',
-            'max_size' => '2048',
+    function updatedata() {
+        $outlet = array(
+            'id_outlet' => $this->input->post('id_outlet'),
+            'nama_outlet' => $this->input->post('cabang_outlet'),
+            'alamat' => $this->input->post('alamat_outlet'),
+            'telpon' => $this->input->post('telpon_outlet'),
+            'channel' => $this->input->post('channel'),
+            'id_cabang' => $this->input->post('id_cabang'),
         );
-        $this->load->library('upload', $config);
-        $this->upload->do_upload('file_upload');
-        $upload_data = $this->upload->data();
-
-        $id_produk = '';
-        $judul = $_POST['judul'];
-        $harga = $_POST['harga'];
-        $jumlah = $_POST['jumlah'];
-        $kondisi = $_POST['kondisi'];
-        $id_merk = $_POST['id_merk'];
-        $id_kat = $_POST['id_kat'];
-        $status = $_POST['status'];
-        $ket = $_POST['ket'];
-        $tgl_input_pro = $_POST['tgl_input_pro'];
-        $file_name = $upload_data['file_name'];
-
         $data = array(
-            'id_produk' => $id_produk,
-            'judul' => $judul,
-            'harga' => $harga,
-            'jumlah' => $jumlah,
-            'kondisi' => $kondisi,
-            'id_merk' => $id_merk,
-            'id_kat' => $id_kat,
-            'status' => $status,
-            'ket' => $ket,
-            'tgl_input_pro' => date("Y-m-d H:i:s"),
-            'foto' => $file_name,
+            'id_hasil' => $this->input->post('id_hasil'),
+            'tahun' => $this->input->post('tahun_survei'),
+            'semester' => $this->input->post('semester'),
+            'Q01' => $this->input->post('kepuasan1'),
+            'Q02' => $this->input->post('kepuasan2'),
+            'Q03' => $this->input->post('kepuasan3'),
+            'Q04' => $this->input->post('kepuasan4'),
+            'Q05' => $this->input->post('kepuasan5'),
+            'Q06' => $this->input->post('kepuasan6'),
+            'Q07' => $this->input->post('kepuasan7'),
+            'Q08' => $this->input->post('kepuasan8'),
+            'Q09' => $this->input->post('kepuasan9'),
+            'Q10' => $this->input->post('kepuasan10'),
+            'Q11' => $this->input->post('kepuasan11'),
+            'Q12' => $this->input->post('kepuasan12'),
+            'Q13' => $this->input->post('kepuasan13'),
+            'Q14' => $this->input->post('kepuasan14'),
+            'Q15' => $this->input->post('kepuasan15'),
+            'Q16' => $this->input->post('kepuasan16'),
+            'Q17' => $this->input->post('kepuasan17'),
+            'Q18' => $this->input->post('kepuasan18'),
+            'Q19' => $this->input->post('kepuasan19'),
+            'Q20' => $this->input->post('kepuasan20'),
+            'K01' => $this->input->post('kepentingan1'),
+            'K02' => $this->input->post('kepentingan2'),
+            'K03' => $this->input->post('kepentingan3'),
+            'K04' => $this->input->post('kepentingan5'),
+            'K05' => $this->input->post('kepentingan5'),
+            'K06' => $this->input->post('kepentingan6'),
+            'K07' => $this->input->post('kepentingan7'),
+            'K08' => $this->input->post('kepentingan8'),
+            'K09' => $this->input->post('kepentingan9'),
+            'K10' => $this->input->post('kepentingan10'),
+            'K11' => $this->input->post('kepentingan11'),
+            'K12' => $this->input->post('kepentingan12'),
+            'K13' => $this->input->post('kepentingan13'),
+            'K14' => $this->input->post('kepentingan14'),
+            'K15' => $this->input->post('kepentingan15'),
+            'K16' => $this->input->post('kepentingan16'),
+            'K17' => $this->input->post('kepentingan17'),
+            'K18' => $this->input->post('kepentingan18'),
+            'K19' => $this->input->post('kepentingan19'),
+            'K20' => $this->input->post('kepentingan20'),
         );
-
-        $result = $this->model->Simpan('tb_produk', $data);
-        if ($result == 1) {
-            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Simpan data BERHASIL dilakukan</strong></div>");
-            header('location:' . base_url() . 'produk');
+        $result = $this->model->Updatedata($data);
+        $result1 = $this->model->UpdateOutlet($outlet);
+        if ($result >= 0 && $result1 >= 0) {
+            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Data Berhasil Diupdate</strong></div>");
+            header('location:' . base_url() . 'Data');
         } else {
-            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Simpan data GAGAL di lakukan</strong></div>");
-            header('location:' . base_url() . 'produk');
+            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Data Gagal Diupdate</strong></div>");
+            header('location:' . base_url() . 'Data');
         }
     }
-    
+
     function Hapus($kode = 1) {
 
         $result = $this->model->Hapus('hasilsurvei', array('id_outlet' => $kode));
@@ -139,45 +165,6 @@ class Data extends CI_Controller {
         } else {
             $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Hapus data GAGAL di lakukan</strong></div>");
             header('location:' . base_url() . 'Data');
-        }
-    }
-
-    function updateproduk() {
-        if ($_FILES['file_upload']['error'] == 0):
-            $config = array(
-                'upload_path' => './assets/upload',
-                'allowed_types' => 'gif|jpg|JPG|png',
-                'max_size' => '2048',
-            );
-            $this->load->library('upload', $config);
-            $this->upload->do_upload('file_upload');
-            $upload_data = $this->upload->data();
-            $file_name = $upload_data['file_name'];
-        else:
-            $file_name = $this->input->post('foto');
-        endif;
-
-        $data = array(
-            'id_produk' => $this->input->post('id_produk'),
-            'judul' => $this->input->post('judul'),
-            'harga' => $this->input->post('harga'),
-            'jumlah' => $this->input->post('jumlah'),
-            'kondisi' => $this->input->post('kondisi'),
-            'id_merk' => $this->input->post('id_merk'),
-            'id_kat' => $this->input->post('id_kat'),
-            'tgl_input_pro' => $this->input->post('tgl_input_pro'),
-            'status' => $this->input->post('status'),
-            'ket' => $this->input->post('ket'),
-            'foto' => $file_name,
-        );
-
-        $res = $this->model->UpdateProduk($data);
-        if ($res >= 0) {
-            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Update data BERHASIL di lakukan</strong></div>");
-            header('location:' . base_url() . 'produk');
-        } else {
-            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Update data GAGAL di lakukan</strong></div>");
-            header('location:' . base_url() . 'produk');
         }
     }
 
