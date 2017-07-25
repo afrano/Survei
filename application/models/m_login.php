@@ -64,12 +64,6 @@ class M_login extends CI_Model {
                     redirect(base_url() . "enjinering");
                 }
 
-                // }
-                // else{
-                // 	$info='<div class="warning-valid">NAMA PENGGUNA DAN PASSWORD ANDA SEDANG DI GUNAKAN</div>';
-                // 	$this->session->set_userdata('info',$info);
-                // 	redirect(base_url().'login');
-                // }
             } else {
                 $info = '<div style="color:red">AKUN YANG ANDA GUNAKAN BELUM DI VERIFIKASI ADMIN</div>';
                 $this->session->set_userdata('info', $info);
@@ -149,12 +143,6 @@ class M_login extends CI_Model {
                     redirect(base_url() . "enjinering");
                 }
 
-                // }
-                // else{
-                // 	$info='<div class="warning-valid">NAMA PENGGUNA DAN PASSWORD ANDA SEDANG DI GUNAKAN</div>';
-                // 	$this->session->set_userdata('info',$info);
-                // 	redirect(base_url().'login');
-                // }
             } else {
                 $info = '<div style="color:red">AKUN YANG ANDA GUNAKAN BELUM DI VERIFIKASI ADMIN</div>';
                 $this->session->set_userdata('info', $info);

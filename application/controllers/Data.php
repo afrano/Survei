@@ -32,7 +32,7 @@ class Data extends CI_Controller {
             'nama' => $this->session->userdata('nama'),
             'id_outlet' => $data_produk[0]['id_outlet'],
             'id_cabang' => $data_produk[0]['id_cabang'],
-            'cabang_outlet' => $data_produk[0]['nama_cabang'],
+            'id_cabang' => $data_produk[0]['nama_cabang'],
             'nama_outlet' => $data_produk[0]['nama_outlet'],
             'tahun_survei' => $data_produk[0]['tahun'],
             'channel' => $data_produk[0]['channel'],
@@ -91,6 +91,7 @@ class Data extends CI_Controller {
     }
 
     function updatedata() {
+        
         $outlet = array(
             'id_outlet' => $this->input->post('id_outlet'),
             'nama_outlet' => $this->input->post('nama_outlet'),

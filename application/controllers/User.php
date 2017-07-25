@@ -20,49 +20,8 @@ class User extends CI_Controller {
 
         $data = array(
             'nama' => $this->session->userdata('nama'),
-                //  'data_survei' => $this->model->Getdatasurvei()->result_array(),
         );
         $this->load->view('User/FormInputUser', $data);
-    }
-
-    public function Draft() {
-        $data = array(
-            'nama' => $this->session->userdata('nama'),
-            'data_survei' => $this->model->Getdatasurvei()->result_array(),
-        );
-        $this->load->view('Hasil/Draft', $data);
-    }
-
-    public function SaveOutlet() {
-        $id_outlet = '2';
-        $id_hasil = '';
-        $id_cabang = '2';
-        $komentar = 'Tes Komen';
-        $nama_outlet = $_POST['nama_outlet'];
-        $cabang_outlet = $_POST['cabang_outlet'];
-        $channel = $_POST['channel'];
-        $alamat_outlet = $_POST['alamat_outlet'];
-        $telpon_outlet = $_POST['telpon_outlet'];
-        $tahun_survei = $_POST['tahun_survei'];
-        $semester = $_POST['semester'];
-        $Outlet = array(
-            'id_outlet' => $id_outlet,
-            'nama_outlet' => $nama_outlet,
-            'alamat' => $alamat_outlet,
-            'telpon' => $telpon_outlet,
-            'channel' => $channel,
-            'id_cabang' => $id_cabang,
-        );
-
-        $result = $this->model->Simpan('outlet', $Outlet);
-        //  $result1 = $this->model->Simpan('hasilsurvei', $data);
-        if ($result == 1) {
-            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Simpan data BERHASIL dilakukan</strong></div>");
-            header('location:' . base_url() . 'Survei');
-        } else {
-            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Simpan data GAGAL di lakukan</strong></div>");
-            header('location:' . base_url() . 'Survei');
-        }
     }
 
     public function SaveSurvei() {
@@ -176,73 +135,10 @@ class User extends CI_Controller {
         $result1 = $this->model->Simpan('hasilsurvei', $data);
         if ($result1 == 1) {
             $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Simpan data BERHASIL dilakukan</strong></div>");
-            header('location:' . base_url() . 'Survei');
+            header('location:' . base_url() . 'User');
         } else {
             $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Simpan data GAGAL di lakukan</strong></div>");
-            header('location:' . base_url() . 'Survei');
-        }
-    }
-
-    function editkategori($kode = 0) {
-        $tampung = $this->model->GetKat("where id_kat = '$kode'")->result_array();
-        $data = array(
-            'nama' => $this->session->userdata('nama'),
-            'status' => 'lama',
-            'tgl_input_kat' => $tampung[0]['tgl_input_kat'],
-            'kategori' => $tampung[0]['kategori'],
-            'id_kat' => $tampung[0]['id_kat'],
-            'data_kategori' => $this->model->GetKat("where id_kat != '$kode' order by id_kat desc")->result_array()
-        );
-        $this->load->view('kategori/data_kategori', $data);
-    }
-
-    function savedata() {
-        if ($_POST) {
-            $status = $_POST['status'];
-            $id_kat = $_POST['id_kat'];
-            $kategori = $_POST['kategori'];
-            $tgl_input_kat = $_POST['tgl_input_kat'];
-            if ($status == "baru") {
-                $data = array(
-                    'id_kat' => $id_kat,
-                    'kategori' => $kategori,
-                    'tgl_input_kat' => date("Y-m-d H:i:s"),
-                );
-                $result = $this->model->Simpan('tb_kategori', $data);
-                if ($result == 1) {
-                    $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Simpan data BERHASIL dilakukan</strong></div>");
-                    header('location:' . base_url() . 'kategori');
-                } else {
-                    $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Simpan data GAGAL di lakukan</strong></div>");
-                    header('location:' . base_url() . 'kategori');
-                }
-            } else {
-                $data = array(
-                    'kategori' => $kategori
-                );
-                $result = $this->model->Update('tb_kategori', $data, array('id_kat' => $id_kat));
-                if ($result == 1) {
-                    $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Update data BERHASIL dilakukan</strong></div>");
-                    header('location:' . base_url() . 'kategori');
-                } else {
-                    $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Update data GAGAL di lakukan</strong></div>");
-                    header('location:' . base_url() . 'kategori');
-                }
-            }
-        } else {
-            echo('handak baapa nyawa tong!!!');
-        }
-    }
-
-    function hapuskat($kode = 1) {
-
-        $result = $this->model->Hapus('tb_kategori', array('id_kat' => $kode));
-        if ($result == 1) {
-            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Hapus data BERHASIL dilakukan</strong></div>");
-            header('location:' . base_url() . 'kategori');
-        } else {
-            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Hapus data GAGAL di lakukan</strong></div>");
-            header('location:' . base_url() . 'kategori');
+            header('location:' . base_url() . 'User');
         }
     }
 

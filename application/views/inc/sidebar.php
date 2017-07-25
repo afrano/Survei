@@ -14,6 +14,11 @@
                 <i class="fa fa-home"></i> <span>Home</span>  </a>
         </li>
         <li>
+            <a href="<?php echo base_url(); ?>Survei/cabang">
+                <i class="fa fa-circle-o"></i> <span>Input Data Cabang</span> 
+            </a>
+        </li>
+        <li>
             <a href="<?php echo base_url(); ?>Survei">
                 <i class="fa fa-circle-o"></i> <span>Form Survei</span> 
             </a>

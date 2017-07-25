@@ -33,6 +33,18 @@ class Survei extends CI_Controller {
         $this->load->view('Hasil/Draft', $data);
     }
 
+    public function Cabang() {
+        $data = array(
+            'nama' => $this->session->userdata('nama'),
+        );
+        if ($this->session->userdata('level') == '1') {
+            $this->load->view('Cabang/InputCabang', $data);
+        } else {
+            $this->session->sess_destroy();
+            redirect(base_url() . 'index.php');
+        }
+    }
+
     public function SaveOutlet() {
         $id_outlet = '2';
         $id_hasil = '';

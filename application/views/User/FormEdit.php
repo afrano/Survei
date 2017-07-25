@@ -44,11 +44,11 @@
                                         <label for="">Cabang</label> 
                                         <select name="cabang_outlet" class="form-control" required="">
                                             <option value="<?php echo $cabang_outlet; ?> "> <?php echo $cabang_outlet; ?></option>
-                                            <option value="BAC">Banda Aceh</option>
+                                            <option value="1">Banda Aceh</option>
                                             <option value="BD2">Bandung 2</option>
                                             <option value="BDG">Bandung</option>
                                             <option value="BDL">Bandar Lampung</option>
-                                            <option value="BGR">Bogor</option>
+                                            <option value="2">Bogor</option>
                                             <option value="BKL">Bengkulu</option>
                                             <option value="BKS">Bekasi</option>
                                             <option value="BMS">Banjarmasin</option>
