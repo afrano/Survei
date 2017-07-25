@@ -78,9 +78,9 @@ class Survei extends CI_Controller {
     }
 
     public function SaveSurvei() {
-        $id_outlet = '2';
+        $id_outlet = '';
         $id_hasil = '';
-        $id_cabang = '2';
+        $id_cabang = $_POST['cabang_outlet'];
         $komentar = $_POST['komentar'];
         $nama_outlet = $_POST['nama_outlet'];
         $cabang_outlet = $_POST['cabang_outlet'];
@@ -176,23 +176,23 @@ class Survei extends CI_Controller {
             'K19' => $kepentingan19,
             'K20' => $kepentingan20,
         );
-        $Outlet = array(
-            'id_outlet' => $id_outlet,
-            'nama_outlet' => $nama_outlet,
-            'alamat' => $alamat_outlet,
-            'telpon' => $telpon_outlet,
-            'channel' => $channel,
-            'id_cabang' => $id_cabang,
-        );
+//        $Outlet = array(
+//            'id_outlet' => $id_outlet,
+//            'nama_outlet' => $nama_outlet,
+//            'alamat' => $alamat_outlet,
+//            'telpon' => $telpon_outlet,
+//            'channel' => $channel,
+//            'id_cabang' => $id_cabang,
+//        );
 
-        $result = $this->model->Simpan('outlet', $Outlet);
+//        $result = $this->model->Simpan('outlet', $Outlet);
         $result1 = $this->model->Simpan('hasilsurvei', $data);
-        if ($result == 1 && $result1 == 1) {
+        if ($result1 == 1) {
             $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Simpan data BERHASIL dilakukan</strong></div>");
-            header('location:' . base_url() . 'Survei');
+            header('location:' . base_url() . 'User');
         } else {
             $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Simpan data GAGAL di lakukan</strong></div>");
-            header('location:' . base_url() . 'Survei');
+            header('location:' . base_url() . 'User');
         }
     }
 

@@ -18,11 +18,11 @@
                 <i class="fa fa-circle-o"></i> <span>Input Data Cabang</span> 
             </a>
         </li>
-        <li>
+<!--        <li>
             <a href="<?php echo base_url(); ?>Survei">
                 <i class="fa fa-circle-o"></i> <span>Form Survei</span> 
             </a>
-        </li>
+        </li>-->
         <li>
             <a href="<?php echo base_url(); ?>Rekap">
                 <i class="fa fa-tag"></i> <span>Hasil Survei</span> 

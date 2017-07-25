@@ -10,8 +10,13 @@
     <ul class="sidebar-menu">
         <li class="header">MENU</li>
         <li>
+            <a href="<?php echo base_url(); ?>User/Outlet">
+                <i class="fa fa-circle-o"></i> <span>Input Outlet</span> 
+            </a>
+        </li>
+        <li>
             <a href="<?php echo base_url(); ?>User">
-                <i class="fa fa-circle-o"></i> <span>Form Survei</span> 
+                <i class="fa fa-circle-o"></i> <span>Input Kuesioner</span> 
             </a>
         </li>
         <li>

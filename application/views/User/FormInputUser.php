@@ -21,115 +21,39 @@
                                 <center>
                                     <font color="#008000">
                                     <h2><b>PT ENSEVAL PUTERA MEGATRADING Tbk.</b> <br></h2>
-                                    <hr color="black">
-                                    <h4><b>Form Input Data Survei</b>
-                                    </h4> <hr color="black">
                                     </font><br>
                                 </center>
-                            </div>
-                            <div class="box-body chat" id="chat-box">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <?php $tahun = getdate(); ?>
-                                        <label for="">Tahun Survei</label>
-                                        <input type="number"  class="form-control" value="<?php echo $tahun['year']; ?>" id="" name="tahun_survei" readonly="" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Periode Kuesioner</label>
-                                        <select name="semester" class="form-control" required="">
-                                            <option value="S1">S1</option>
-                                            <option value="S2">S2</option>
-                                        </select> 
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Nama Outlet</label>
-                                        <input type="text" class="form-control" value="" id="" name="nama_outlet" placeholder="Masukan Nama Outlet" required>                        
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Cabang</label> 
-                                        <select name="cabang_outlet" class="form-control" required="">
-                                            <option value="">Pilih Cabang</option>
-                                            <option value="BAC">Banda Aceh</option>
-                                            <option value="BD2">Bandung 2</option>
-                                            <option value="BDG">Bandung</option>
-                                            <option value="BDL">Bandar Lampung</option>
-                                            <option value="BGR">Bogor</option>
-                                            <option value="BKL">Bengkulu</option>
-                                            <option value="BKS">Bekasi</option>
-                                            <option value="BMS">Banjarmasin</option>
-                                            <option value="BPP">BalikPapan</option>
-                                            <option value="BTM">Batam</option>
-                                            <option value="CRB">Cirebon</option>
-                                            <option value="DPS">Denpasar</option>
-                                            <option value="JBI">Jambi</option>
-                                            <option value="JBR">Jember</option>
-                                            <option value="JK1">Jakarta 1</option>
-                                            <option value="JK2">Jakarta 2</option>
-                                            <option value="JK3">Jakarta 3</option>
-                                            <option value="JPU">Jayapura</option>
-                                            <option value="KDR">Kediri</option>
-                                            <option value="KDS">Kudus</option>
-                                            <option value="KPG">Kupang</option>
-                                            <option value="LSE">Lhokseumawe</option>  
-                                            <option value="MDN">Medan</option>
-                                            <option value="MKS">Makasar</option>
-                                            <option value="MLG">Malang</option>
-                                            <option value="MNO">Manado</option>
-                                            <option value="MTR">Mataram</option>
-                                            <option value="PDG">Padang</option>
-                                            <option value="PJT">Pejaten</option>
-                                            <option value="PKB">Pekanbaru</option>
-                                            <option value="PKP">Pangkalpinang</option>
-                                            <option value="PLB">Palembang</option>
-                                            <option value="PLU">Palu</option>
-                                            <option value="PMS">Pematangsiantar</option>
-                                            <option value="PTK">Pontianak</option>
-                                            <option value="PWK">Purwokerto</option>
-                                            <option value="SB1">Surabaya 1</option>
-                                            <option value="SB2">Surabaya 2</option>
-                                            <option value="SKI">Sukabumi</option>  
-                                            <option value="SLO">Solo</option>
-                                            <option value="SMD">Samarinda</option>
-                                            <option value="SMG">Semarang</option>
-                                            <option value="TGL">Tegal</option>
-                                            <option value="TGR">Tangerang</option>
-                                            <option value="TSK">Tasikmalaya</option>
-                                            <option value="YOG">Yogyakarta</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="">Alamat </label>
-                                        <input type="text" class="form-control" value="" id="" name="alamat_outlet" placeholder="Masukan Alamat Outlet" required>                        
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">No Telpon</label>
-                                        <input type="number" class="form-control" value="" id="" name="telpon_outlet" placeholder="Masukan No Telpon" required>                        
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Channel</label>
-                                        <select name="channel" class="form-control" required="">
-                                            <option value="">Pilih Channel</option>
-                                            <option value="Apotek">Apotek</option>
-                                            <option value="Rumah Sakit">Rumah Sakit</option>
-                                            <option value="Subdis">Subdis</option>
-                                            <option value="other">Other</option>
-                                        </select> 
-                                    </div>
-                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="box">
                                         <div class="box-title">
                                             <center>
-                                                <hr color="black">
                                                 <font color="#008000">
                                                 <h4><b>KUESIONER PELAYANAN</b> <br></h4>
-                                                <hr color="black">
+                                                <br>
                                                 </font>
                                             </center>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <h5><b>Bapak/Ibu yang terhormat,</b><br></h5>
+                                                <h5>Terima kasih atas kerjasama selama ini dengan PT.Enseval Putera Megatrading, sebagai upaya peningkatan pelayanan pelanggan, mohon dapat mengisikan pendapat dan komentar Bapak/Ibu pada kolom di bawah ini.
+                                                    Berilah nilai terhadap pelayanan kami (berdasarkan pengalaman Anda) sesuai dengan tingkat kepuasan Anda dan bobot Kepentingannya.</h5><font color="Red"><h5>* Catatan : 1 sangat tidak puas dan 4 sangat puas</h5></font>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <?php $tahun = getdate(); ?>
+                                                <label for="">Tahun Survei</label>
+                                                <input type="number"  class="form-control" value="<?php echo $tahun['year']; ?>" id="" name="tahun_survei" readonly="" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Periode Kuesioner</label>
+                                                <select name="semester" class="form-control" required="">
+                                                    <option value="S1">S1</option>
+                                                    <option value="S2">S2</option>
+                                                </select> 
+                                            </div>
                                         </div>
                                         <div class="box-body">
                                             <table id="example1" class="table table-bordered table-striped">

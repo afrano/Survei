@@ -24,6 +24,37 @@ class User extends CI_Controller {
         $this->load->view('User/FormInputUser', $data);
     }
 
+    public function Outlet() {
+        $data = array(
+            'nama' => $this->session->userdata('nama'),
+        );
+        $this->load->view('User/FormInputOutlet', $data);
+    }
+
+    public function SaveOutlet() {
+        $id_outlet = '';
+        $id_hasil = '';
+        $id_cabang = $_POST['cabang_outlet'];
+        $komentar = $_POST['komentar'];
+        $nama_outlet = $_POST['nama_outlet'];
+        $cabang_outlet = $_POST['cabang_outlet'];
+        $channel = $_POST['channel'];
+        $alamat_outlet = $_POST['alamat_outlet'];
+        $telpon_outlet = $_POST['telpon_outlet'];
+        $tahun_survei = $_POST['tahun_survei'];
+        $semester = $_POST['semester'];
+        $Outlet = array(
+            'id_outlet' => $id_outlet,
+            'nama_outlet' => $nama_outlet,
+            'alamat' => $alamat_outlet,
+            'telpon' => $telpon_outlet,
+            'channel' => $channel,
+            'id_cabang' => $id_cabang,
+        );
+
+        $result = $this->model->Simpan('outlet', $Outlet);
+    }
+
     public function SaveSurvei() {
         $id_outlet = '3';
         $id_hasil = '';
