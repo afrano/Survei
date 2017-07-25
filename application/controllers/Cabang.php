@@ -51,4 +51,12 @@ class Cabang extends CI_Controller {
         }
     }
 
+    public function ListDataCabang() {
+        $data = array(
+            'nama' => $this->session->userdata('nama'),
+            'data_cabang' => $this->model->GetDataCabang()->result_array(),
+        );
+        $this->load->view('Cabang/listdatacabang', $data);
+    }
+
 }

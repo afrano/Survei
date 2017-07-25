@@ -46,12 +46,12 @@ class Login extends CI_Controller {
                 redirect(base_url() . "Home");
             } else if ($this->session->userdata('level') == '2') {
                 $this->session->set_userdata('useradmin', $sess_data);
-                redirect(base_url() . "User");
+                redirect(base_url() . "Outlet");
                 $this->session->set_userdata('Web_Survei', $sess_data);
                 redirect(base_url());
             }
         } else {
-            $info = '<div style="color:red">PERIKSA KEMBALI NAMA PENGGUNA DAN PASSWORD ANDA!</div>';
+            $info = '<div style="color:red">PERIKSA KEMBALI NAMA PENGGUNA DAN PASSWORD ANDA !!!</div>';
             $this->session->set_userdata('info', $info);
 
             redirect(base_url() . 'login');

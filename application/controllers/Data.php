@@ -79,7 +79,7 @@ class Data extends CI_Controller {
             'kepentingan19' => $data_produk[0]['K19'],
             'kepentingan20' => $data_produk[0]['K20'],
         );
-        $this->load->view('User/FormEdit', $data);
+        $this->load->view('Outlet/FormEdit', $data);
     }
 
     public function export_excel() {
@@ -90,7 +90,7 @@ class Data extends CI_Controller {
     }
 
     function updatedata() {
-        
+
         $outlet = array(
             'id_outlet' => $this->input->post('id_outlet'),
             'nama_outlet' => $this->input->post('nama_outlet'),
@@ -164,44 +164,6 @@ class Data extends CI_Controller {
         } else {
             $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Hapus data GAGAL di lakukan</strong></div>");
             header('location:' . base_url() . 'Data');
-        }
-    }
-
-    public function simpan() {
-        $id['kode'] = $this->input->post('id', TRUE);
-        $data_array = $this->add_data(array('kode', 'nip', 'jenisarsip', 'tanggal', 'titel', 'deskripsi',
-            'kodearsip', 'lokasifisik', 'catatan'), TRUE);
-
-        // kita cek dulu dengan kode error 4
-        if (!in_array(4, $_FILES['lampiran']['error'])) {
-            // jika file tidak kosong tambahkan file gambar
-            //$file1 = array();
-            if ($this->input->post('dok') == !NULL) {
-                $file1 = $this->upload($_FILES['lampiran']['name']);
-                $file2 = $this->input->post('dok');
-                $lampiran = $file1 . '*' . $file2;
-                $file['lampiran'] = $lampiran;
-            } else {
-                $file1 = $this->upload($_FILES['lampiran']['name']);
-                $file['lampiran'] = $file1;
-            }
-        } else {
-            $file['lampiran'] = $this->input->post('dok');
-        }
-
-        if ($this->input->post(NULL, TRUE) == TRUE) {
-            $data = array_merge($data_array, $file);
-            if ($id['kode'] == false or $id['kode'] == null) {
-                //print_r($_POST); die();
-                $this->model_home->tambah_data('tbl_arsip_kegiatan', $data);
-                $this->pesan('pesan', 'Berhasil Menyimpan Data');
-                redirect(base_url() . 'arsip_kegiatan/tambah');
-            } else {
-
-                $this->model_home->update_data($id, 'tbl_arsip_kegiatan', $data);
-                $this->pesan('pesan', 'Berhasil Mengubah Data');
-                redirect(base_url() . 'arsip_kegiatan/tambah');
-            }
         }
     }
 

@@ -97,7 +97,7 @@ header("Expires: 0");
                 <td></td>    
                 <td><?php echo $row['semester']; ?></td>
                 <td><?php echo $row['tahun']; ?></td>
-                <td><?php echo $row['nama_cabang']; ?></td>
+                <td><?php echo $row['id_cabang']; ?></td>
                 <td><?php echo $row['nama_outlet']; ?></td>
                 <td><?php echo $row['channel']; ?></td>
                 <td><?php echo $row['K01']; ?></td>

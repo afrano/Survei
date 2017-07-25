@@ -10,7 +10,12 @@
     <ul class="sidebar-menu">
         <li class="header">MENU</li>
         <li>
-            <a href="<?php echo base_url(); ?>User">
+            <a href="<?php echo base_url(); ?>Outlet/DataOutlet">
+                <i class="fa fa-database"></i> <span>Lihat Data Outlet</span> 
+            </a>
+        </li>
+        <li>
+            <a href="<?php echo base_url(); ?>Outlet">
                 <i class="fa fa-circle-o"></i> <span>Input Kuesioner</span> 
             </a>
         </li>

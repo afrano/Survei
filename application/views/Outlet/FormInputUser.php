@@ -63,7 +63,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="">ID Outlet</label>
-                                                <input type="number"  class="form-control" placeholder="Masukan ID Outlet anda" value="" id="" name="id_outlet" required>
+                                                <input type="text"  readonly="" class="form-control" value="<?php echo $nama;?>"  name="id_outlet" required>
                                             </div>
 
                                         </div>
@@ -534,7 +534,7 @@
                                                         <td></td>
                                                         <td> 
                                                             <div class=""> 
-                                                                <a href="<?php echo base_url(); ?>User" class="btn btn-warning btn-block btn-flat"><i class="fa fa-close"></i> Batal </a>
+                                                                <a href="<?php echo base_url(); ?>Outlet" class="btn btn-warning btn-block btn-flat"><i class="fa fa-close"></i> Batal </a>
                                                             </div>
                                                         </td>
                                                         <td>

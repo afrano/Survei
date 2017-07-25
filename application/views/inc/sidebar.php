@@ -18,11 +18,6 @@
                 <i class="fa fa-circle-o"></i> <span>Input Data Cabang</span> 
             </a>
         </li>
-        <li>
-            <a href="<?php echo base_url(); ?>User/Outlet">
-                <i class="fa fa-circle-o"></i> <span>Input Outlet</span> 
-            </a>
-        </li>
         <!--        <li>
                     <a href="<?php echo base_url(); ?>Survei">
                         <i class="fa fa-circle-o"></i> <span>Form Survei</span> 
@@ -39,15 +34,26 @@
             </a>
         </li>
         <li>
-            <a href="<?php echo base_url(); ?>Data">
-                <i class="fa fa-table"></i> <span>Data Hasil Survei</span> 
-            </a>
-        </li>
-        <li>
             <a href="<?php echo base_url(); ?>Survei/Draft">
                 <i class="fa fa-windows"></i> <span>Draft</span> 
             </a>
         </li>
+        <li>
+            <a href="<?php echo base_url(); ?>Data">
+                <i class="fa fa-database"></i> <span>Data Hasil Survei</span> 
+            </a>
+        </li>
+        <li>
+            <a href="<?php echo base_url(); ?>Outlet/ListDataOutlet">
+                <i class="fa fa-database"></i> <span>List Data Outlet</span> 
+            </a>
+        </li>
+        <li>
+            <a href="<?php echo base_url(); ?>Cabang/ListDataCabang">
+                <i class="fa fa-database"></i> <span>List Data Cabang</span> 
+            </a>
+        </li>
+        
         <li>
             <a href="<?php echo base_url(); ?>login/logout">
                 <i class="fa fa-sign-out"></i> <span>Keluar</span></a>

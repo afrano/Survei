@@ -75,6 +75,15 @@ class Model extends CI_Model {
         return $data;
     }
 
+    public function GetDataOutlet() {
+        $data = $this->db->query(' SELECT o.*,c.regional from outlet o, cabang c where o.id_cabang = c.id_cabang');
+        return $data;
+    }
+    public function GetDataCabang(){
+        $data = $this->db->query(' SELECT * from cabang');
+        return $data;
+    }
+
     public function GetEdit($where = "") {
         $data = $this->db->query(' SELECT p.*, q.nama_outlet, q.channel,q.id_outlet, c.id_cabang, q.alamat,q.telpon,p.semester
                                 FROM hasilsurvei p, outlet q, cabang c ' . $where);

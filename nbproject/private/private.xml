@@ -10,49 +10,51 @@
             <file>file:/C:/xampp/htdocs/Web_Survei/application/index.html</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/Hasil/data_survei.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/time.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/Cabang/listdatacabang.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/head2User.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/User/newEmptyPHP.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/User.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/kategori.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/footer.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/config/routes.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/Cabang.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/footer2.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/User/FormEdit.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/User/FormInputUser.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/Outlet/FormInput.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/system/core/Input.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/Rekap.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/kategori/data_kategori.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/Outlet/FormInputUser.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/login.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/site/index.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/head.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/config/constants.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/User/FormInput.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/models/model.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/Outlet/DataOutlet.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/Data.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/config/index.html</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/User/FormSurvei.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/produk/edit_produk.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/Outlet/FormEdit.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/index.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/site/Welcome.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/config/config.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/Outlet.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/sidebarUser.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/Cabang/InputCabang.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/Survei.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/config/autoload.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/Home.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/index.html</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/footer.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/Outlet/FormInputOutlet.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/sidebarEnseval.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/config/database.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/headEnseval.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/Outlet/listdataoutlet.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/sidebar.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/index.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/config/profiler.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/config/user_agents.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/head.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/produk.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/head2.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/Outlet/Aktivasi.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/models/m_login.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/User/FormInputOutlet.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/config/hooks.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/Aktivasi.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/Rekap/rekap_data.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/config/doctypes.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/config/migration.php</file>
