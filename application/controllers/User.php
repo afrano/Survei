@@ -33,16 +33,12 @@ class User extends CI_Controller {
 
     public function SaveOutlet() {
         $id_outlet = '';
-        $id_hasil = '';
         $id_cabang = $_POST['cabang_outlet'];
-        $komentar = $_POST['komentar'];
         $nama_outlet = $_POST['nama_outlet'];
         $cabang_outlet = $_POST['cabang_outlet'];
         $channel = $_POST['channel'];
         $alamat_outlet = $_POST['alamat_outlet'];
         $telpon_outlet = $_POST['telpon_outlet'];
-        $tahun_survei = $_POST['tahun_survei'];
-        $semester = $_POST['semester'];
         $Outlet = array(
             'id_outlet' => $id_outlet,
             'nama_outlet' => $nama_outlet,
@@ -51,8 +47,14 @@ class User extends CI_Controller {
             'channel' => $channel,
             'id_cabang' => $id_cabang,
         );
-
         $result = $this->model->Simpan('outlet', $Outlet);
+        if ($result == 1) {
+            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Simpan data BERHASIL dilakukan</strong></div>");
+            header('location:' . base_url() . 'User/Outlet');
+        } else {
+            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Simpan data GAGAL di lakukan</strong></div>");
+            header('location:' . base_url() . 'User/Outlet');
+        }
     }
 
     public function SaveSurvei() {

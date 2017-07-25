@@ -5,9 +5,9 @@
     </head>
     <body class="skin-green">
         <div class="wrapper">
-            <?php $this->load->view('inc/head2User'); ?>
+            <?php $this->load->view('inc/head2'); ?>
             <aside class="main-sidebar">
-                <?php $this->load->view('inc/sidebarUser'); ?>
+                <?php $this->load->view('inc/sidebar'); ?>
             </aside>
             <div class="content-wrapper">
                 <section class="content">
@@ -29,11 +29,6 @@
                             <div class="box-body chat" id="chat-box">
                                 <div class="box-body chat" id="chat-box">
                                     <div class="col-lg-6">
-
-                                        <div class="form-group">
-                                            <label for="">No Telpon</label>
-                                            <input type="number" class="form-control" value="" id="" name="telpon_cabang" placeholder="Masukan No Telpon" >                        
-                                        </div>
                                         <div class="form-group">
                                             <label for="">Nama Outlet</label>
                                             <input type="text" class="form-control" value="" id="" name="nama_outlet" placeholder="Masukan Nama Outlet" required>                        
@@ -42,12 +37,12 @@
                                             <label for="">Cabang</label> 
                                             <select name="cabang_outlet" class="form-control" required="">
                                                 <option value="">Pilih Cabang</option>
-                                                <option value="1">Banda Aceh</option>
-                                                <option value="2">Bandung 2</option>
-                                                <option value="3">Bandung</option>
-                                                <option value="4">Bandar Lampung</option>
-                                                <option value="5">Bogor</option>
-                                                <option value="6">Bengkulu</option>
+                                                <option value="BAC">Banda Aceh</option>
+                                                <option value="BD2">Bandung 2</option>
+                                                <option value="BDG">Bandung</option>
+                                                <option value="BDL">Bandar Lampung</option>
+                                                <option value="BGR">Bogor</option>
+                                                <option value="BKL">Bengkulu</option>
                                                 <option value="BKS">Bekasi</option>
                                                 <option value="BMS">Banjarmasin</option>
                                                 <option value="BPP">BalikPapan</option>
@@ -90,16 +85,6 @@
                                                 <option value="YOG">Yogyakarta</option>
                                             </select>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label for="">Alamat </label>
-                                            <input type="text" class="form-control" value="" id="" name="alamat_outlet" placeholder="Masukan Alamat Outlet" required>                        
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">No Telpon</label>
-                                            <input type="number" class="form-control" value="" id="" name="telpon_outlet" placeholder="Masukan No Telpon" required>                        
-                                        </div>
                                         <div class="form-group">
                                             <label for="">Channel</label>
                                             <select name="channel" class="form-control" required="">
@@ -109,6 +94,16 @@
                                                 <option value="Subdis">Subdis</option>
                                                 <option value="other">Other</option>
                                             </select> 
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="">Alamat </label>
+                                            <input type="text" class="form-control" value="" id="" name="alamat_outlet" placeholder="Masukan Alamat Outlet" required>                        
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">No Telpon</label>
+                                            <input type="number" class="form-control" value="" id="" name="telpon_outlet" placeholder="Masukan No Telpon" required>                        
                                         </div>
                                     </div>
                                 </div>

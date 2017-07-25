@@ -35,12 +35,12 @@
                                         <input type="number"  class="form-control" value="<?php echo $tahun['year']; ?>" id="" readonly="" >
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Nama Cabang</label>
-                                        <input type="text" class="form-control" value="" id="" name="nama_cabang" placeholder="Masukan Nama Cabang" required>                        
+                                        <label for="">ID Cabang</label>
+                                        <input type="text" class="form-control" value="" id="" name="id_cabang" placeholder="Masukan ID Cabang" required>                        
                                     </div>
                                     <div class="form-group">
                                         <label for="">Alamat </label>
-                                        <input type="text" class="form-control" value="" id="" name="alamat_cabang" placeholder="Masukan Alamat Outlet" >                        
+                                        <input type="text" class="form-control" value="" id="" name="alamat_cabang" placeholder="Masukan Alamat Cabang" >                        
                                     </div>
                                 </div>
                                 <div class="col-lg-6">

@@ -49,9 +49,9 @@
                                         <label for="">Cabang</label> 
                                         <select name="cabang_outlet" class="form-control" required="">
                                             <option value="">Pilih Cabang</option>
-                                            <option value="1">Banda Aceh</option>
-                                            <option value="2">Bandung 2</option>
-                                            <option value="3">Bandung</option>
+                                            <option value="BAC">Banda Aceh</option>
+                                            <option value="BD2">Bandung 2</option>
+                                            <option value="BDG">Bandung</option>
                                             <option value="BDL">Bandar Lampung</option>
                                             <option value="BGR">Bogor</option>
                                             <option value="BKL">Bengkulu</option>

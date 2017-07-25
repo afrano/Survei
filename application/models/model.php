@@ -69,14 +69,14 @@ class Model extends CI_Model {
     }
 
     public function Getdatasurvei($where = "") {
-        $data = $this->db->query(' SELECT p.*, q.nama_outlet, q.channel, c.nama_cabang
+        $data = $this->db->query(' SELECT p.*, q.nama_outlet, q.channel, c.id_cabang
                                 FROM hasilsurvei p, outlet q, cabang c 
                                 where q.id_outlet = p.id_outlet and q.id_cabang = c.id_cabang ' . $where);
         return $data;
     }
 
     public function GetEdit($where = "") {
-        $data = $this->db->query(' SELECT p.*, q.nama_outlet, q.channel,q.id_outlet, c.nama_cabang,c.id_cabang, q.alamat,q.telpon,p.semester
+        $data = $this->db->query(' SELECT p.*, q.nama_outlet, q.channel,q.id_outlet, c.id_cabang, q.alamat,q.telpon,p.semester
                                 FROM hasilsurvei p, outlet q, cabang c ' . $where);
         return $data;
     }
@@ -112,7 +112,7 @@ class Model extends CI_Model {
         $this->db->where('id_outlet', $data['id_outlet']);
         $this->db->update('outlet', $data);
     }
-    
+
     function UpdateCabang($data) {
         $this->db->where('id_outlet', $data['id_outlet']);
         $this->db->update('cabang', $data);

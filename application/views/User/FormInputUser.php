@@ -55,6 +55,18 @@
                                                 </select> 
                                             </div>
                                         </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group"><br><br><br><br><br>
+                                            </div>
+                                            <div class="form-group">
+                                                <br>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">ID Outlet</label>
+                                                <input type="number"  class="form-control" placeholder="Masukan ID Outlet anda" value="" id="" name="id_outlet" required>
+                                            </div>
+
+                                        </div>
                                         <div class="box-body">
                                             <table id="example1" class="table table-bordered table-striped">
                                                 <thead>
@@ -513,7 +525,7 @@
                                                         <td>
                                                             <div class="form-group">
                                                                 <label for="">Tuliskan beberapa hal penting terhadap pelayanan kami :</label>
-                                                                <textarea style="height:90px"  class="form-control" name="komentar" placeholder="Tuliskan kritikan dan saran . . ."></textarea>                
+                                                                <textarea style="height:90px"  required="" class="form-control" name="komentar" placeholder="Tuliskan kritikan dan saran . . ."></textarea>                
                                                             </div>
                                                         </td>
                                                     </tr>

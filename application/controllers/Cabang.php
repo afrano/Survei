@@ -30,15 +30,13 @@ class Cabang extends CI_Controller {
     }
 
     public function SaveCabang() {
-        $id_cabang = '';
-        $nama_cabang = $_POST['nama_cabang'];
+        $id_cabang = $_POST['id_cabang'];
         $alamat_cabang = $_POST['alamat_cabang'];
         $telpon = $_POST['telpon_cabang'];
         $regional = $_POST['regional'];
 
         $data = array(
             'id_cabang' => $id_cabang,
-            'nama_cabang' => $nama_cabang,
             'regional' => $regional,
             'alamat_cabang' => $alamat_cabang,
             'telpon_cabang' => $telpon,
