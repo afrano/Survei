@@ -30,10 +30,9 @@ class Outlet extends CI_Controller {
         );
         $this->load->view('Outlet/FormInputOutlet', $data);
     }
-    
-    function DataOutlet($kode = 0) {
-        $datauser = $this->model->GetEdit("where q.id_outlet = '$kode'")->result_array();
 
+    function DataOutlet($kode = 0) {
+        $datauser = $this->model->GetDetailOutlet("where o.id_outlet = '$kode' ")->result_array();
         $data = array(
             'nama' => $this->session->userdata('nama'),
             'id_outlet' => $datauser[0]['id_outlet'],
@@ -41,7 +40,7 @@ class Outlet extends CI_Controller {
             'nama_outlet' => $datauser[0]['nama_outlet'],
             'channel' => $datauser[0]['channel'],
             'alamat' => $datauser[0]['alamat'],
-            'telpon' => $datauser[0]['telpon'],
+            'telpon' => $datauser[0]['Telpon'],
         );
         $this->load->view('Outlet/DataOutlet', $data);
     }

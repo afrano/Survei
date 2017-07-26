@@ -50,6 +50,10 @@
                                                     <option value="S2">S2</option>
                                                 </select> 
                                             </div>
+                                            <div class="form-group">
+                                                <label for="">ID Sales</label>
+                                                <input type="text" class="form-control" value="" name="id_sales" placeholder="Masukan ID Sales "required>
+                                            </div>
                                         </div>
                                         <input type="hidden" readonly="" class="form-control" value="<?php echo $nama; ?>"  name="id_outlet" required>
                                         <div class="box-body">

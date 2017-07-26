@@ -79,14 +79,26 @@ class Model extends CI_Model {
         $data = $this->db->query(' SELECT o.*,c.regional from outlet o, cabang c where o.id_cabang = c.id_cabang');
         return $data;
     }
-    public function GetDataCabang(){
+
+    public function GetDataCabang() {
         $data = $this->db->query(' SELECT * from cabang');
         return $data;
     }
 
+    public function GetSurveiOutlet() {
+        $data = $this->db->query('SELECT s.*,h.*, o.* from sales s, hasilsurvei h, outlet o where s.id_sales = h.id_sales and h.id_outlet = o.id_outlet and status = 0');
+        return $data;
+    }
+
+    public function GetDetailOutlet($where = "") {
+        $data = $this->db->query(' SELECT o.*, c.*
+                                FROM outlet o, cabang c ' . $where);
+        return $data;
+    }
+
     public function GetEdit($where = "") {
-        $data = $this->db->query(' SELECT p.*, q.nama_outlet, q.channel,q.id_outlet, c.id_cabang, q.alamat,q.telpon,p.semester
-                                FROM hasilsurvei p, outlet q, cabang c ' . $where);
+        $data = $this->db->query(' SELECT h.*, q.nama_outlet, q.channel,q.id_outlet, c.id_cabang, q.alamat,q.telpon,p.semester
+                                FROM hasilsurvei h, outlet q, cabang c ' . $where);
         return $data;
     }
 

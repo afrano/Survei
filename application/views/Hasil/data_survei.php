@@ -92,8 +92,8 @@
                                                     <td><?php echo $row['Q19']; ?></td>
                                                     <td><?php echo $row['Q20']; ?></td>
                                                     <td>
-                                                        <a class="btn btn-warning btn-sm" href="<?php echo base_url(); ?>Data/Edit/<?php echo $row['id_outlet']; ?>"><i class="fa fa-pencil"></i></a>
-                                                        <a onclick="return confirm('Hapus data??');" class="btn btn-danger btn-sm" href="<?php echo base_url(); ?>Data/Hapus/<?php echo $row['id_outlet']; ?>"><i class="fa fa-trash"></i></a>
+                                                        <a class="btn btn-warning btn-sm" href="<?php echo base_url(); ?>Data/Edit/<?php echo $row['id_hasil']; ?>"><i class="fa fa-pencil"></i></a>
+                                                        <a onclick="return confirm('Hapus data??');" class="btn btn-danger btn-sm" href="<?php echo base_url(); ?>Data/Hapus/<?php echo $row['id_hasil']; ?>"><i class="fa fa-trash"></i></a>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -178,24 +178,24 @@
         <script src="<?php echo base_url(); ?>assets/dist/datatables/jquery.dataTables.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>assets/dist/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
         <script type="text/javascript">
-            $(function () {
-                $("#example1").dataTable();
-                $('#example2').dataTable({
-                    "bPaginate": true,
-                    "bLengthChange": false,
-                    "bFilter": true,
-                    "bSort": true,
-                    "bInfo": true,
-                    "bAutoWidth": false
+                                                            $(function () {
+                                                                $("#example1").dataTable();
+                                                                $('#example2').dataTable({
+                                                                    "bPaginate": true,
+                                                                    "bLengthChange": false,
+                                                                    "bFilter": true,
+                                                                    "bSort": true,
+                                                                    "bInfo": true,
+                                                                    "bAutoWidth": false
 
 
-                });
-            });
-            //waktu flash data 
-            $(function () {
-                $('#pesan-flash').delay(4000).fadeOut();
-                $('#pesan-error-flash').delay(5000).fadeOut();
-            });
+                                                                });
+                                                            });
+                                                            //waktu flash data 
+                                                            $(function () {
+                                                                $('#pesan-flash').delay(4000).fadeOut();
+                                                                $('#pesan-error-flash').delay(5000).fadeOut();
+                                                            });
         </script>
     </body>
 </html>

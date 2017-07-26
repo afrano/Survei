@@ -25,7 +25,7 @@ class Aktivasi extends CI_Controller {
         $alamat_outlet = $_POST['alamat_outlet'];
         $telpon_outlet = $_POST['telpon_outlet'];
         $status = '1';
-        $level = '2';
+        $level = '3';
         $Outlet = array(
             'id_outlet' => $id_outlet,
             'nama_outlet' => $nama_outlet,

@@ -17,16 +17,11 @@ class Cabang extends CI_Controller {
     }
 
     public function index() {
-
         $data = array(
             'nama' => $this->session->userdata('nama'),
+            'data_outlet' => $this->model->GetSurveiOutlet()->result_array(),//
         );
-        if ($this->session->userdata('level') == '1') {
-            $this->load->view('Cabang/InputCabang', $data);
-        } else {
-            $this->session->sess_destroy();
-            redirect(base_url() . 'index.php');
-        }
+        $this->load->view('Cabang/Cabang', $data);
     }
 
     public function SaveCabang() {
