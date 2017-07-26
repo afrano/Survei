@@ -1,6 +1,6 @@
 <main class="site-main">
     <section class="hero_area">
-        <center>
+        
             <div class="hero_content">
                 <div class="container">
                     <div class="row">
@@ -11,6 +11,6 @@
                         </div>
                     </div>
                 </div>
-            </div></center>
+            </div>
     </section>
 </main>

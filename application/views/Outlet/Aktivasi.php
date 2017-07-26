@@ -28,8 +28,10 @@
         <section class="content">
             <form  role="form" action="<?php echo base_url(); ?>Aktivasi/SaveData" method="POST" enctype="multipart/form-data">
                 <div class="box">
+                    
                     <span id="pesan-flash"><?php echo $this->session->flashdata('sukses'); ?></span>
                     <span id="pesan-error-flash"><?php echo $this->session->flashdata('alert'); ?></span>
+                    
                     <div class="box-title">
                         <br>
                         <center>
@@ -153,7 +155,6 @@
                         <div class="col-md-12">
                             <br><br><br><br>
                         </div>
-
                     </div>
                 </div>
             </form>

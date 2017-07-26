@@ -2,6 +2,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
+<meta name="keywords" content="Karate Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+              Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
 <title>Survei Enseval</title>
 <link href="<?php echo base_url(); ?>assets/site/css/bootstrap.min.css" rel="stylesheet">
 <link href="<?php echo base_url(); ?>assets/site/css/bootstrap1.min.css" rel="stylesheet"> <!-- Enseval -->

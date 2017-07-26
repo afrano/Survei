@@ -10,7 +10,6 @@
                 <?php $this->load->view('inc/sidebarUser'); ?>
             </aside>
             <div class="content-wrapper">
-
                 <section class="content">
                     <form  role="form" action="<?php echo base_url(); ?>Survei/SaveSurvei" method="POST" enctype="multipart/form-data">
                         <div class="box">
@@ -39,14 +38,11 @@
                                             <div class="form-group">
                                                 <h5><b>Bapak/Ibu yang terhormat,</b><br></h5>
                                                 <h5>Terima kasih atas kerjasama selama ini dengan PT.Enseval Putera Megatrading, sebagai upaya peningkatan pelayanan pelanggan, mohon dapat mengisikan pendapat dan komentar Bapak/Ibu pada kolom di bawah ini.
-                                                    Berilah nilai terhadap pelayanan kami (berdasarkan pengalaman Anda) sesuai dengan tingkat kepuasan Anda dan bobot Kepentingannya.</h5><font color="Red"><h5>* Catatan : 1 sangat tidak puas dan 4 sangat puas</h5></font>
+                                                    Berilah nilai terhadap pelayanan kami (berdasarkan pengalaman Anda) sesuai dengan tingkat kepuasan Anda dan bobot Kepentingannya.</h5><font color="Red"><h5>* Catatan : <br> | 1 : Sangat Tidak | 2 : Tidak Puas | 3 : Puas | 4 Sangat Puas</h5></font>
 
                                             </div>
-                                            <div class="form-group">
-                                                <?php $tahun = getdate(); ?>
-                                                <label for="">Tahun Survei</label>
-                                                <input type="number"  class="form-control" value="<?php echo $tahun['year']; ?>" id="" name="tahun_survei" readonly="" required>
-                                            </div>
+                                            <?php $tahun = getdate(); ?>
+                                            <input type="hidden" hidden="" class="form-control" value="<?php echo $tahun['year']; ?>" id="" name="tahun_survei" readonly="" required>
                                             <div class="form-group">
                                                 <label for="">Periode Kuesioner</label>
                                                 <select name="semester" class="form-control" required="">
@@ -55,18 +51,7 @@
                                                 </select> 
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group"><br><br><br><br><br>
-                                            </div>
-                                            <div class="form-group">
-                                                <br>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="">ID Outlet</label>
-                                                <input type="text"  readonly="" class="form-control" value="<?php echo $nama;?>"  name="id_outlet" required>
-                                            </div>
-
-                                        </div>
+                                        <input type="hidden" readonly="" class="form-control" value="<?php echo $nama; ?>"  name="id_outlet" required>
                                         <div class="box-body">
                                             <table id="example1" class="table table-bordered table-striped">
                                                 <thead>
@@ -96,6 +81,7 @@
                                                                 <input type="radio" name="kepuasan1" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan1" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan1" value="4"> 4 
+                                                                <input type="radio" name="kepuasan1" value="" required="" hidden="">
                                                             </div>                                 
                                                         </td>
                                                         <td>
@@ -104,6 +90,7 @@
                                                                 <input type="radio" name="kepentingan1" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepentingan1" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepentingan1" value="4"> 4 
+                                                                <input type="radio" name="kepentingan1" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -116,6 +103,7 @@
                                                                 <input type="radio" name="kepuasan2" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan2" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan2" value="4"> 4 
+                                                                <input type="radio" name="kepuasan2" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -124,6 +112,7 @@
                                                                 <input type="radio" name="kepentingan2" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepentingan2" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepentingan2" value="4"> 4 
+                                                                <input type="radio" name="kepentingan2" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -136,6 +125,8 @@
                                                                 <input type="radio" name="kepuasan3" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan3" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan3" value="4"> 4 
+                                                                <input type="radio" name="kepuasan3" value="" required="" hidden="">
+
                                                             </div>
                                                         </td>
                                                         <td>
@@ -144,6 +135,7 @@
                                                                 <input type="radio" name="Kepentingan3" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan3" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan3" value="4"> 4 
+                                                                <input type="radio" name="Kepentingan3" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -156,6 +148,7 @@
                                                                 <input type="radio" name="kepuasan4" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan4" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan4" value="4"> 4 
+                                                                <input type="radio" name="kepuasan4" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -164,6 +157,7 @@
                                                                 <input type="radio" name="Kepentingan4" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan4" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan4" value="4"> 4 
+                                                                <input type="radio" name="Kepentingan4" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -184,6 +178,7 @@
                                                                 <input type="radio" name="kepuasan5" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan5" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan5" value="4"> 4 
+                                                                <input type="radio" name="kepuasan5" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -192,6 +187,7 @@
                                                                 <input type="radio" name="Kepentingan5" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan5" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan5" value="4"> 4 
+                                                                <input type="radio" name="Kepentingan5" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -204,6 +200,8 @@
                                                                 <input type="radio" name="kepuasan6" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan6" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan6" value="4"> 4 
+                                                                <input type="radio" name="kepuasan6" value="" required="" hidden="">
+
                                                             </div>
                                                         </td>
                                                         <td>
@@ -212,6 +210,7 @@
                                                                 <input type="radio" name="Kepentingan6" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan6" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan6" value="4"> 4 
+                                                                <input type="radio" name="Kepentingan6" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -232,6 +231,7 @@
                                                                 <input type="radio" name="kepuasan7" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan7" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan7" value="4"> 4 
+                                                                <input type="radio" name="kepuasan7" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -240,6 +240,7 @@
                                                                 <input type="radio" name="Kepentingan7" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan7" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan7" value="4"> 4 
+                                                                <input type="radio" name="Kepentingan7" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -252,6 +253,7 @@
                                                                 <input type="radio" name="kepuasan8" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan8" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan8" value="4"> 4
+                                                                <input type="radio" name="kepuasan8" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -260,6 +262,8 @@
                                                                 <input type="radio" name="Kepentingan8" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan8" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan8" value="4"> 4 
+                                                                <input type="radio" name="Kepentingan8" value="" required="" hidden="">
+
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -281,6 +285,7 @@
                                                                 <input type="radio" name="Kepentingan9" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan9" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan9" value="4"> 4
+                                                                <input type="radio" name="Kepentingan9" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -292,7 +297,8 @@
                                                                 <input type="radio" name="kepuasan10" value="1"> 1 &emsp14; 
                                                                 <input type="radio" name="kepuasan10" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan10" value="3"> 3 &emsp14; 
-                                                                <input type="radio" name="kepuasan10" value="4"> 4 
+                                                                <input type="radio" name="kepuasan10" value="4"> 4                                                                 
+                                                                <input type="radio" name="kepuasan10" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -301,6 +307,8 @@
                                                                 <input type="radio" name="Kepentingan10" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan10" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan10" value="4"> 4 
+                                                                <input type="radio" name="Kepentingan10" value="" required="" hidden="">
+
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -312,7 +320,8 @@
                                                                 <input type="radio" name="kepuasan11" value="1"> 1 &emsp14; 
                                                                 <input type="radio" name="kepuasan11" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan11" value="3"> 3 &emsp14; 
-                                                                <input type="radio" name="kepuasan11" value="4"> 4 
+                                                                <input type="radio" name="kepuasan11" value="4"> 4                                                                
+                                                                <input type="radio" name="kepuasan11" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -321,6 +330,8 @@
                                                                 <input type="radio" name="Kepentingan11" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan11" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan11" value="4"> 4 
+                                                                <input type="radio" name="Kepentingan11" value="" required="" hidden="">
+
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -341,6 +352,7 @@
                                                                 <input type="radio" name="kepuasan12" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan12" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan12" value="4"> 4 
+                                                                <input type="radio" name="kepuasan12" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -349,6 +361,7 @@
                                                                 <input type="radio" name="Kepentingan12" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan12" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan12" value="4"> 4 
+                                                                <input type="radio" name="Kepentingan12" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -361,6 +374,7 @@
                                                                 <input type="radio" name="kepuasan13" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan13" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan13" value="4"> 4 
+                                                                <input type="radio" name="kepuasan13" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -369,6 +383,8 @@
                                                                 <input type="radio" name="Kepentingan13" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan13" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan13" value="4"> 4 
+                                                                <input type="radio" name="Kepentingan13" value="" required="" hidden="">
+
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -381,6 +397,7 @@
                                                                 <input type="radio" name="kepuasan14" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan14" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan14" value="4"> 4 
+                                                                <input type="radio" name="kepuasan14" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -389,6 +406,8 @@
                                                                 <input type="radio" name="Kepentingan14" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan14" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan14" value="4"> 4 
+                                                                <input type="radio" name="Kepentingan14" value="" required="" hidden="">
+
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -409,6 +428,7 @@
                                                                 <input type="radio" name="kepuasan15" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan15" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan15" value="4"> 4 
+                                                                <input type="radio" name="kepuasan15" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -417,6 +437,8 @@
                                                                 <input type="radio" name="Kepentingan15" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan15" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan15" value="4"> 4 
+                                                                <input type="radio" name="Kepentingan15" value="" required="" hidden="">
+
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -429,6 +451,7 @@
                                                                 <input type="radio" name="kepuasan16" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan16" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan16" value="4"> 4 
+                                                                <input type="radio" name="kepuasan16" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -437,6 +460,8 @@
                                                                 <input type="radio" name="Kepentingan16" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan16" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan16" value="4"> 4 
+                                                                <input type="radio" name="Kepentingan16" value="" required="" hidden="">
+
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -449,6 +474,7 @@
                                                                 <input type="radio" name="kepuasan17" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan17" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan17" value="4"> 4 
+                                                                <input type="radio" name="kepuasan17" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -457,6 +483,7 @@
                                                                 <input type="radio" name="Kepentingan17" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan17" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan17" value="4"> 4 
+                                                                <input type="radio" name="Kepentingan17" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -469,6 +496,7 @@
                                                                 <input type="radio" name="kepuasan18" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan18" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan18" value="4"> 4 
+                                                                <input type="radio" name="kepuasan18" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -477,6 +505,7 @@
                                                                 <input type="radio" name="Kepentingan18" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan18" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan18" value="4"> 4 
+                                                                <input type="radio" name="Kepentingan18" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -488,7 +517,9 @@
                                                                 <input type="radio" name="kepuasan19" value="1"> 1 &emsp14; 
                                                                 <input type="radio" name="kepuasan19" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan19" value="3"> 3 &emsp14; 
-                                                                <input type="radio" name="kepuasan19" value="4"> 4 
+                                                                <input type="radio" name="kepuasan19" value="4"> 4                                                                 
+                                                                <input type="radio" name="kepuasan19" value="" required="" hidden="">
+
                                                             </div>
                                                         </td>
                                                         <td>
@@ -497,6 +528,7 @@
                                                                 <input type="radio" name="Kepentingan19" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan19" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan19" value="4"> 4 
+                                                                <input type="radio" name="Kepentingan19" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -509,6 +541,7 @@
                                                                 <input type="radio" name="kepuasan20" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan20" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="kepuasan20" value="4"> 4 
+                                                                <input type="radio" name="kepuasan20" value="" required="" hidden="">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -517,6 +550,7 @@
                                                                 <input type="radio" name="Kepentingan20" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="Kepentingan20" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan20" value="4"> 4 
+                                                                <input type="radio" name="Kepentingan20" value="" required="" hidden="">
                                                             </div>                                            
                                                         </td>
                                                     </tr>
@@ -535,6 +569,7 @@
                                                         <td> 
                                                             <div class=""> 
                                                                 <a href="<?php echo base_url(); ?>Outlet" class="btn btn-warning btn-block btn-flat"><i class="fa fa-close"></i> Batal </a>
+                                                                <br>
                                                             </div>
                                                         </td>
                                                         <td>

@@ -69,7 +69,7 @@
 
     @media screen and (max-width: 992px) {.navbar-toggle {display: block;}.navbar-collapse.collapse {display: none !important;}.main-navbar-nav.navbar-nav,.main-navbar-nav.navbar-nav > li {float: none !important;}.navbar-collapse.collapse.in {display: block !important;overflow-y: auto !important;}}
 
-    .hero_area {background-image: url(assets/img/feature-image-IT-21.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;height: 570px;padding: 0;}
+    .hero_area {background-image: url(assets/img/Webpage-Enseval.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;height: 570px;padding: 0;}
     .hero_content {padding: 120px 0;}
     .hero_content h1 {text-shadow: 1px 1px 2px rgba(0,0,0,0.75);color: #000000;font-weight: 700;font-size: 60px;}
     .hero_content h2 {text-shadow: 1px 1px 2px rgba(0,0,0,0.25);color: #000000;font-weight: 700;font-size: 32px; margin-top: 0;width: 45%;line-height: 38px;}

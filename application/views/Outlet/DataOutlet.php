@@ -12,7 +12,7 @@
             <div class="content-wrapper">
                 <section class="content-header">
                     <center><h1>
-                        <b>DATA OUTLET</b>
+                            <b>DATA OUTLET</b>
                         </h1></center>
                 </section>
                 <section class="content">
@@ -26,20 +26,25 @@
                         <div class="box-body chat" id="chat-box">
                             <div class="col-lg-6">
                                 <div class="form-group">
+                                    <label for="">ID Outlet</label>
+                                    <input type="text" readonly="" class="form-control" value="<?php echo $id_outlet; ?>" id="" name="nama_outlet" >                        
+                                </div>
+                                <div class="form-group">
                                     <label for="">Nama Outlet</label>
                                     <input type="text" readonly="" class="form-control" value="<?php echo $nama_outlet; ?>" id="" name="nama_outlet" >                        
                                 </div>
                                 <div class="form-group">
                                     <label for="">Cabang</label> 
                                     <input type="text" readonly="" class="form-control" value="<?php echo $id_cabang; ?>" id="" name="nama_outlet" >                        
-                               
+
                                 </div>
-                                <div class="form-group">
-                                    <label for="">Channel</label>
-                                     <input type="text" readonly="" class="form-control" value="<?php echo $channel; ?>" id="" name="nama_outlet" >                        
-                                </div>
+
                             </div>
                             <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="">Channel</label>
+                                    <input type="text" readonly="" class="form-control" value="<?php echo $channel; ?>" id="" name="nama_outlet" >                        
+                                </div>
                                 <div class="form-group">
                                     <label for="">Alamat </label>
                                     <input type="text" class="form-control" readonly="" value="<?php echo $alamat; ?>" id="" name="alamat_outlet" >                        
