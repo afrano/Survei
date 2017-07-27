@@ -20,9 +20,13 @@ class Data extends CI_Controller {
     public function index() {
         $data = array(
             'nama' => $this->session->userdata('nama'),
-            'data_survei' => $this->model->Getdatasurvei()->result_array(),
+            'data_survei' => $this->model->GetHasilNasional()->result_array(),
         );
-        $this->load->view('Hasil/data_survei', $data);
+        if ($this->session->userdata('level') == '1') {
+            $this->load->view('Hasil/data_survei', $data);
+        } else {
+            redirect(base_url() . 'login');
+        }
     }
 
     function Edit($kode = 0) {
@@ -82,10 +86,19 @@ class Data extends CI_Controller {
     }
 
     public function export_excel() {
-        $data = array('title' => 'Database',
-            'data_survei' => $this->model->Getdatasurvei()->result_array(),);
-
-        $this->load->view('Hasil/Excel', $data);
+        if ($this->session->userdata('level') == '1') {
+            $data = array('title' => 'Database',
+                'data_survei' => $this->model->GetHasilNasional()->result_array(),
+            );
+            $this->load->view('Hasil/Excel', $data);
+        } else if ($this->session->userdata('level') == '2') {
+            $data = array('title' => 'Database',
+                'data_survei' => $this->model->GetTerverifikasi($where = $this->session->userdata('id_user'))->result_array(),
+            );
+            $this->load->view('Hasil/Excel', $data);
+        } else {
+            redirect(base_url() . 'index');
+        }
     }
 
     function updatedata() {

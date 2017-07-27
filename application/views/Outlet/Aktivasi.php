@@ -28,10 +28,8 @@
         <section class="content">
             <form  role="form" action="<?php echo base_url(); ?>Aktivasi/SaveData" method="POST" enctype="multipart/form-data">
                 <div class="box">
-                    
                     <span id="pesan-flash"><?php echo $this->session->flashdata('sukses'); ?></span>
                     <span id="pesan-error-flash"><?php echo $this->session->flashdata('alert'); ?></span>
-                    
                     <div class="box-title">
                         <br>
                         <center>
@@ -56,15 +54,14 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Password</label>
-                                    <input type="password" class="form-control" value="" id="" name="pass_user" placeholder="Masukan Password" required>                        
+                                    <input type="password" class="form-control" value="" id="pass_user" name="pass_user" placeholder="Masukan Password" required>                        
                                 </div>
                                 <div class="form-group">
                                     <label for="">Konfirmasi Password </label>
-                                    <input type="password" class="form-control" value="" id="" name="pass_user1" placeholder="Konfirmasi Password" required>                        
+                                    <input type="password" class="form-control" value="" id="pass_user1" name="pass_user1" placeholder="Konfirmasi Password" required>                        
                                 </div>
                             </div>
                             <div class="col-lg-6">
-
                                 <div class="form-group">
                                     <label for="">Alamat </label>
                                     <input type="text" class="form-control" value="" id="" name="alamat_outlet" placeholder="Masukan Alamat Outlet" required>                        
@@ -146,7 +143,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div>
-                                    <button type="submit" class="btn btn-primary btn-block btn-flat"><i class="fa fa-save"></i>  Simpan</button>
+                                    <button type="submit" value="cek" class="btn btn-primary btn-block btn-flat"><i class="fa fa-save"></i>  Simpan</button>
                                 </div> 
                             </div>
                         </div>  
@@ -164,6 +161,18 @@
         <script src="<?php echo base_url(); ?>assets/dist/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
     </body>
     <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("pass_user").onchange = validatePassword;
+            document.getElementById("pass_user1").onchange = validatePassword;
+        }
+        function validatePassword() {
+            var pass2 = document.getElementById("pass_user1").value;
+            var pass1 = document.getElementById("pass_user").value;
+            if (pass1 != pass2)
+                document.getElementById("pass_user1").setCustomValidity("Passwords Tidak Sama, Coba Lagi !!");
+            else
+                document.getElementById("pass_user1").setCustomValidity('');
+        }
         $(function () {
             $('#pesan-flash').delay(4000).fadeOut();
             $('#pesan-error-flash').delay(5000).fadeOut();

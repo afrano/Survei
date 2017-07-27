@@ -23,21 +23,21 @@
                         <i class="fa fa-circle-o"></i> <span>Form Survei</span> 
                     </a>
                 </li>-->
-        <li>
+<!--        <li>
             <a href="<?php echo base_url(); ?>Rekap">
                 <i class="fa fa-tag"></i> <span>Hasil Survei</span> 
             </a>
-        </li>
-        <li>
+        </li>-->
+<!--        <li>
             <a href="<?php echo base_url(); ?>Data">
                 <i class="fa fa-user-secret"></i> <span>Rank</span> 
             </a>
-        </li>
-        <li>
+        </li>-->
+<!--        <li>
             <a href="<?php echo base_url(); ?>Survei/Draft">
                 <i class="fa fa-windows"></i> <span>Draft</span> 
             </a>
-        </li>
+        </li>-->
         <li>
             <a href="<?php echo base_url(); ?>Data">
                 <i class="fa fa-database"></i> <span>Data Hasil Survei</span> 

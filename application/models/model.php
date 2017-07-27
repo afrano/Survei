@@ -38,43 +38,15 @@ class Model extends CI_Model {
         return $data;
     }
 
-    //ambil data tabel kategori
-    public function GetKat($where = "") {
-        $data = $this->db->query('select * from tb_kategori ' . $where);
-        return $data;
-    }
-
-    public function GetMerk($where = "") {
-        $data = $this->db->query('select * from tb_merk ' . $where);
-        return $data;
-    }
-
-    //ambil data tabel produk
-    public function GetProduk($where = "") {
-        $data = $this->db->query('select * from tb_produk ' . $where);
-        return $data;
-    }
-
     public function GetTotProduk() {
-        $data = $this->db->query('select * from tb_produk group by id_kat ');
+        $data = $this->db->query('select * from hasilsurvei group by id_hasil ');
         return $data;
-    }
-
-    public function GetDetailProduk($where = "") {
-        return $this->db->query("select tb_merk.merk, tb_produk.*  from tb_produk inner join tb_merk on tb_merk.id_merk=tb_produk.id_merk $where;");
     }
 
     public function count_all() {
-        return $this->db->count_all('tb_produk');
+        return $this->db->count_all('hasilsurvei');
     }
-
-    public function Getdatasurvei($where = "") {
-        $data = $this->db->query(' SELECT p.*, q.nama_outlet, q.channel, c.id_cabang
-                                FROM hasilsurvei p, outlet q, cabang c 
-                                where q.id_outlet = p.id_outlet and q.id_cabang = c.id_cabang ' . $where);
-        return $data;
-    }
-
+    
     public function GetDataOutlet() {
         $data = $this->db->query(' SELECT o.*,c.regional from outlet o, cabang c where o.id_cabang = c.id_cabang');
         return $data;
@@ -85,8 +57,18 @@ class Model extends CI_Model {
         return $data;
     }
 
-    public function GetSurveiOutlet() {
-        $data = $this->db->query('SELECT s.*,h.*, o.* from sales s, hasilsurvei h, outlet o where s.id_sales = h.id_sales and h.id_outlet = o.id_outlet and status = 0');
+    public function GetSurveiOutlet($where) {
+        $data = $this->db->query('SELECT s.*,h.*, o.*, c.* from sales s, hasilsurvei h, outlet o, cabang c where s.id_sales = h.id_sales and h.id_outlet = o.id_outlet and status = 0 and c.id_cabang = o.id_cabang and o.id_cabang = "'.$where.'" ');
+        return $data;
+    }
+
+    public function GetTerverifikasi($where) {
+        $data = $this->db->query('SELECT s.*,h.*, o.*, c.* from sales s, hasilsurvei h, outlet o, cabang c where s.id_sales = h.id_sales and h.id_outlet = o.id_outlet and status = 1 and c.id_cabang = o.id_cabang and o.id_cabang = "'.$where.'" ');
+        return $data;
+    }
+    
+    public function GetHasilNasional() {
+        $data = $this->db->query('SELECT s.*,h.*, o.* from sales s, hasilsurvei h, outlet o where s.id_sales = h.id_sales and h.id_outlet = o.id_outlet and status = 1');
         return $data;
     }
 
@@ -99,16 +81,6 @@ class Model extends CI_Model {
     public function GetEdit($where = "") {
         $data = $this->db->query(' SELECT h.*, q.nama_outlet, q.channel,q.id_outlet, c.id_cabang, q.alamat,q.telpon,p.semester
                                 FROM hasilsurvei h, outlet q, cabang c ' . $where);
-        return $data;
-    }
-
-    public function GetProdukKatMerko($where = "") {
-        $data = $this->db->query('SELECT p.*, q.kategori, c.merk
-                                FROM tb_produk p
-                                LEFT JOIN tb_kategori q
-                                ON(p.id_kat = q.id_kat)
-                                LEFT JOIN tb_merk c
-                                ON(p.id_merk = c.id_merk)' . $where);
         return $data;
     }
 
@@ -137,11 +109,6 @@ class Model extends CI_Model {
     function UpdateCabang($data) {
         $this->db->where('id_outlet', $data['id_outlet']);
         $this->db->update('cabang', $data);
-    }
-
-    function UpdateProduk($data) {
-        $this->db->where('id_produk', $data['id_produk']);
-        $this->db->update('tb_produk', $data);
     }
 
     function GetVisitor($where = "") {

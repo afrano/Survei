@@ -21,7 +21,11 @@ class Outlet extends CI_Controller {
         $data = array(
             'nama' => $this->session->userdata('nama'),
         );
-        $this->load->view('Outlet/FormInputUser', $data);
+        if ($this->session->userdata('level') == '3') {
+            $this->load->view('Outlet/FormInputUser', $data);
+        } else {
+            redirect(base_url() . 'login');
+        }
     }
 
     public function Outlet() {
@@ -50,7 +54,11 @@ class Outlet extends CI_Controller {
             'nama' => $this->session->userdata('nama'),
             'data_outlet' => $this->model->GetDataOutlet()->result_array(),
         );
-        $this->load->view('Outlet/listdataoutlet', $data);
+        if ($this->session->userdata('level') == '1') {
+            $this->load->view('Outlet/listdataoutlet', $data);
+        } else {
+            redirect(base_url() . 'login');
+        }
     }
 
 }

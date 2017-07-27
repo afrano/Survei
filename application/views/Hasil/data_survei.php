@@ -27,7 +27,7 @@
                                 <div class="box-body">
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
-                                        <center><h4><b>Tabel Kepuasan</b></h4></center>
+                                        <center><div class="alert-info"><br><h4><b>Tabel Kepuasan</b></h4><br></div></center><br>
                                         <tr>
                                             <th>NO</th>
                                             <th>Outlet</th>
@@ -101,7 +101,7 @@
                                     </table>
                                     <table id="example2" class="table table-bordered table-striped">
                                         <thead>
-                                        <center><h4><b>Tabel Kepentingan</b></h4></center>
+                                        <center><div class="alert-info"><br><h4><b>Tabel Kepentingan</b></h4><br></div></center><br>
                                         <tr>
                                             <th>NO</th>
                                             <th>Nama Outlet</th>
@@ -161,9 +161,8 @@
                                         </tbody>
                                     </table>
                                     <div class>
-                                        <a href="<?php echo base_url('Data/export_excel') ?>"/> <button type="text" class="btn btn-primary btn-block btn-flat">Export Data to Excel</button></a>
-                                    </div>                                               
-
+                                        <a href="<?php echo base_url('Data/export_excel') ?>"/> <button type="text" class="btn btn-primary btn-block btn-flat fa fa-download"> Export  to Excel</button></a>
+                                    </div>   
                                 </div>
                             </div>
                         </div>

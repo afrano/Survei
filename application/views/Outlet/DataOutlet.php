@@ -11,7 +11,7 @@
             </aside>
             <div class="content-wrapper">
                 <section class="content-header">
-                    <center><h1>
+                    <center><h1> <i class="fa fa-database"></i>
                             <b>DATA OUTLET</b>
                         </h1></center>
                 </section>
@@ -19,9 +19,9 @@
                     <div class="box">
                         <div class="box-title">
                         </div>
-                        <div class="box-header">
+                       <div class="box-header">
                             <i class="fa fa-database"></i>
-                            <h3 class="box-title">DATA OUTLET</h3>
+                            <h3 class="box-title">Detail Data Outlet</h3>
                         </div>
                         <div class="box-body chat" id="chat-box">
                             <div class="col-lg-6">

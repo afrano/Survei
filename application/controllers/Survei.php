@@ -39,8 +39,7 @@ class Survei extends CI_Controller {
         if ($this->session->userdata('level') == '1') {
             $this->load->view('Cabang/InputCabang', $data);
         } else {
-            $this->session->sess_destroy();
-            redirect(base_url() . 'index.php');
+            redirect(base_url() . 'login');
         }
     }
 
@@ -143,7 +142,7 @@ class Survei extends CI_Controller {
             'K19' => $kepentingan19,
             'K20' => $kepentingan20,
         );
-        
+
         $result1 = $this->model->Simpan('hasilsurvei', $data);
         if ($result1 == 1) {
             $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Simpan data BERHASIL dilakukan</strong></div>");

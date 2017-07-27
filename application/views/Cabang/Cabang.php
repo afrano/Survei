@@ -15,44 +15,77 @@
                         <div class="col-md-12">
                             <div class="box">
                                 <div class="box-title">
+
+                                </div>
+
+                                <div class="box-body">
                                     <span id="pesan-flash"><?php echo $this->session->flashdata('sukses'); ?></span>
                                     <span id="pesan-error-flash"><?php echo $this->session->flashdata('alert'); ?></span>
-                                </div>
-                                <div class="box-body">
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
-                                        <center><h4><b>Tabel Survei Outlet</b></h4></center>
+                                        <center><div class="alert-warning"><h4><b> <br>Data Belum Terverifikasi</b></h4> <br> </div> </center><br>
                                         <tr>
                                             <th>NO</th>
-                                            <th>Nama Sales</th>
                                             <th>Outlet</th>
                                             <th>Alamat</th>
                                             <th>Telpon</th>
-                                            <th>Channel</th>
+                                            <th>Channel</th>                                            
+                                            <th>Nama Sales</th>
                                             <th>AKSI</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                             <?php
                                             $no = 0;
-                                            foreach ($data_outlet as $row) {
+                                            foreach ($belum_terverifikasi as $row) {
                                                 $no++
                                                 ?>
                                                 <tr>
-                                                    <td><?php echo $no; ?></td>    
-                                                    <td><?php echo $row['nama_sales']; ?></td>
-                                                    <td><?php echo $row['nama_outlet']; ?></td>
-                                                    <td><?php echo $row['alamat']; ?></td>
-                                                    <td><?php echo $row['Telpon']; ?></td>
-                                                    <td><?php echo $row['channel']; ?></td>
+                                                    <td><font color="red"><?php echo $no; ?></td>    
+                                                    <td><font color="red"><?php echo $row['nama_outlet']; ?></td>
+                                                    <td><font color="red"><?php echo $row['alamat']; ?></td>
+                                                    <td><font color="red"><?php echo $row['Telpon']; ?></td>
+                                                    <td><font color="red"><?php echo $row['channel']; ?></td>                                                    
+                                                    <td><font color="red"><?php echo $row['nama_sales']; ?></font></td>
                                                     <td>
-                                                        <a class="btn btn-primary btn-sm" href="<?php echo base_url(); ?>Data/Edit/<?php echo $row['id_hasil']; ?>"><i class="fa fa-send"></i></a>
-                                                        <a onclick="return confirm('Hapus data survei??');" class="btn btn-danger btn-sm" href="<?php echo base_url(); ?>Data/Hapus/<?php echo $row['id_hasil']; ?>"><i class="fa fa-trash"></i></a>
+                                                        <a class="btn btn-primary btn-sm" href="<?php echo base_url(); ?>Cabang/Verifikasi/<?php echo $row['id_hasil']; ?>"><i class="fa fa-send"></i></a>
+                                                        <a onclick="return confirm('Hapus data survei??');" class="btn btn-danger btn-sm" href="<?php echo base_url(); ?>Cabang/Hapus/<?php echo $row['id_hasil']; ?>"><i class="fa fa-trash"></i></a>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
                                         </tbody>
-                                    </table>
+                                    </table> <table id="example2" class="table table-bordered table-striped">
+                                        <thead>
+                                        <center><div class="alert-info"><br><h4><b>Data Telah Terverifikasi</b></h4><br></div></center><br>
+                                        <tr>
+                                            <th>NO</th>
+                                            <th>Outlet</th>
+                                            <th>Alamat</th>
+                                            <th>Telpon</th>
+                                            <th>Channel</th>
+                                            <th>Nama Sales</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $no = 0;
+                                            foreach ($data_terverifikasi as $row1) {
+                                                $no++
+                                                ?>
+                                                <tr>
+                                                    <td><?php echo $no; ?></td>    
+                                                    <td><?php echo $row1['nama_outlet']; ?></td>
+                                                    <td><?php echo $row1['alamat']; ?></td>
+                                                    <td><?php echo $row1['Telpon']; ?></td>
+                                                    <td><?php echo $row1['channel']; ?></td>                                                    
+                                                    <td><?php echo $row1['nama_sales']; ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table><br>
+                                    <div class>
+                                        <a href="<?php echo base_url('Data/export_excel') ?>"/> <button type="text" class="btn btn-primary btn-block btn-flat fa fa-download"> Export  to Excel</button></a>
+                                    </div>  
                                 </div>
                             </div>
                         </div>
@@ -67,24 +100,24 @@
         <script src="<?php echo base_url(); ?>assets/dist/datatables/jquery.dataTables.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>assets/dist/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
         <script type="text/javascript">
-                                                            $(function () {
-                                                                $("#example1").dataTable();
-                                                                $('#example2').dataTable({
-                                                                    "bPaginate": true,
-                                                                    "bLengthChange": false,
-                                                                    "bFilter": true,
-                                                                    "bSort": true,
-                                                                    "bInfo": true,
-                                                                    "bAutoWidth": false
+                                                        $(function () {
+                                                            $("#example1").dataTable();
+                                                            $('#example2').dataTable({
+                                                                "bPaginate": true,
+                                                                "bLengthChange": false,
+                                                                "bFilter": true,
+                                                                "bSort": true,
+                                                                "bInfo": true,
+                                                                "bAutoWidth": false
 
 
-                                                                });
                                                             });
-                                                            //waktu flash data 
-                                                            $(function () {
-                                                                $('#pesan-flash').delay(4000).fadeOut();
-                                                                $('#pesan-error-flash').delay(5000).fadeOut();
-                                                            });
+                                                        });
+                                                        //waktu flash data 
+                                                        $(function () {
+                                                            $('#pesan-flash').delay(4000).fadeOut();
+                                                            $('#pesan-error-flash').delay(5000).fadeOut();
+                                                        });
         </script>
     </body>
 </html>

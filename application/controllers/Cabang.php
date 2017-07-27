@@ -19,9 +19,67 @@ class Cabang extends CI_Controller {
     public function index() {
         $data = array(
             'nama' => $this->session->userdata('nama'),
-            'data_outlet' => $this->model->GetSurveiOutlet()->result_array(),//
+            'id_user' => $this->session->userdata('id_user'),
+            'belum_terverifikasi' => $this->model->GetSurveiOutlet($where = $this->session->userdata('id_user'))->result_array(), //
+            'data_terverifikasi' => $this->model->GetTerverifikasi($where = $this->session->userdata('id_user'))->result_array(),
         );
-        $this->load->view('Cabang/Cabang', $data);
+        if ($this->session->userdata('level') == '2') {
+            $this->load->view('Cabang/Cabang', $data);
+        } else {
+            redirect(base_url() . 'login');
+        }
+    }
+
+    function updatedata() {
+
+        $outlet = array(
+            'id_outlet' => $this->input->post('id_outlet'),
+            'nama_outlet' => $this->input->post('nama_outlet'),
+            'alamat' => $this->input->post('alamat_outlet'),
+            'telpon' => $this->input->post('telpon_outlet'),
+            'channel' => $this->input->post('channel'),
+            'id_cabang' => $this->input->post('id_cabang'),
+        );
+        $data = array(
+            'status' => $this->input->post('status'),
+        );
+        $result = $this->model->Updatedata($data);
+        $result1 = $this->model->UpdateOutlet($outlet);
+        if ($result >= 0 && $result1 >= 0) {
+            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Data Berhasil Diupdate</strong></div>");
+            header('location:' . base_url() . 'Data');
+        } else {
+            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Data Gagal Diupdate</strong></div>");
+            header('location:' . base_url() . 'Data');
+        }
+    }
+
+    function Verifikasi($kode = 0) {
+        $status = 1;
+        $data = array(
+            'status' => $status,
+        );
+        $result = $this->model->Update('hasilsurvei', $data, array('id_hasil' => $kode));
+
+        if ($result == 1) {
+            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Data Terverifikasi</strong></div>");
+            header('location:' . base_url() . 'Cabang');
+        } else {
+            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Data Berhasil Ditolak</strong></div>");
+            header('location:' . base_url() . 'Cabang');
+        }
+    }
+
+    function Hapus($kode = 1) {
+
+        $result = $this->model->Hapus('hasilsurvei', array('id_hasil' => $kode));
+        if ($result == 1) {
+            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Data Berhasil Ditolak</strong></div>");
+            header('location:' . base_url() . 'Cabang');
+        } else {
+            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Data Berhasil Ditolak</strong></div>");
+            header('location:' . base_url() . 'Cabang');
+        }
     }
 
     public function SaveCabang() {
@@ -36,13 +94,14 @@ class Cabang extends CI_Controller {
             'alamat_cabang' => $alamat_cabang,
             'telpon_cabang' => $telpon,
         );
+        
         $result = $this->model->Simpan('cabang', $data);
         if ($result == 1) {
             $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Data Tersimpan</strong></div>");
-            header('location:' . base_url() . 'Cabang');
+            header('location:' . base_url() . 'Survei/cabang');
         } else {
             $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Gagal Menyimpan Data</strong></div>");
-            header('location:' . base_url() . 'Cabang');
+            header('location:' . base_url() . 'Survei/cabang');
         }
     }
 
@@ -51,7 +110,11 @@ class Cabang extends CI_Controller {
             'nama' => $this->session->userdata('nama'),
             'data_cabang' => $this->model->GetDataCabang()->result_array(),
         );
-        $this->load->view('Cabang/listdatacabang', $data);
+        if ($this->session->userdata('level') == '1') {
+            $this->load->view('Cabang/listdatacabang', $data);
+        } else {
+            redirect(base_url() . 'login');
+        }
     }
 
 }

@@ -19,9 +19,14 @@ class Home extends CI_Controller {
     public function index() {
         $data = array(
             'nama' => $this->session->userdata('nama'),
+            'level' => $this->session->userdata('level'),
+            'status' => $this->session->userdata('status'),
         );
-
-        $this->load->view('index', $data);
+        if ($this->session->userdata('level') == '1') {
+            $this->load->view('index', $data);
+        } else {
+            redirect(base_url() . 'login');
+        }
     }
 
 }
