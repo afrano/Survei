@@ -42,15 +42,17 @@ class Aktivasi extends CI_Controller {
             'level' => $level,
             'status' => $status,
         );
-        $result = $this->model->Simpan('outlet', $Outlet);
-        $result1 = $this->model->Simpan('login', $Akun);
-        if ($result == 1 && $result1 == 1) {
-            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Simpan data BERHASIL dilakukan</strong></div>");
-            header('location:' . base_url() . 'Aktivasi');
+        if ($result = $this->model->Simpan('outlet', $Outlet) && $result1 = $this->model->Simpan('login', $Akun)) {
+            if ($result == 1 && $result1 == 1) {
+                $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Data berhasil tersimpan</strong></div>");
+                header('location:' . base_url() . 'Aktivasi');
+            } else {
+                $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Gagal menyimpan data</strong></div>");
+                header('location:' . base_url() . 'Aktivasi');
+            }
         } else {
-            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Simpan data GAGAL di lakukan</strong></div>");
+            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Gagal menyimpan data</strong></div>");
             header('location:' . base_url() . 'Aktivasi');
         }
     }
-
 }

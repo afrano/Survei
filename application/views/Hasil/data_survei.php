@@ -30,11 +30,9 @@
                                         <center><div class="alert-info"><br><h4><b>Tabel Kepuasan</b></h4><br></div></center><br>
                                         <tr>
                                             <th>NO</th>
-                                            <th>Outlet</th>
-                                            <th>Channel</th>
-                                            <th>Cabang</th>
+                                            <th>Nama_Outlet</th>
                                             <th>Tahun</th>
-                                            <th>Semester</th>
+                                            <th>Periode</th>
                                             <th>Q1</th>
                                             <th>Q2</th>
                                             <th>Q3</th>
@@ -55,7 +53,6 @@
                                             <th>Q18</th>
                                             <th>Q19</th>
                                             <th>Q20</th>
-                                            <th>AKSI</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -67,8 +64,6 @@
                                                 <tr>
                                                     <td><?php echo $no; ?></td>    
                                                     <td><?php echo $row['nama_outlet']; ?></td>
-                                                    <td><?php echo $row['channel']; ?></td>
-                                                    <td><?php echo $row['id_cabang']; ?></td>
                                                     <td><?php echo $row['tahun']; ?></td>
                                                     <td><?php echo $row['semester']; ?></td>
                                                     <td><?php echo $row['Q01']; ?></td>
@@ -91,10 +86,6 @@
                                                     <td><?php echo $row['Q18']; ?></td>
                                                     <td><?php echo $row['Q19']; ?></td>
                                                     <td><?php echo $row['Q20']; ?></td>
-                                                    <td>
-                                                        <a class="btn btn-warning btn-sm" href="<?php echo base_url(); ?>Data/Edit/<?php echo $row['id_hasil']; ?>"><i class="fa fa-pencil"></i></a>
-                                                        <a onclick="return confirm('Hapus data??');" class="btn btn-danger btn-sm" href="<?php echo base_url(); ?>Data/Hapus/<?php echo $row['id_hasil']; ?>"><i class="fa fa-trash"></i></a>
-                                                    </td>
                                                 </tr>
                                             <?php } ?>
                                         </tbody>
@@ -104,7 +95,7 @@
                                         <center><div class="alert-info"><br><h4><b>Tabel Kepentingan</b></h4><br></div></center><br>
                                         <tr>
                                             <th>NO</th>
-                                            <th>Nama Outlet</th>
+                                            <th>Channel</th>
                                             <th>K1</th>
                                             <th>K2</th>
                                             <th>K3</th>
@@ -125,6 +116,7 @@
                                             <th>K18</th>
                                             <th>K19</th>
                                             <th>K20</th>
+                                            <th>Aksi</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -135,7 +127,7 @@
                                                 ?>
                                                 <tr>
                                                     <td><?php echo $no; ?></td>
-                                                    <td><?php echo $row['nama_outlet']; ?></td>
+                                                    <td><?php echo $row['channel']; ?></td>
                                                     <td><?php echo $row['K01']; ?></td>
                                                     <td><?php echo $row['K02']; ?></td>
                                                     <td><?php echo $row['K03']; ?></td>
@@ -156,6 +148,10 @@
                                                     <td><?php echo $row['K18']; ?></td>
                                                     <td><?php echo $row['K19']; ?></td>
                                                     <td><?php echo $row['K20']; ?></td>
+                                                    <td>
+                                                        <a class="btn btn-warning btn-sm" href="<?php echo base_url(); ?>Data/Edit/<?php echo $row['id_hasil']; ?>"><i class="fa fa-pencil"></i></a>
+                                                        <a onclick="return confirm('Hapus data??');" class="btn btn-danger btn-sm" href="<?php echo base_url(); ?>Data/Hapus/<?php echo $row['id_hasil']; ?>"><i class="fa fa-trash"></i></a>
+                                                    </td>
                                                 </tr>
                                             <?php } ?>
                                         </tbody>

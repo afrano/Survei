@@ -12,7 +12,7 @@ class Cabang extends CI_Controller {
 
     private function _cek_login() {
         if (!$this->session->userdata('useradmin')) {
-            redirect(base_url() . 'backend');
+            redirect(base_url() . 'login');
         }
     }
 
@@ -46,10 +46,10 @@ class Cabang extends CI_Controller {
         $result = $this->model->Updatedata($data);
         $result1 = $this->model->UpdateOutlet($outlet);
         if ($result >= 0 && $result1 >= 0) {
-            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Data Berhasil Diupdate</strong></div>");
+            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Data berhasil diupdate</strong></div>");
             header('location:' . base_url() . 'Data');
         } else {
-            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Data Gagal Diupdate</strong></div>");
+            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Data gagal diupdate</strong></div>");
             header('location:' . base_url() . 'Data');
         }
     }
@@ -60,7 +60,6 @@ class Cabang extends CI_Controller {
             'status' => $status,
         );
         $result = $this->model->Update('hasilsurvei', $data, array('id_hasil' => $kode));
-
         if ($result == 1) {
             $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Data Terverifikasi</strong></div>");
             header('location:' . base_url() . 'Cabang');
@@ -94,7 +93,7 @@ class Cabang extends CI_Controller {
             'alamat_cabang' => $alamat_cabang,
             'telpon_cabang' => $telpon,
         );
-        
+
         $result = $this->model->Simpan('cabang', $data);
         if ($result == 1) {
             $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Data Tersimpan</strong></div>");

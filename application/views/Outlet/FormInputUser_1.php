@@ -590,31 +590,11 @@
 
                             </div>
                         </div>
-                        
-<!--                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="col1">Header 1</th>
-                                    <th class="col2">Header 2</th>
-                                    <th class="col3">Header 3</th>
-                                </tr>
-                            </thead>
-                            <tr><td>Column1</td><td>Column2</td><td>Column3</td></tr>
-                            <tr><td>Column1</td><td>Column2</td><td>Column3</td></tr>
-                            <tr><td>Column1</td><td>Column2</td><td>Column3</td></tr>
-                            <tr><td>Column1</td><td>Column2</td><td>Column3</td></tr>
-                        </table>
-
-                        <input type="button" name="col1"  /> PEMESANAN BARANG MELALUI SALESMAN <br />
-                        <input type="button" name="col2"  /> PENANGANAN RETUR BARANG<br />
-                        <input type="button" name="col3"  /> PENGIRIMAN BARANG<br />-->
-
                     </form>
                 </section>
             </div>
         </div>
         <?php $this->load->view('inc/footer'); ?>
-        <script src="<?php echo base_url(); ?>assets/dist/js/jquery-latest.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>assets/dist/datatables/jquery.dataTables.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>assets/dist/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
     </body>
@@ -622,16 +602,6 @@
         $(function () {
             $('#pesan-flash').delay(4000).fadeOut();
             $('#pesan-error-flash').delay(5000).fadeOut();
-        });
-        $(document).ready(function () {
-            $('input[type="button"]').click(function () {
-                var index = $(this).attr('name').substr(3);
-                index--;
-                $('table tr').each(function () {
-                    $('td:eq(' + index + ')', this).toggle();
-                });
-                $('th.' + $(this).attr('name')).toggle();
-            });
         });
     </script>
 </html>

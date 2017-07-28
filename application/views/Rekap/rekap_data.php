@@ -119,12 +119,14 @@
                                                     </tr>
                                                     <tr>
                                                         <td>Pertanyaan 1</td>
-                                                        <td>1</td>
-                                                        <td>3</td>
-                                                        <td>3</td>
-                                                        <td>4</td>
+                                                        <?php
+                                                        foreach ($rekap_data as $row) {
+                                                            ?>
+                                                            <td><?php echo $row['q01']; ?></td>
+                                                        <?php } ?>
                                                         <td>Nilainya</td>
                                                         <td>POIN</td>
+
                                                     </tr>
                                                     <tr>
                                                         <td>Pertanyaan 2</td>

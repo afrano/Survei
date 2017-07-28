@@ -7,7 +7,7 @@ class Login extends CI_Controller {
 
     function index() {
         if ($this->session->userdata('Home') OR $this->session->userdata('kategori')) {
-            redirect(base_url() . 'backend');
+            redirect(base_url() . 'login');
         } else {
             $db = 'm_login';
             $sub_data['info'] = $this->session->userdata('info');

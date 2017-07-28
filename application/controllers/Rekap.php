@@ -12,14 +12,14 @@ class Rekap extends CI_Controller {
 
     private function _cek_login() {
         if (!$this->session->userdata('useradmin')) {
-            redirect(base_url() . 'backend');
+            redirect(base_url() . 'login');
         }
     }
 
     public function index() {
         $data = array(
             'nama' => $this->session->userdata('nama'),
-            'rekap_data' => $this->model->GetRekap()->result_array(),
+            'rekap_data' => $this->model->GetHitungPemilih()->result_array(),
         );
 
         $this->load->view('Rekap/rekap_data', $data);

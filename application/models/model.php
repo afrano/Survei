@@ -33,6 +33,11 @@ class Model extends CI_Model {
         return $data;
     }
 
+    public function GetHitungPemilih() {
+        $data = $this->db->query('SELECT q01 as data, count(case when q01 = 1 then 1 else case when q01 = 2 then 1 else case when q01 = 3 then 1 else case when q01 = 4 then 1 else null end end end end) as q01 FROM hasilsurvei group by q01');
+        return $data;
+    }
+
     public function GetRekapdata($Tahun = '2017', $Cabang = 'PTK', $Channel = 'Apotek', $semester = 'S1') {
         $data = $this->db->query('select h.Q01 from data_outlet d, hasilsurvei h where d.tahun_survei = "' + $Tahun + '" and d.cabang_outlet like "' + $Cabang + '" and d.channel like "' + $Channel + '" and d.semester like "' + $semester + '"');
         return $data;
@@ -46,7 +51,7 @@ class Model extends CI_Model {
     public function count_all() {
         return $this->db->count_all('hasilsurvei');
     }
-    
+
     public function GetDataOutlet() {
         $data = $this->db->query(' SELECT o.*,c.regional from outlet o, cabang c where o.id_cabang = c.id_cabang');
         return $data;
@@ -58,15 +63,15 @@ class Model extends CI_Model {
     }
 
     public function GetSurveiOutlet($where) {
-        $data = $this->db->query('SELECT s.*,h.*, o.*, c.* from sales s, hasilsurvei h, outlet o, cabang c where s.id_sales = h.id_sales and h.id_outlet = o.id_outlet and status = 0 and c.id_cabang = o.id_cabang and o.id_cabang = "'.$where.'" ');
+        $data = $this->db->query('SELECT s.*,h.*, o.*, c.* from sales s, hasilsurvei h, outlet o, cabang c where s.id_sales = h.id_sales and h.id_outlet = o.id_outlet and status = 0 and c.id_cabang = o.id_cabang and o.id_cabang = "' . $where . '" ');
         return $data;
     }
 
     public function GetTerverifikasi($where) {
-        $data = $this->db->query('SELECT s.*,h.*, o.*, c.* from sales s, hasilsurvei h, outlet o, cabang c where s.id_sales = h.id_sales and h.id_outlet = o.id_outlet and status = 1 and c.id_cabang = o.id_cabang and o.id_cabang = "'.$where.'" ');
+        $data = $this->db->query('SELECT s.*,h.*, o.*, c.* from sales s, hasilsurvei h, outlet o, cabang c where s.id_sales = h.id_sales and h.id_outlet = o.id_outlet and status = 1 and c.id_cabang = o.id_cabang and o.id_cabang = "' . $where . '" ');
         return $data;
     }
-    
+
     public function GetHasilNasional() {
         $data = $this->db->query('SELECT s.*,h.*, o.* from sales s, hasilsurvei h, outlet o where s.id_sales = h.id_sales and h.id_outlet = o.id_outlet and status = 1');
         return $data;

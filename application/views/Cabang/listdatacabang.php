@@ -11,11 +11,6 @@
                 <?php $this->load->view('inc/sidebar'); ?>
             </aside>
             <div class="content-wrapper">
-                <section class="content-header">
-                    <h1>
-                        <b>LIST DATA OUTLET</b>
-                    </h1>
-                </section>
                 <section class="content">
                     <div class="row">
                         <div class="col-md-12">
@@ -27,7 +22,7 @@
                                 <div class="box-body">
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
-                                        <center><h4><b>Tabel Kepuasan</b></h4></center>
+                                        <center><div class="alert-info"><br><h4><b>Data Cabang</b></h4><br></div></center><br>
                                         <tr>
                                             <th>NO</th>
                                             <th>ID Cabang</th>
