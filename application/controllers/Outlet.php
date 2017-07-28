@@ -20,6 +20,7 @@ class Outlet extends CI_Controller {
 
         $data = array(
             'nama' => $this->session->userdata('nama'),
+            'id_user' => $this->session->userdata('id_user'),
         );
         if ($this->session->userdata('level') == '3') {
             $this->load->view('Outlet/FormInputUser', $data);

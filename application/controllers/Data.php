@@ -86,16 +86,31 @@ class Data extends CI_Controller {
     }
 
     public function export_excel() {
+        $semester = $_POST['semester'];
+        $tahun = $_POST['tahun'];
         if ($this->session->userdata('level') == '1') {
-            $data = array('title' => 'Database',
-                'data_survei' => $this->model->GetHasilNasional()->result_array(),
-            );
+            if ($semester == 'all') {
+                $data = array('title' => 'Database',
+                    'data_survei' => $this->model->GetHasilNasional()->result_array(),
+                );
+            } else {
+                $data = array('title' => 'Database',
+                    'data_survei' => $this->model->Export($semester, $tahun)->result_array(),
+                );
+            }
             $this->load->view('Hasil/Excel', $data);
         } else if ($this->session->userdata('level') == '2') {
-            $data = array('title' => 'Database',
-                'data_survei' => $this->model->GetTerverifikasi($where = $this->session->userdata('id_user'))->result_array(),
-            );
-            $this->load->view('Hasil/Excel', $data);
+            if ($semester == 'all') {
+                $data = array('title' => 'Database',
+                    'data_survei' => $this->model->GetTerverifikasi($ID = $this->session->userdata('id_user'))->result_array(),
+                );
+                $this->load->view('Hasil/Excel', $data);
+            } else {
+                $data = array('title' => 'Database',
+                    'data_survei' => $this->model->ExportCabang($ID = $this->session->userdata('id_user'), $semester, $tahun)->result_array(),
+                );
+                $this->load->view('Hasil/Excel', $data);
+            }
         } else {
             redirect(base_url() . 'index');
         }

@@ -52,10 +52,10 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="">ID Sales</label>
-                                                <input type="text" class="form-control" value="" name="id_sales" placeholder="Masukan ID Sales "required>
+                                                <input type="text"  class="form-control" value="" name="id_sales" placeholder="Masukan ID Sales " required="">
                                             </div>
                                         </div>
-                                        <input type="hidden" readonly="" class="form-control" value="<?php echo $nama; ?>"  name="id_outlet" required>
+                                        <input type="hidden" readonly="" class="form-control" value="<?php echo $id_user; ?>"  name="id_outlet" >
                                         <div class="box-body">
                                             <table id="example1" class="table table-bordered table-striped">
                                                 <thead>

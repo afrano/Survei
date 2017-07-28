@@ -82,10 +82,34 @@
                                                 </tr>
                                             <?php } ?>
                                         </tbody>
-                                    </table><br>
+                                    </table>
+                                    <br>
                                     <div class>
-                                        <a href="<?php echo base_url('Data/export_excel') ?>"/> <button type="text" class="btn btn-primary btn-block btn-flat fa fa-download"> Export  to Excel</button></a>
-                                    </div>  
+                                    </div>  <br>
+                                    <form  role="form" action="<?php echo base_url(); ?>Data/export_excel" method="POST" enctype="multipart/form-data">
+                                        <table id="example1" class="table table-bordered table-striped">
+                                            <div class="col-lg-6">
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">                                                    
+                                                        <select name="semester" class="form-control" required="">
+                                                            <option value="">Pilih Periode</option>
+                                                            <option value="all">All</option>
+                                                            <option  value="S1">S1</option>
+                                                            <option value="S2">S2</option>
+                                                        </select> 
+                                                    </div>
+                                                    <div class>
+                                                        <button type="submit" class="btn btn-primary btn-block btn-flat"><i class="fa fa-download"></i>&nbsp;  Export to Excel</button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <p> <input type="number" min="2015" class="form-control" value="" id="" name="tahun" placeholder="Pilih Tahun Survei" required="">          </p>               
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </table>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -100,24 +124,23 @@
         <script src="<?php echo base_url(); ?>assets/dist/datatables/jquery.dataTables.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>assets/dist/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
         <script type="text/javascript">
-                                                        $(function () {
-                                                            $("#example1").dataTable();
-                                                            $('#example2').dataTable({
-                                                                "bPaginate": true,
-                                                                "bLengthChange": false,
-                                                                "bFilter": true,
-                                                                "bSort": true,
-                                                                "bInfo": true,
-                                                                "bAutoWidth": false
+                                                            $(function () {
+                                                                $("#example1").dataTable();
+                                                                $('#example2').dataTable({
+                                                                    "bPaginate": true,
+                                                                    "bLengthChange": false,
+                                                                    "bFilter": true,
+                                                                    "bSort": true,
+                                                                    "bInfo": true,
+                                                                    "bAutoWidth": false
 
-
+                                                                });
                                                             });
-                                                        });
-                                                        //waktu flash data 
-                                                        $(function () {
-                                                            $('#pesan-flash').delay(4000).fadeOut();
-                                                            $('#pesan-error-flash').delay(5000).fadeOut();
-                                                        });
+                                                            //waktu flash data 
+                                                            $(function () {
+                                                                $('#pesan-flash').delay(4000).fadeOut();
+                                                                $('#pesan-error-flash').delay(5000).fadeOut();
+                                                            });
         </script>
     </body>
 </html>

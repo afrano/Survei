@@ -156,9 +156,31 @@
                                             <?php } ?>
                                         </tbody>
                                     </table>
-                                    <div class>
-                                        <a href="<?php echo base_url('Data/export_excel') ?>"/> <button type="text" class="btn btn-primary btn-block btn-flat fa fa-download"> Export  to Excel</button></a>
-                                    </div>   
+                                    
+                                    <form  role="form" action="<?php echo base_url(); ?>Data/export_excel" method="POST" enctype="multipart/form-data">
+                                        <table id="example1" class="table table-bordered table-striped">
+                                            <div class="col-lg-6">
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">                                                    
+                                                        <select name="semester" class="form-control" required="">
+                                                            <option value="">Pilih Periode</option>
+                                                            <option value="all">All</option>
+                                                            <option value="S1">S1</option>
+                                                            <option value="S2">S2</option>
+                                                        </select> 
+                                                    </div>
+                                                    <div class>
+                                                        <button type="submit" class="btn btn-primary btn-block btn-flat"><i class="fa fa-download"></i>&nbsp;  Export to Excel</button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <input type="number" min="2015" class="form-control" value="" id="" name="tahun" placeholder="Pilih Tahun Survei" required="">                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </table>
+                                    </form>
                                 </div>
                             </div>
                         </div>

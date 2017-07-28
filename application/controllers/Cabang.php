@@ -116,4 +116,24 @@ class Cabang extends CI_Controller {
         }
     }
 
+    public function Inputsales() {
+        if ($this->session->userdata('level') == '2') {
+            $id_sales = $_POST['id_sales'];
+            $nama_sales = $_POST['nama_sales'];
+            $data = array(
+                'id_sales' => $id_sales,
+                'nama_sales' => $nama_sales,
+            );
+            if ($result = $this->model->Simpan('cabang', $data)) {
+                $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Data Tersimpan</strong></div>");
+                header('location:' . base_url() . 'Cabang/cabang');
+            } else {
+                $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Gagal Menyimpan Data</strong></div>");
+                header('location:' . base_url() . 'Survei/cabang');
+            }
+        } else {
+            redirect(base_url() . 'login');
+        }
+    }
+
 }

@@ -73,7 +73,17 @@ class Model extends CI_Model {
     }
 
     public function GetHasilNasional() {
-        $data = $this->db->query('SELECT s.*,h.*, o.* from sales s, hasilsurvei h, outlet o where s.id_sales = h.id_sales and h.id_outlet = o.id_outlet and status = 1');
+        $data = $this->db->query('SELECT s.*,h.*, o.* from sales s, hasilsurvei h, outlet o where s.id_sales = h.id_sales and h.id_outlet = o.id_outlet and status = 1 ');
+        return $data;
+    }
+
+    public function Export($semester, $tahun) {
+        $data = $this->db->query('SELECT s.*,h.*, o.* from sales s, hasilsurvei h, outlet o where s.id_sales = h.id_sales and h.id_outlet = o.id_outlet and status = 1 and h.semester = "' . $semester . '" and h.tahun = "' . $tahun . '"');
+        return $data;
+    }
+
+    public function ExportCabang($ID, $semester, $tahun) {
+        $data = $this->db->query('SELECT s.*,h.*, o.*, c.* from sales s, hasilsurvei h, outlet o, cabang c where s.id_sales = h.id_sales and h.id_outlet = o.id_outlet and status = 1 and c.id_cabang = o.id_cabang and o.id_cabang = "' . $ID . '" and h.semester = "' . $semester . '" and h.tahun = "' . $tahun . '"');
         return $data;
     }
 
