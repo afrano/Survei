@@ -13,7 +13,7 @@
                     <li class="active"><?php echo anchor('index.php', '<b>Home</b>') ?></li>
                     <li><?php echo anchor('http://www.enseval.com/tentang-kami/tata-kelola-perusahaan/struktur/', '<b>About Us</b>') ?></li>
                     <li><?php echo anchor('login', '<b>Login</b>') ?></li>
-                    <li><a href="<?php echo base_url(); ?>Aktivasi"><b>Aktivasi</b></a><li>
+                    <li><a href="<?php echo base_url(); ?>site/Aktivasi"><b>Aktivasi</b></a><li>
                 </ul>   					
             </div>
         </div>			

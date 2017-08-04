@@ -26,7 +26,7 @@
                                         <center><div class="alert-warning"><h4><b> <br>Data Belum Terverifikasi</b></h4> <br> </div> </center><br>
                                         <tr>
                                             <th>NO</th>
-                                            <th>Outlet</th>
+                                            <th>Nama Outlet</th>
                                             <th>Alamat</th>
                                             <th>Telpon</th>
                                             <th>Channel</th>                                            
@@ -48,21 +48,22 @@
                                                     <td><font color="red"><?php echo $row['channel']; ?></td>                                                    
                                                     <td><font color="red"><?php echo $row['nama_sales']; ?></font></td>
                                                     <td>
+                                                        <a class="btn btn-warning btn-sm" href="<?php echo base_url(); ?>Data/Detail/<?php echo $row['id_hasil']; ?>"><i class="fa fa-eye"></i></a>
                                                         <a class="btn btn-primary btn-sm" href="<?php echo base_url(); ?>Cabang/Verifikasi/<?php echo $row['id_hasil']; ?>"><i class="fa fa-send"></i></a>
                                                         <a onclick="return confirm('Hapus data survei??');" class="btn btn-danger btn-sm" href="<?php echo base_url(); ?>Cabang/Hapus/<?php echo $row['id_hasil']; ?>"><i class="fa fa-trash"></i></a>
                                                     </td>
                                                 </tr>
-                                            <?php } ?>
+                                            <?php }?>
                                         </tbody>
                                     </table> <table id="example2" class="table table-bordered table-striped">
                                         <thead>
                                         <center><div class="alert-info"><br><h4><b>Data Telah Terverifikasi</b></h4><br></div></center><br>
                                         <tr>
                                             <th>NO</th>
-                                            <th>Outlet</th>
-                                            <th>Alamat</th>
-                                            <th>Telpon</th>
+                                            <th>Nama Outlet</th>
                                             <th>Channel</th>
+                                            <th>Telpon</th>
+                                            <th>Komentar</th>
                                             <th>Nama Sales</th>
                                         </tr>
                                         </thead>
@@ -75,9 +76,9 @@
                                                 <tr>
                                                     <td><?php echo $no; ?></td>    
                                                     <td><?php echo $row1['nama_outlet']; ?></td>
-                                                    <td><?php echo $row1['alamat']; ?></td>
+                                                    <td><?php echo $row1['channel']; ?></td>
                                                     <td><?php echo $row1['Telpon']; ?></td>
-                                                    <td><?php echo $row1['channel']; ?></td>                                                    
+                                                    <td><?php echo $row1['komentar']; ?></td>                                                    
                                                     <td><?php echo $row1['nama_sales']; ?></td>
                                                 </tr>
                                             <?php } ?>

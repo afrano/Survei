@@ -45,6 +45,7 @@ class Survei extends CI_Controller {
 
     public function SaveSurvei() {
         $id_outlet = $_POST['id_outlet'];
+        $id_sales = $_POST['id_sales'];
         $id_hasil = '';
         $id_cabang = $_POST['cabang_outlet'];
         $komentar = $_POST['komentar'];
@@ -98,6 +99,7 @@ class Survei extends CI_Controller {
         $data = array(
             'id_hasil' => $id_hasil,
             'tahun' => $tahun_survei,
+            'id_sales' => $id_sales,
             'semester' => $semester,
             'id_outlet' => $id_outlet,
             'komentar' => $komentar,

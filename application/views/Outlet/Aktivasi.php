@@ -18,7 +18,7 @@
                         <li ><?php echo anchor('index.php', '<b>Home</b>') ?></li>
                         <li><?php echo anchor('http://www.enseval.com/tentang-kami/tata-kelola-perusahaan/struktur/', '<b>About Us</b>') ?></li>
                         <li><?php echo anchor('login', '<b>Login</b>') ?></li>
-                        <li class="active"><a href="<?php echo base_url(); ?>Aktivasi"><b>Aktivasi</b></a><li>
+                        <li class="active"><a href="<?php echo base_url(); ?>site/Aktivasi"><b>Aktivasi</b></a><li>
                     </ul>   					
                 </div>
             </div>			
@@ -26,7 +26,7 @@
     </header>
     <body class="skin-green">
         <section class="content">
-            <form  role="form" action="<?php echo base_url(); ?>Aktivasi/SaveData" method="POST" enctype="multipart/form-data">
+            <form  role="form" action="<?php echo base_url(); ?>site/SaveData" method="POST" enctype="multipart/form-data">
                 <div class="box">
                     <span id="pesan-flash"><?php echo $this->session->flashdata('sukses'); ?></span>
                     <span id="pesan-error-flash"><?php echo $this->session->flashdata('alert'); ?></span>

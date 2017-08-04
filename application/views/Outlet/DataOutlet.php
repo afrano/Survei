@@ -19,7 +19,7 @@
                     <div class="box">
                         <div class="box-title">
                         </div>
-                       <div class="box-header">
+                        <div class="box-header">
                             <i class="fa fa-database"></i>
                             <h3 class="box-title">Detail Data Outlet</h3>
                         </div>

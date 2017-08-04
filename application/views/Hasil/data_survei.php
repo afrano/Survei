@@ -149,7 +149,7 @@
                                                     <td><?php echo $row['K19']; ?></td>
                                                     <td><?php echo $row['K20']; ?></td>
                                                     <td>
-                                                        <a class="btn btn-warning btn-sm" href="<?php echo base_url(); ?>Data/Edit/<?php echo $row['id_hasil']; ?>"><i class="fa fa-pencil"></i></a>
+                                                        <a class="btn btn-warning btn-sm" href="<?php echo base_url(); ?>Data/Detail/<?php echo $row['id_hasil']; ?>"><i class="fa fa-eye"></i></a>
                                                         <a onclick="return confirm('Hapus data??');" class="btn btn-danger btn-sm" href="<?php echo base_url(); ?>Data/Hapus/<?php echo $row['id_hasil']; ?>"><i class="fa fa-trash"></i></a>
                                                     </td>
                                                 </tr>

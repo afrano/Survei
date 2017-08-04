@@ -62,8 +62,8 @@
                                                     <tr>
                                                         <th>NO</th>
                                                         <th>Pertanyaan</th>
-                                                        <th>Kepentingan</th>
                                                         <th>Kepuasan</th>
+                                                        <th>Kepentingan</th>
                                                     </tr>
                                                 </thead>
 

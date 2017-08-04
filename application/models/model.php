@@ -62,6 +62,7 @@ class Model extends CI_Model {
         return $data;
     }
 
+// masukan and ke where
     public function GetSurveiOutlet($where) {
         $data = $this->db->query('SELECT s.*,h.*, o.*, c.* from sales s, hasilsurvei h, outlet o, cabang c where s.id_sales = h.id_sales and h.id_outlet = o.id_outlet and status = 0 and c.id_cabang = o.id_cabang and o.id_cabang = "' . $where . '" ');
         return $data;
@@ -93,9 +94,9 @@ class Model extends CI_Model {
         return $data;
     }
 
-    public function GetEdit($where = "") {
-        $data = $this->db->query(' SELECT h.*, q.nama_outlet, q.channel,q.id_outlet, c.id_cabang, q.alamat,q.telpon,p.semester
-                                FROM hasilsurvei h, outlet q, cabang c ' . $where);
+    public function GetDetail($where = "") {
+        $data = $this->db->query(' SELECT h.*, q.*, c.*, s.*
+                                FROM hasilsurvei h, outlet q, cabang c, sales s ' . $where . 'and h.id_sales = s.id_sales');
         return $data;
     }
 

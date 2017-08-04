@@ -29,18 +29,21 @@ class Data extends CI_Controller {
         }
     }
 
-    function Edit($kode = 0) {
-        $data_hasil = $this->model->GetEdit("where h.id_hasil = '$kode'")->result_array();
+    function Detail($kode = 0) {
+        $data_hasil = $this->model->GetDetail("where h.id_hasil = '$kode'")->result_array();
         $data = array(
             'nama' => $this->session->userdata('nama'),
             'id_outlet' => $data_hasil[0]['id_outlet'],
             'id_cabang' => $data_hasil[0]['id_cabang'],
+            'id_hasil' => $data_hasil[0]['id_hasil'],
+            'nama_sales' => $data_hasil[0]['nama_sales'],
             'nama_outlet' => $data_hasil[0]['nama_outlet'],
             'tahun_survei' => $data_hasil[0]['tahun'],
             'channel' => $data_hasil[0]['channel'],
             'semester' => $data_hasil[0]['semester'],
             'alamat' => $data_hasil[0]['alamat'],
-            'telpon' => $data_hasil[0]['telpon'],
+            'telpon' => $data_hasil[0]['Telpon'],
+            'komentar' => $data_hasil[0]['komentar'],
             'kepuasan1' => $data_hasil[0]['Q01'],
             'kepuasan2' => $data_hasil[0]['Q02'],
             'kepuasan3' => $data_hasil[0]['Q03'],
@@ -82,7 +85,13 @@ class Data extends CI_Controller {
             'kepentingan19' => $data_hasil[0]['K19'],
             'kepentingan20' => $data_hasil[0]['K20'],
         );
-        $this->load->view('Outlet/FormEdit', $data);
+        if ($this->session->userdata('level') == '1') {
+            $this->load->view('Outlet/Detailpusat', $data);
+        } else if ($this->session->userdata('level') == '2') {
+            $this->load->view('Outlet/Detailhasil', $data);
+        } else {
+            redirect(base_url() . 'login');
+        }
     }
 
     public function export_excel() {

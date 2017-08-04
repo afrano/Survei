@@ -120,13 +120,16 @@
                                                     <tr>
                                                         <td>Pertanyaan 1</td>
                                                         <?php
+                                                        $data = 0;
+                                                        $point = 0;
                                                         foreach ($rekap_data as $row) {
                                                             ?>
                                                             <td><?php echo $row['q01']; ?></td>
-                                                        <?php } ?>
-                                                        <td>Nilainya</td>
-                                                        <td>POIN</td>
-
+                                                            <?php $data = $data + $row['q01'];
+                                                        }
+                                                        ?>
+                                                        <td><?php echo $data ?></td>
+                                                        <td><?php $point = $data ?></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Pertanyaan 2</td>
@@ -683,7 +686,7 @@
                 </section>
             </div>
         </div>
-        <?php $this->load->view('inc/footer'); ?>
+<?php $this->load->view('inc/footer'); ?>
         <script src="<?php echo base_url(); ?>assets/dist/datatables/jquery.dataTables.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>assets/dist/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
     </body>

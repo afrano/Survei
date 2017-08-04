@@ -32,7 +32,6 @@ class M_login extends CI_Model {
                 $c = '";s:1:"';
                 $sql = "SELECT * FROM ci_sessions WHERE user_data LIKE '%id_user" . $c . $id_user . "%'";
                 $cek = $this->db->query($sql)->num_rows();
-                // if($cek==0){
 
                 $this->session->set_userdata('id_user', $id_user);
                 $this->session->set_userdata('nama', $nama);
@@ -63,7 +62,6 @@ class M_login extends CI_Model {
                     $this->session->set_userdata('enjinering', $id_user);
                     redirect(base_url() . "enjinering");
                 }
-
             } else {
                 $info = '<div style="color:red">AKUN YANG ANDA GUNAKAN BELUM DI VERIFIKASI ADMIN</div>';
                 $this->session->set_userdata('info', $info);
@@ -142,7 +140,6 @@ class M_login extends CI_Model {
                     $this->session->set_userdata('enjinering', $id_user);
                     redirect(base_url() . "enjinering");
                 }
-
             } else {
                 $info = '<div style="color:red">AKUN YANG ANDA GUNAKAN BELUM DI VERIFIKASI ADMIN</div>';
                 $this->session->set_userdata('info', $info);

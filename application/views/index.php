@@ -14,10 +14,7 @@
                         <font color="#008000">
                         <h3>
                             <b>                                
-                                <?php
-                                $this->load->view('inc/time');
-                                ?>
-                                <?php echo $nama; ?>, Selamat Datang  di Web Pengolahan Data Survei</b>
+                               Home Pengumpulan data survei
                             <br>
                             <br><br>
                         </h3
