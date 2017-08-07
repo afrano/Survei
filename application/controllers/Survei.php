@@ -20,6 +20,7 @@ class Survei extends CI_Controller {
 
         $data = array(
             'nama' => $this->session->userdata('nama'),
+            'data_survei' => $this->model->GetPertanyaan()->result_array(),
         );
         $this->load->view('Outlet/FormInput', $data);
     }

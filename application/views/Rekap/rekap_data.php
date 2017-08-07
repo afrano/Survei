@@ -125,7 +125,8 @@
                                                         foreach ($rekap_data as $row) {
                                                             ?>
                                                             <td><?php echo $row['q01']; ?></td>
-                                                            <?php $data = $data + $row['q01'];
+                                                            <?php
+                                                            $data = $data + $row['q01'];
                                                         }
                                                         ?>
                                                         <td><?php echo $data ?></td>

@@ -1,4 +1,4 @@
-<html>
+<!--<html>
     <head>
         <link href="<?php echo base_url(); ?>assets/dist/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
         <?php $this->load->view('inc/head'); ?>
@@ -629,4 +629,4 @@
             $('#pesan-error-flash').delay(5000).fadeOut();
         });
     </script>
-</html>
+</html>-->

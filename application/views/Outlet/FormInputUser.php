@@ -71,14 +71,14 @@
                                                     <tr>
                                                         <td><i class="fa fa-archive"></i></td>
                                                         <td><b>PEMESANAN BARANG MELALUI SALESMAN</b></td>
-                                                        <td>   
+                                                        <td> 
                                                         </td>
                                                         <td>                                                                                               
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>1</td>
-                                                        <td>Ketepatan Waktu  kunjungan Salesman mengambil Order</td>
+                                                        <td> <?php echo $pertanyaan1; ?></td>
                                                         <td>
                                                             <div class="form-group" >
                                                                 <input type="radio" name="kepuasan1" value="1"> 1 &emsp14; 
@@ -100,7 +100,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>2</td>
-                                                        <td>Salesman Penampilan Rapih  </td>
+                                                        <td><?php echo $pertanyaan2; ?> </td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan2" value="1"> 1 &emsp14; 
@@ -122,7 +122,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>3</td>
-                                                        <td>Pengetahuan Salesman mengenai Produk</td>
+                                                        <td><?php echo $pertanyaan3; ?></td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan3" value="1"> 1 &emsp14; 
@@ -145,7 +145,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>4</td>
-                                                        <td>Ketanggapan Salesman dalam membantu menyelesaikan Keluhan</td>
+                                                        <td><?php echo $pertanyaan4; ?></td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan4" value="1"> 1 &emsp14; 
@@ -175,7 +175,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>5</td>
-                                                        <td>Kesediaan Salesman dalam membantu penyelesaian proses Retur barang</td>
+                                                        <td><?php echo $pertanyaan5; ?></td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan5" value="1"> 1 &emsp14; 
@@ -197,7 +197,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>6</td>
-                                                        <td>Kecepatan pelayanan Retur Barang ( Tidak lebih dari 7 hari)</td>
+                                                        <td><?php echo $pertanyaan6; ?></td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan6" value="1"> 1 &emsp14; 
@@ -228,7 +228,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>7</td>
-                                                        <td>Penampilan Pengirim Barang</td>
+                                                        <td><?php echo $pertanyaan7; ?></td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan7" value="1"> 1 &emsp14; 
@@ -250,7 +250,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>8</td>
-                                                        <td>Kesesuaian antara pesanan dengan barang yang dikirim</td>
+                                                        <td><?php echo $pertanyaan8; ?></td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan8" value="1"> 1 &emsp14; 
@@ -273,7 +273,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>9</td>
-                                                        <td>Kesesuaian Pengiriman Produk Suhu Khusus dengan CDOB</td>
+                                                        <td><?php echo $pertanyaan9; ?></td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan9" value="1"> 1 &emsp14; 
@@ -295,7 +295,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>10</td>
-                                                        <td>Ketepatan waktu dalam pengiriman barang Sesuai dengan Janji</td>
+                                                        <td><?php echo $pertanyaan10; ?></td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan10" value="1"> 1 &emsp14; 
@@ -318,7 +318,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>11</td>
-                                                        <td>Kejelasan dokumen Pengiriman</td>
+                                                        <td><?php echo $pertanyaan11; ?></td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan11" value="1"> 1 &emsp14; 
@@ -349,7 +349,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>12</td>
-                                                        <td>Penampilan Penagih</td>
+                                                        <td><?php echo $pertanyaan12; ?></td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan12" value="1"> 1 &emsp14; 
@@ -371,7 +371,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>13</td>
-                                                        <td>Ketepatan waktu kunjungan Penagih</td>
+                                                        <td><?php echo $pertanyaan13; ?></td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan13" value="1"> 1 &emsp14; 
@@ -394,7 +394,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>14</td>
-                                                        <td>Kelengkapan dokumen Penagihan</td>
+                                                        <td><?php echo $pertanyaan14; ?></td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan14" value="1"> 1 &emsp14; 
@@ -425,7 +425,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>15</td>
-                                                        <td>Kemudahan untuk menghubungi nomor Telepon Enseval Customer Care (ECC)</td>
+                                                        <td><?php echo $pertanyaan15; ?></td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan15" value="1"> 1 &emsp14; 
@@ -448,7 +448,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>16</td>
-                                                        <td>Kecepatan petugas  ECC dalam penerimaan Telepon (Tidak lebih dari 3 Kali dering)</td>
+                                                        <td><?php echo $pertanyaan16; ?></td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan16" value="1"> 1 &emsp14; 
@@ -471,7 +471,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>17</td>
-                                                        <td>Keramahan Petugas ECC pada saat terima Telepon </td>
+                                                        <td><?php echo $pertanyaan17; ?></td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan17" value="1"> 1 &emsp14; 
@@ -493,7 +493,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>18</td>
-                                                        <td>Pemahaman/Pengetahuan mengenal Produk oleh Petugas ECC</td>
+                                                        <td><?php echo $pertanyaan18; ?></td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan18" value="1"> 1 &emsp14; 
@@ -515,7 +515,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>19</td>
-                                                        <td>Ketanggapan Petugas ECC Menerima keluhan Pelanggan</td>
+                                                        <td><?php echo $pertanyaan19; ?></td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan19" value="1"> 1 &emsp14; 
@@ -538,7 +538,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>20</td>
-                                                        <td>Kecepatan Petugas ECC dalam memberi informasi dan memfollow up keluhan Pelanggan</td>
+                                                        <td><?php echo $pertanyaan20; ?></td>
                                                         <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan20" value="1"> 1 &emsp14; 
@@ -590,24 +590,24 @@
 
                             </div>
                         </div>
-                        
-<!--                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="col1">Header 1</th>
-                                    <th class="col2">Header 2</th>
-                                    <th class="col3">Header 3</th>
-                                </tr>
-                            </thead>
-                            <tr><td>Column1</td><td>Column2</td><td>Column3</td></tr>
-                            <tr><td>Column1</td><td>Column2</td><td>Column3</td></tr>
-                            <tr><td>Column1</td><td>Column2</td><td>Column3</td></tr>
-                            <tr><td>Column1</td><td>Column2</td><td>Column3</td></tr>
-                        </table>
 
-                        <input type="button" name="col1"  /> PEMESANAN BARANG MELALUI SALESMAN <br />
-                        <input type="button" name="col2"  /> PENANGANAN RETUR BARANG<br />
-                        <input type="button" name="col3"  /> PENGIRIMAN BARANG<br />-->
+<!--                        <table>
+    <thead>
+        <tr>
+            <th class="col1">Header 1</th>
+            <th class="col2">Header 2</th>
+            <th class="col3">Header 3</th>
+        </tr>
+    </thead>
+    <tr><td>Column1</td><td>Column2</td><td>Column3</td></tr>
+    <tr><td>Column1</td><td>Column2</td><td>Column3</td></tr>
+    <tr><td>Column1</td><td>Column2</td><td>Column3</td></tr>
+    <tr><td>Column1</td><td>Column2</td><td>Column3</td></tr>
+</table>
+
+<input type="button" name="col1"  /> PEMESANAN BARANG MELALUI SALESMAN <br />
+<input type="button" name="col2"  /> PENANGANAN RETUR BARANG<br />
+<input type="button" name="col3"  /> PENGIRIMAN BARANG<br />-->
 
                     </form>
                 </section>

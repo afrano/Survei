@@ -18,10 +18,87 @@ class Model extends CI_Model {
     }
 
     // ambil pertanyaan dari database
-    public function GetPertanyaan() {
-        $data = $this->db->query('SELECT * FROM `kuesioner` WHERE id_pertanyaan = "Q01"');
+    public function GetPertanyaan1() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "1"');
         return $data;
     }
+    public function GetPertanyaan2() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "2"');
+        return $data;
+    }
+    public function GetPertanyaan3() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "3"');
+        return $data;
+    }
+    public function GetPertanyaan4() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "4"');
+        return $data;
+    }
+    public function GetPertanyaan5() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "5"');
+        return $data;
+    }
+    public function GetPertanyaan6() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "6"');
+        return $data;
+    }
+    public function GetPertanyaan7() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "7"');
+        return $data;
+    }
+    public function GetPertanyaan8() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "8"');
+        return $data;
+    }
+    public function GetPertanyaan9() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "9"');
+        return $data;
+    }
+    public function GetPertanyaan10() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "10"');
+        return $data;
+    }
+    public function GetPertanyaan11() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "11"');
+        return $data;
+    }
+    public function GetPertanyaan12() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "12"');
+        return $data;
+    }
+    public function GetPertanyaan13() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "13"');
+        return $data;
+    }
+    public function GetPertanyaan14() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "14"');
+        return $data;
+    }
+    public function GetPertanyaan15() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "15"');
+        return $data;
+    }
+    public function GetPertanyaan16() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "16"');
+        return $data;
+    }
+    public function GetPertanyaan17() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "17"');
+        return $data;
+    }
+    public function GetPertanyaan18() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "18"');
+        return $data;
+    }
+    public function GetPertanyaan19() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "19"');
+        return $data;
+    }
+    public function GetPertanyaan20() {
+        $data = $this->db->query('SELECT * FROM `quesioner` WHERE id_quesioner = "20"');
+        return $data;
+    }
+    
 
     public function GetHitungOutlet() {
         $data = $this->db->query('select d.channel, count(*) as jumlah from data_outlet d, hasilsurvei h where h.id_outlet = d.id_outlet and d.tahun_survei = "2017" and Semester = "S1"');
