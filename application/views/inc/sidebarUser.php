@@ -10,7 +10,7 @@
     <ul class="sidebar-menu">
         <li class="header ">MENU</li>
         <li>
-            <a href="<?php echo base_url(); ?>Outlet">
+            <a href="<?php echo base_url(); ?>Survei/Pertanyaan">
                 <i class="fa fa-circle-o"></i> <span>Input Kuesioner</span> 
             </a>
         </li>

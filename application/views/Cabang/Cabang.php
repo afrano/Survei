@@ -53,7 +53,7 @@
                                                         <a onclick="return confirm('Hapus data survei??');" class="btn btn-danger btn-sm" href="<?php echo base_url(); ?>Cabang/Hapus/<?php echo $row['id_hasil']; ?>"><i class="fa fa-trash"></i></a>
                                                     </td>
                                                 </tr>
-                                            <?php }?>
+                                            <?php } ?>
                                         </tbody>
                                     </table> <table id="example2" class="table table-bordered table-striped">
                                         <thead>
@@ -93,9 +93,9 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">                                                    
                                                         <select name="semester" class="form-control" required="">
-                                                            <option value="">Pilih Periode</option>
-                                                            <option value="all">All</option>
-                                                            <option  value="S1">S1</option>
+                                                            <option value="" >Pilih Periode</option>
+                                                            <option value="all" >All</option>
+                                                            <option  value="S1" >S1</option>
                                                             <option value="S2">S2</option>
                                                         </select> 
                                                     </div>
@@ -105,7 +105,7 @@
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <p> <input type="number" min="2015" class="form-control" value="" id="" name="tahun" placeholder="Pilih Tahun Survei" required="">          </p>               
+                                                        <p> <input type="number" min="2015" class="form-control" id="tahun" value=""  name="tahun" placeholder="Pilih Tahun Survei" required="">          </p>               
                                                     </div>
                                                 </div>
                                             </div>
@@ -125,23 +125,23 @@
         <script src="<?php echo base_url(); ?>assets/dist/datatables/jquery.dataTables.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>assets/dist/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
         <script type="text/javascript">
-                                                            $(function () {
-                                                                $("#example1").dataTable();
-                                                                $('#example2').dataTable({
-                                                                    "bPaginate": true,
-                                                                    "bLengthChange": false,
-                                                                    "bFilter": true,
-                                                                    "bSort": true,
-                                                                    "bInfo": true,
-                                                                    "bAutoWidth": false
+                                                        $(function () {
+                                                            $("#example1").dataTable();
+                                                            $('#example2').dataTable({
+                                                                "bPaginate": true,
+                                                                "bLengthChange": false,
+                                                                "bFilter": true,
+                                                                "bSort": true,
+                                                                "bInfo": true,
+                                                                "bAutoWidth": false
 
-                                                                });
                                                             });
-                                                            //waktu flash data 
-                                                            $(function () {
-                                                                $('#pesan-flash').delay(4000).fadeOut();
-                                                                $('#pesan-error-flash').delay(5000).fadeOut();
-                                                            });
+                                                        });
+                                                        //waktu flash data 
+                                                        $(function () {
+                                                            $('#pesan-flash').delay(4000).fadeOut();
+                                                            $('#pesan-error-flash').delay(5000).fadeOut();
+                                                        });
         </script>
     </body>
 </html>

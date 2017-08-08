@@ -17,12 +17,42 @@ class Survei extends CI_Controller {
     }
 
     public function index() {
+        
+    }
 
+    function Pertanyaan() {
+        $data_hasil = $this->model->GetPertanyaan()->result_array();
         $data = array(
+            'id_user' => $this->session->userdata('id_user'),
             'nama' => $this->session->userdata('nama'),
-            'data_survei' => $this->model->GetPertanyaan()->result_array(),
+            'pertanyaan1' => $data_hasil[0]['pertanyaan'],
+            'pertanyaan2' => $data_hasil[1]['pertanyaan'],
+            'pertanyaan3' => $data_hasil[2]['pertanyaan'],
+            'pertanyaan4' => $data_hasil[3]['pertanyaan'],
+            'pertanyaan5' => $data_hasil[4]['pertanyaan'],
+            'pertanyaan6' => $data_hasil[5]['pertanyaan'],
+            'pertanyaan7' => $data_hasil[6]['pertanyaan'],
+            'pertanyaan8' => $data_hasil[7]['pertanyaan'],
+            'pertanyaan9' => $data_hasil[8]['pertanyaan'],
+            'pertanyaan10' => $data_hasil[9]['pertanyaan'],
+            'pertanyaan11' => $data_hasil[10]['pertanyaan'],
+            'pertanyaan12' => $data_hasil[11]['pertanyaan'],
+            'pertanyaan13' => $data_hasil[12]['pertanyaan'],
+            'pertanyaan14' => $data_hasil[13]['pertanyaan'],
+            'pertanyaan15' => $data_hasil[14]['pertanyaan'],
+            'pertanyaan16' => $data_hasil[15]['pertanyaan'],
+            'pertanyaan17' => $data_hasil[16]['pertanyaan'],
+            'pertanyaan18' => $data_hasil[17]['pertanyaan'],
+            'pertanyaan19' => $data_hasil[18]['pertanyaan'],
+            'pertanyaan20' => $data_hasil[19]['pertanyaan'],
         );
-        $this->load->view('Outlet/FormInput', $data);
+        if ($this->session->userdata('level') == '1') {
+            $this->load->view('Pertanyaan/EditPertanyaan', $data);
+        } else if ($this->session->userdata('level') == '3') {
+            $this->load->view('Pertanyaan/Pertanyaan', $data);
+        } else {
+            redirect(base_url() . 'login');
+        }
     }
 
     public function Draft() {
@@ -31,17 +61,6 @@ class Survei extends CI_Controller {
             'data_survei' => $this->model->Getdatasurvei()->result_array(),
         );
         $this->load->view('Hasil/Draft', $data);
-    }
-
-    public function Cabang() {
-        $data = array(
-            'nama' => $this->session->userdata('nama'),
-        );
-        if ($this->session->userdata('level') == '1') {
-            $this->load->view('Cabang/InputCabang', $data);
-        } else {
-            redirect(base_url() . 'login');
-        }
     }
 
     public function SaveSurvei() {
@@ -153,6 +172,21 @@ class Survei extends CI_Controller {
         } else {
             $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Simpan data GAGAL di lakukan</strong></div>");
             header('location:' . base_url() . 'Outlet');
+        }
+    }
+
+    function updatePertanyaan() {
+        $data = array(
+            'id_Quesioner' => $this->input->post('id_Quesioner'),
+            'pertanyaan' => $this->input->post('pertanyaan'),
+        );
+        $result = $this->model->UpdatePertanyaan($data);
+        if ($result >= 0) {
+            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Data Berhasil Diupdate</strong></div>");
+            header('location:' . base_url() . 'Survei/Pertanyaan');
+        } else {
+            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Data Gagal Diupdate</strong></div>");
+            header('location:' . base_url() . 'Survei/Pertanyaan');
         }
     }
 

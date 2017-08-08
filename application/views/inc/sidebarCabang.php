@@ -15,7 +15,7 @@
             </a>
         </li>
         <li>
-            <a href="<?php echo base_url(); ?>Outlet">
+            <a href="<?php echo base_url(); ?>Cabang/InputSales">
                 <i class="fa fa-circle-o"></i> <span>Input Data Sales</span> 
             </a>
         </li>

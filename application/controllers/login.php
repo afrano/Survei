@@ -51,7 +51,7 @@ class Login extends CI_Controller {
                 redirect(base_url());
             } else if ($this->session->userdata('level') == '3') {
                 $this->session->set_userdata('useradmin', $sess_data);
-                redirect(base_url() . "Outlet");
+                redirect(base_url() . "Survei/Pertanyaan");
                 $this->session->set_userdata('Web_Survei', $sess_data);
                 redirect(base_url());
             }

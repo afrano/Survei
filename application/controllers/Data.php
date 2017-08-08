@@ -126,7 +126,6 @@ class Data extends CI_Controller {
     }
 
     function updatedata() {
-
         $outlet = array(
             'id_outlet' => $this->input->post('id_outlet'),
             'nama_outlet' => $this->input->post('nama_outlet'),

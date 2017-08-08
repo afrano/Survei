@@ -30,6 +30,30 @@ class Cabang extends CI_Controller {
         }
     }
 
+    public function InputCabang() {
+        $data = array(
+            'nama' => $this->session->userdata('nama'),
+        );
+        if ($this->session->userdata('level') == '1') {
+            $this->load->view('Cabang/InputCabang', $data);
+        } else {
+            redirect(base_url() . 'login');
+        }
+    }
+
+    public function Inputsales() {
+        $data = array(
+            'nama' => $this->session->userdata('nama'),
+            'id_user' => $this->session->userdata('id_user'),
+            'listSales' => $this->model->GetSales($where = $this->session->userdata('id_user'))->result_array(),
+        );
+        if ($this->session->userdata('level') == '2') {
+            $this->load->view('Cabang/InputSales', $data);
+        } else {
+            redirect(base_url() . 'login');
+        }
+    }
+
     function updatedata() {
 
         $outlet = array(
@@ -81,6 +105,18 @@ class Cabang extends CI_Controller {
         }
     }
 
+    function HapusSales($kode = 1) {
+
+        $result = $this->model->Hapus('sales', array('id_sales' => $kode));
+        if ($result == 1) {
+            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Data Berhasil Ditolak</strong></div>");
+            header('location:' . base_url() . 'Cabang/InputSales');
+        } else {
+            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Data Berhasil Dihapus</strong></div>");
+            header('location:' . base_url() . 'Cabang/InputSales');
+        }
+    }
+
     public function SaveCabang() {
         $id_cabang = $_POST['id_cabang'];
         $alamat_cabang = $_POST['alamat_cabang'];
@@ -104,6 +140,27 @@ class Cabang extends CI_Controller {
         }
     }
 
+    public function SaveSales() {
+        $nama_sales = $_POST['nama_sales'];
+        $id_sales = $_POST['id_sales'];
+        $id_cabang = $_POST['id_cabang'];
+
+        $data = array(
+            'nama_sales' => $nama_sales,
+            'id_sales' => $id_sales,
+            'id_cabang' => $id_cabang,
+        );
+
+        $result = $this->model->Simpan('sales', $data);
+        if ($result == 1) {
+            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Data Tersimpan</strong></div>");
+            header('location:' . base_url() . 'Cabang/InputSales');
+        } else {
+            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Gagal Menyimpan Data</strong></div>");
+            header('location:' . base_url() . 'Cabang/InputSales');
+        }
+    }
+
     public function ListDataCabang() {
         $data = array(
             'nama' => $this->session->userdata('nama'),
@@ -111,26 +168,6 @@ class Cabang extends CI_Controller {
         );
         if ($this->session->userdata('level') == '1') {
             $this->load->view('Cabang/listdatacabang', $data);
-        } else {
-            redirect(base_url() . 'login');
-        }
-    }
-
-    public function Inputsales() {
-        if ($this->session->userdata('level') == '2') {
-            $id_sales = $_POST['id_sales'];
-            $nama_sales = $_POST['nama_sales'];
-            $data = array(
-                'id_sales' => $id_sales,
-                'nama_sales' => $nama_sales,
-            );
-            if ($result = $this->model->Simpan('cabang', $data)) {
-                $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Data Tersimpan</strong></div>");
-                header('location:' . base_url() . 'Cabang/cabang');
-            } else {
-                $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Gagal Menyimpan Data</strong></div>");
-                header('location:' . base_url() . 'Survei/cabang');
-            }
         } else {
             redirect(base_url() . 'login');
         }
