@@ -32,7 +32,6 @@
                                             <th>Channel</th>
                                             <th>ID Cabang</th>
                                             <th>Regional</th>
-                                            <th>AKSI</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -50,10 +49,6 @@
                                                     <td><?php echo $row['channel']; ?></td>
                                                     <td><?php echo $row['id_cabang']; ?></td>
                                                     <td><?php echo $row['regional']; ?></td>
-                                                    <td>
-                                                        <a class="btn btn-warning btn-sm" href="<?php echo base_url(); ?>Data/Edit/<?php echo $row['id_outlet']; ?>"><i class="fa fa-pencil"></i></a>
-                                                        <a onclick="return confirm('Hapus data??');" class="btn btn-danger btn-sm" href="<?php echo base_url(); ?>Data/Hapus/<?php echo $row['id_outlet']; ?>"><i class="fa fa-trash"></i></a>
-                                                    </td>
                                                 </tr>
                                             <?php } ?>
                                         </tbody>

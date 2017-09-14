@@ -1,4 +1,4 @@
-<html>
+<!--<html>
     <head>
         <link href="<?php echo base_url(); ?>assets/dist/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
         <?php $this->load->view('inc/head'); ?>
@@ -39,6 +39,7 @@
                                                 <h5><b>Bapak/Ibu yang terhormat,</b><br></h5>
                                                 <h5>Terima kasih atas kerjasama selama ini dengan PT.Enseval Putera Megatrading, sebagai upaya peningkatan pelayanan pelanggan, mohon dapat mengisikan pendapat dan komentar Bapak/Ibu pada kolom di bawah ini.
                                                     Berilah nilai terhadap pelayanan kami (berdasarkan pengalaman Anda) sesuai dengan tingkat kepuasan Anda dan bobot Kepentingannya.</h5><font color="Red"><h5>* Catatan : <br> | 1 : Sangat Tidak | 2 : Tidak Puas | 3 : Puas | 4 Sangat Puas</h5></font>
+
                                             </div>
                                             <?php $tahun = getdate(); ?>
                                             <input type="hidden" hidden="" class="form-control" value="<?php echo $tahun['year']; ?>" id="" name="tahun_survei" readonly="" required>
@@ -59,30 +60,25 @@
                                             <table id="example1" class="table table-bordered table-striped">
                                                 <thead>
                                                     <tr>
-                                                        <th width="4%">NO</th>
-                                                        <th width="60%">Pertanyaan</th>
-                                                        <th width="16%">Kepuasan</th>
+                                                        <th>NO</th>
+                                                        <th>Pertanyaan</th>
+                                                        <th>Kepuasan</th>
                                                         <th>Kepentingan</th>
                                                     </tr>
                                                 </thead>
-                                            </table>
-                                            <table id="example1" class="table table-bordered table-striped">
-                                                <div class="alert-success"> <label onclick="if (this.parentNode.parentNode.getElementsByTagName('tbody')['kategori1'].style.display != '') {
-                                                            this.parentNode.parentNode.getElementsByTagName('tbody')['kategori1'].style.display = '';
-                                                            this.parentNode.parentNode.getElementsByTagName('tbody')['hide'].style.display = 'none';
-                                                            this.innerText = '';
-                                                            this.value = 'Sembunyikan';
-                                                        } else {
-                                                            this.parentNode.parentNode.getElementsByTagName('tbody')['kategori1'].style.display = 'none';
-                                                            this.parentNode.parentNode.getElementsByTagName('tbody')['hide'].style.display = '';
-                                                            this.innerText = '';
-                                                            this.value = 'Tampilkan';
-                                                        }" >
-                                                        <font color="white"><b>&nbsp;&nbsp;&nbsp;<i class="fa fa-archive"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;PEMESANAN BARANG MELALUI SALESMAN</b></font></label></div>
-                                                        <tbody id="kategori1" style="display: none">
-                                                <td width="4%">1</td>
-                                                <td width="60%"> <?php echo $pertanyaan1; ?></td>
-                                                <td width="16%">
+                                                <tbody>
+                                                    <tr>
+                                                        <td onclick="TampilKuesioner(0);"><i class="fa fa-archive"></i></td>
+                                                        <td onclick="TampilKuesioner(1);"><b>PEMESANAN BARANG MELALUI SALESMAN</b></td>
+                                                        <td> 
+                                                        </td>
+                                                        <td>                                                                                               
+                                                        </td>
+                                                    </tr>
+                                                <tbody id="show" >
+                                                <td>1</td>
+                                                <td> <?php echo $pertanyaan1; ?></td>
+                                                <td>
                                                     <div class="form-group" >
                                                         <input type="radio" name="kepuasan1" value="1"> 1 &emsp14; 
                                                         <input type="radio" name="kepuasan1" value="2"> 2 &emsp14; 
@@ -100,6 +96,7 @@
                                                         <input type="radio" name="kepentingan1" value="" required="" hidden="">
                                                     </div>
                                                 </td>
+                                                </tr>
                                                 <tr>
                                                     <td>2</td>
                                                     <td><?php echo $pertanyaan2; ?> </td>
@@ -168,25 +165,19 @@
                                                     </td>
                                                 </tr>  
                                                 </tbody>
-                                            </table> 
-                                            <table id="example1" class="table table-bordered table-striped">
-                                                <div class="alert-success">  <label onclick="if (this.parentNode.parentNode.getElementsByTagName('tbody')['kategori2'].style.display != '') {
-                                                            this.parentNode.parentNode.getElementsByTagName('tbody')['kategori2'].style.display = '';
-                                                            this.parentNode.parentNode.getElementsByTagName('tbody')['hide'].style.display = 'none';
-                                                            this.innerText = '';
-                                                            this.value = 'Sembunyikan';
-                                                        } else {
-                                                            this.parentNode.parentNode.getElementsByTagName('tbody')['kategori2'].style.display = 'none';
-                                                            this.parentNode.parentNode.getElementsByTagName('tbody')['hide'].style.display = '';
-                                                            this.innerText = '';
-                                                            this.value = 'Tampilkan';
-                                                        }">
-                                                        <font color="white"><b>&nbsp;&nbsp;&nbsp;<i class="fa fa-refresh"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; PENANGANAN RETUR BARANG</b></font></label></div>
-                                                <tbody id="kategori2" style="display: none">
+                                                <tr>
+                                                    <td onclick="TampilKuesioner2(0);"><i class="fa fa-refresh"></i></td>
+                                                    <td onclick="TampilKuesioner2(1);"><b>PENANGANAN RETUR BARANG</b></td>
+                                                    <td>   
+                                                    </td>
+                                                    <td>                                                                                               
+                                                    </td>
+                                                </tr>
+                                                <tbody id="kategori2" >
                                                     <tr>
-                                                        <td width="4%%">5</td>
-                                                        <td width="60%"><?php echo $pertanyaan5; ?></td>
-                                                        <td width="16%">
+                                                        <td>5</td>
+                                                        <td><?php echo $pertanyaan5; ?></td>
+                                                        <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan5" value="1"> 1 &emsp14; 
                                                                 <input type="radio" name="kepuasan5" value="2"> 2 &emsp14; 
@@ -229,25 +220,19 @@
                                                         </td>
                                                     </tr>
                                                 </tbody>
-                                            </table> 
-                                            <table id="example1" class="table table-bordered table-striped">
-                                                <div class="alert-success">  <label onclick="if (this.parentNode.parentNode.getElementsByTagName('tbody')['kategori3'].style.display != '') {
-                                                            this.parentNode.parentNode.getElementsByTagName('tbody')['kategori3'].style.display = '';
-                                                            this.parentNode.parentNode.getElementsByTagName('tbody')['hide'].style.display = 'none';
-                                                            this.innerText = '';
-                                                            this.value = 'Sembunyikan';
-                                                        } else {
-                                                            this.parentNode.parentNode.getElementsByTagName('tbody')['kategori3'].style.display = 'none';
-                                                            this.parentNode.parentNode.getElementsByTagName('tbody')['hide'].style.display = '';
-                                                            this.innerText = '';
-                                                            this.value = 'Tampilkan';
-                                                        }">
-                                                        <font color="white"><b>&nbsp;&nbsp;&nbsp;<i class="fa fa-send"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;PENGIRIMAN BARANG</b></font></label></div>
-                                                <tbody id="kategori3" style="display: none">
+                                                <tr>
+                                                    <td onclick="TampilKuesioner3(0);"><i class="fa fa-send"></i></td>
+                                                    <td onclick="TampilKuesioner3(1);"><b>PENGIRIMAN BARANG</b></td>
+                                                    <td>   
+                                                    </td>
+                                                    <td>                                                                                               
+                                                    </td>
+                                                </tr>
+                                                <tbody id="Kategori3" >
                                                     <tr>
-                                                        <td width="4%">7</td>
-                                                        <td width="60%"><?php echo $pertanyaan7; ?></td>
-                                                        <td width="16%">
+                                                        <td>7</td>
+                                                        <td><?php echo $pertanyaan7; ?></td>
+                                                        <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan7" value="1"> 1 &emsp14; 
                                                                 <input type="radio" name="kepuasan7" value="2"> 2 &emsp14; 
@@ -353,30 +338,24 @@
                                                                 <input type="radio" name="Kepentingan11" value="3"> 3 &emsp14; 
                                                                 <input type="radio" name="Kepentingan11" value="4"> 4 
                                                                 <input type="radio" name="Kepentingan11" value="" required="" hidden="">
+
                                                             </div>
                                                         </td>
                                                     </tr>
                                                 </tbody>
-                                            </table> 
-                                            <table id="example1" class="table table-bordered table-striped">
-                                                <div class="alert-success">
-                                                    <label onclick="if (this.parentNode.parentNode.getElementsByTagName('tbody')['kategori4'].style.display != '') {
-                                                                this.parentNode.parentNode.getElementsByTagName('tbody')['kategori4'].style.display = '';
-                                                                this.parentNode.parentNode.getElementsByTagName('tbody')['hide'].style.display = 'none';
-                                                                this.innerText = '';
-                                                                this.value = 'Sembunyikan';
-                                                            } else {
-                                                                this.parentNode.parentNode.getElementsByTagName('tbody')['kategori4'].style.display = 'none';
-                                                                this.parentNode.parentNode.getElementsByTagName('tbody')['hide'].style.display = '';
-                                                                this.innerText = '';
-                                                                this.value = 'Tampilkan';
-                                                            }" value="2">
-                                                        <font color="white"><b>&nbsp;&nbsp;&nbsp;<i class="fa fa-refresh"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; PENAGIHAN</b></label></div>
-                                                <tbody id="kategori4" style="display: none">
+                                                <tr>
+                                                    <td onclick="TampilKuesioner4(0);"><i class="fa fa-refresh"></i></td>
+                                                    <td onclick="TampilKuesioner4(1);"><b>PENAGIHAN</b></td>
+                                                    <td>   
+                                                    </td>
+                                                    <td>                                                                                               
+                                                    </td>
+                                                </tr>
+                                                <tbody id="Kategori4" >
                                                     <tr>
-                                                        <td width="4%">12</td>
-                                                        <td width="60%"><?php echo $pertanyaan12; ?></td>
-                                                        <td width="16%">
+                                                        <td>12</td>
+                                                        <td><?php echo $pertanyaan12; ?></td>
+                                                        <td>
                                                             <div class="form-group">
                                                                 <input type="radio" name="kepuasan12" value="1"> 1 &emsp14; 
                                                                 <input type="radio" name="kepuasan12" value="2"> 2 &emsp14; 
@@ -441,26 +420,20 @@
                                                         </td>
                                                     </tr>
                                                 </tbody>
-                                            </table>
-                                            <table id="example1" class="table table-bordered table-striped">
-                                                <div class="alert-success"> <label onclick="if (this.parentNode.parentNode.getElementsByTagName('tbody')['kategori5'].style.display != '') {
-                                                            this.parentNode.parentNode.getElementsByTagName('tbody')['kategori5'].style.display = '';
-                                                            this.parentNode.parentNode.getElementsByTagName('tbody')['hide'].style.display = 'none';
-                                                            this.innerText = '';
-                                                            this.value = 'Sembunyikan';
-                                                        } else {
-                                                            this.parentNode.parentNode.getElementsByTagName('tbody')['kategori5'].style.display = 'none';
-                                                            this.parentNode.parentNode.getElementsByTagName('tbody')['hide'].style.display = '';
-                                                            this.innerText = '';
-                                                            this.value = 'Tampilkan';
-                                                        }" value="2">
-                                                        <font color="white"><b>&nbsp;&nbsp;&nbsp;<i class="fa fa-phone-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; ENSEVAL CUSTOMER CARE ( ECC )</b></label></div>
-                                                <tbody id="kategori5" style="display: none">
+                                                <tr>
+                                                    <td onclick="TampilKuesioner5(0);" ><i class="fa fa-phone-square"></i></td>
+                                                    <td onclick="TampilKuesioner5(1);" ><b>ENSEVAL CUSTOMER CARE ( ECC )</b></td>
+                                                    <td>   
+                                                    </td>
+                                                    <td>                                                                                               
+                                                    </td>
+                                                </tr>
+                                                <tbody id="Kategori5"  >
                                                     <tr>
-                                                        <td width="4%">15</td>
-                                                        <td width="60%"><?php echo $pertanyaan15; ?></td>
-                                                        <td width="16%">
-                                                            <div class="form-group" >
+                                                        <td>15</td>
+                                                        <td><?php echo $pertanyaan15; ?></td>
+                                                        <td>
+                                                            <div class="form-group">
                                                                 <input type="radio" name="kepuasan15" value="1"> 1 &emsp14; 
                                                                 <input type="radio" name="kepuasan15" value="2"> 2 &emsp14; 
                                                                 <input type="radio" name="kepuasan15" value="3"> 3 &emsp14; 
@@ -591,30 +564,31 @@
                                                             </div>                                            
                                                         </td>
                                                     </tr>
-                                                    <tr>
-                                                        <td>21</td>
-                                                        <td>
-                                                            <div class="form-group">
-                                                                <label for="">Tuliskan beberapa hal penting terhadap pelayanan kami :</label>
-                                                                <textarea style="height:90px"  required="" class="form-control" name="komentar" placeholder="Tuliskan kritikan dan saran . . ."></textarea>                
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td> 
-                                                            <div class=""> 
-                                                                <a href="<?php echo base_url(); ?>Outlet" class="btn btn-warning btn-block btn-flat"><i class="fa fa-close"></i> Batal </a>
-                                                                <br>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class>
-                                                                <button type="submit" class="btn btn-primary btn-block btn-flat"><i class="fa fa-save"></i>  Simpan</button>
-                                                            </div>                                               
-                                                        </td>
-                                                    </tr>
+                                                </tbody>
+                                                <tr>
+                                                    <td>21</td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label for="">Tuliskan beberapa hal penting terhadap pelayanan kami :</label>
+                                                            <textarea style="height:90px"  required="" class="form-control" name="komentar" placeholder="Tuliskan kritikan dan saran . . ."></textarea>                
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td> 
+                                                        <div class=""> 
+                                                            <a href="<?php echo base_url(); ?>Outlet" class="btn btn-warning btn-block btn-flat"><i class="fa fa-close"></i> Batal </a>
+                                                            <br>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class>
+                                                            <button type="submit" class="btn btn-primary btn-block btn-flat"><i class="fa fa-save"></i>  Simpan</button>
+                                                        </div>                                               
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                             <br>
@@ -632,9 +606,47 @@
         <script src="<?php echo base_url(); ?>assets/dist/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
     </body>
     <script type="text/javascript">
-                                                    $(function () {
-                                                        $('#pesan-flash').delay(4000).fadeOut();
-                                                        $('#pesan-error-flash').delay(5000).fadeOut();
-                                                    });
+                                                        $(function () {
+                                                            $('#pesan-flash').delay(4000).fadeOut();
+                                                            $('#pesan-error-flash').delay(5000).fadeOut();
+                                                        });
     </script>
-</html>
+    <script type="text/javascript">
+        function TampilKuesioner(param)
+        {
+            if (param == 1)
+                document.getElementById("Kategori1").style.visibility = 'visible';
+            else
+                document.getElementById("Kategori1").style.visibility = 'hidden';
+
+        }
+        function TampilKuesioner2(param)
+        {
+            if (param == 1)
+                document.getElementById("Kategori2").style.visibility = 'visible';
+            else
+                document.getElementById("Kategori2").style.visibility = 'hidden';
+        }
+        function TampilKuesioner3(param)
+        {
+            if (param == 1)
+                document.getElementById("Kategori3").style.visibility = 'visible';
+            else
+                document.getElementById("Kategori3").style.visibility = 'hidden';
+        }
+        function TampilKuesioner4(param)
+        {
+            if (param == 1)
+                document.getElementById("Kategori4").style.visibility = 'visible';
+            else
+                document.getElementById("Kategori4").style.visibility = 'hidden';
+        }
+        function TampilKuesioner5(param)
+        {
+            if (param == 1)
+                document.getElementById("Kategori5").style.visibility = 'visible';
+            else
+                document.getElementById("Kategori5").style.visibility = 'hidden';
+        }
+    </script>
+</html>-->

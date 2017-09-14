@@ -10,7 +10,6 @@
                 <?php $this->load->view('inc/sidebarCabang'); ?>
             </aside>
             <div class="content-wrapper">
-
                 <section class="content-header">
                     <div class="row">
                         <!-- Left col -->
@@ -18,8 +17,7 @@
                             <div class="box">
                                 <div class="box-header">
                                     <span id="pesan-flash"><?php echo $this->session->flashdata('sukses'); ?></span>
-                                    <span id="pesan-error-flash"><?php echo $this->session->flashdata('alert'); ?></span>
-
+                                    <span id="pesan-error-flash"><?php echo $this->session->flashdata('alert'); ?></span> 
                                     <i class="fa fa-plus"></i>
                                     <h3 class="box-title">FORM TAMBAH SALES</h3>
                                 </div>
@@ -46,8 +44,8 @@
                         <section class="col-lg-5 connectedSortable">
                         </section>
                     </div>
-                     <center><div class="alert-warning"><h4><b> <br>LIST DATA SALES</b></h4> <br> </div> </center><br>
-                                       
+                    <center><div class="alert-warning"><h4><b> <br>LIST DATA SALES</b></h4> <br> </div> </center><br>
+
                 </section>
                 <section class="content">
                     <!-- Small boxes (Stat box) -->
@@ -56,7 +54,8 @@
 
                             <div class="box">
                                 <div class="box-title">
-                                </div>
+                                     <span id="pesan-flash1"><?php echo $this->session->flashdata('berhasil'); ?></span>
+                                   </div>
                                 <div class="box-body">
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
@@ -78,7 +77,7 @@
                                                     <td><?php echo $row['id_sales']; ?></td>
                                                     <td><?php echo $row['nama_sales']; ?></td>
                                                     <td>
-                                                       <a onclick="return confirm('Hapus Sales ??');" class="btn btn-danger btn-sm" href="<?php echo base_url(); ?>Cabang/HapusSales/<?php echo $row['id_sales']; ?>"><i class="fa fa-trash"></i></a>
+                                                        <a onclick="return confirm('Hapus Sales ??');" class="btn btn-danger btn-sm" href="<?php echo base_url(); ?>Cabang/HapusSales/<?php echo $row['id_sales']; ?>"><i class="fa fa-trash"></i></a>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -115,6 +114,7 @@
                                                         //waktu flash data :v
                                                         $(function () {
                                                             $('#pesan-flash').delay(2000).fadeOut();
+                                                            $('#pesan-flash1').delay(2000).fadeOut();
                                                             $('#pesan-error-flash').delay(4000).fadeOut();
                                                         });
         </script>

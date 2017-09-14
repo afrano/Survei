@@ -6,23 +6,38 @@ if (!defined('BASEPATH'))
 class Login extends CI_Controller {
 
     function index() {
-        if ($this->session->userdata('Home') OR $this->session->userdata('kategori')) {
-            redirect(base_url() . 'login');
-        } else {
-            $db = 'm_login';
-            $sub_data['info'] = $this->session->userdata('info');
-            if ($this->input->post('login')) {
-                $this->form_validation->set_rules('nama_user', 'Nama Pengguna', 'trim|required|max_length[20]|xss_clean');
-                $this->form_validation->set_rules('pass_user', 'Password', 'trim|required|max_length[20]|xss_clean');
-                $this->form_validation->set_error_delimiters('<div class="warning-valid">', '</div>');
-                if ($this->form_validation->run() == TRUE) {
-                    $this->$db->proses_login();
-                }
-            }
-            $this->load->view('login/login', $sub_data);
 
-            $this->session->unset_userdata('info');
+        $db = 'm_login';
+        $sub_data['info'] = $this->session->userdata('info');
+        if ($this->input->post('login')) {
+            $this->form_validation->set_rules('nama_user', 'Nama Pengguna', 'trim|required|max_length[20]|xss_clean');
+            $this->form_validation->set_rules('pass_user', 'Password', 'trim|required|max_length[20]|xss_clean');
+            $this->form_validation->set_error_delimiters('<div class="warning-valid">', '</div>');
+            if ($this->form_validation->run() == TRUE) {
+                $this->$db->proses_login();
+            }
         }
+        $this->load->view('login/login', $sub_data);
+
+        $this->session->unset_userdata('info');
+    }
+
+//login_1
+
+    public function lupapassword() {
+         $db = 'm_login';
+        $sub_data['info'] = $this->session->userdata('info');
+        if ($this->input->post('login')) {
+            $this->form_validation->set_rules('nama_user', 'Nama Pengguna', 'trim|required|max_length[20]|xss_clean');
+            $this->form_validation->set_rules('pass_user', 'Password', 'trim|required|max_length[20]|xss_clean');
+            $this->form_validation->set_error_delimiters('<div class="warning-valid">', '</div>');
+            if ($this->form_validation->run() == TRUE) {
+                $this->$db->proses_login();
+            }
+        }
+        $this->load->view('login/login_1', $sub_data);
+
+        $this->session->unset_userdata('info');
     }
 
     public function proseslog() {
@@ -59,6 +74,41 @@ class Login extends CI_Controller {
             $info = '<div style="color:red">PERIKSA KEMBALI NAMA PENGGUNA DAN PASSWORD ANDA !!!</div>';
             $this->session->set_userdata('info', $info);
 
+            redirect(base_url() . 'login');
+        }
+    }
+
+    function Updatepassword() {
+        $data = array(
+            'id_user' => $this->input->post('id_user'),
+            'pass_user' => $this->input->post('pass_user'),
+        );
+        $result = $this->model->UpdatePassword($data);
+        if ($this->session->userdata('level') == '1') {
+            if ($result >= 0) {
+                $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Password Berhasil Diupdate</strong></div>");
+                header('location:' . base_url() . 'Cabang/reset_password');
+            } else {
+                $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Password Gagal Diupdate</strong></div>");
+                header('location:' . base_url() . 'Cabang/reset_password');
+            }
+        } else if ($this->session->userdata('level') == '2') {
+            if ($result >= 0) {
+                $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Password Berhasil Diupdate</strong></div>");
+                header('location:' . base_url() . 'Cabang/reset_password');
+            } else {
+                $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Password Gagal Diupdate</strong></div>");
+                header('location:' . base_url() . 'Cabang/reset_password');
+            }
+        } else if ($this->session->userdata('level') == '3') {
+            if ($result >= 0) {
+                $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Password Berhasil Diupdate</strong></div>");
+                header('location:' . base_url() . 'Outlet/DataOutlet/' . $this->input->post('id_user'));
+            } else {
+                $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Password Gagal Diupdate</strong></div>");
+                header('location:' . base_url() . 'Outlet/DataOutlet/' . $this->input->post('id_user'));
+            }
+        } else {
             redirect(base_url() . 'login');
         }
     }

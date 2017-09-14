@@ -46,16 +46,19 @@ class Site extends CI_Controller {
             'level' => $level,
             'status' => $status,
         );
-        if ($result = $this->model->Simpan('outlet', $Outlet) && $result1 = $this->model->Simpan('login', $Akun)) {
-            if ($result == 1 && $result1 == 1) {
-                $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Data berhasil tersimpan</strong></div>");
+
+        $Cek = 0;
+        $Cek = $this->model->CekOutlet($id_outlet)->result_array();
+        if ($Cek == NULL) {
+            if ($this->model->Simpan('outlet', $Outlet) == 1 && $this->model->Simpan('login', $Akun) == 1) {
+                $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Data berhasil tersimpan silahkan login !!</strong></div>");
                 header('location:' . base_url() . 'site/Aktivasi');
             } else {
                 $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Gagal menyimpan data</strong></div>");
                 header('location:' . base_url() . 'site/Aktivasi');
             }
         } else {
-            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Gagal menyimpan data</strong></div>");
+            $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Gagal menyimpan data ID Outlet telah digunakan</strong></div>");
             header('location:' . base_url() . 'site/Aktivasi');
         }
     }

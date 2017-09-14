@@ -191,11 +191,15 @@ class Data extends CI_Controller {
     }
 
     function Hapus($kode = 1) {
-
-        $result = $this->model->Hapus('hasilsurvei', array('id_outlet' => $kode));
-        if ($result == 1) {
-            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Hapus data BERHASIL dilakukan</strong></div>");
-            header('location:' . base_url() . 'Data');
+        if ($this->session->userdata('level') == '1') {
+            $result = $this->model->Hapus('hasilsurvei', array('id_hasil' => $kode));
+            if ($result == 1) {
+                $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Hapus data BERHASIL dilakukan</strong></div>");
+                header('location:' . base_url() . 'Data');
+            } else {
+                $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Hapus data GAGAL di lakukan</strong></div>");
+                header('location:' . base_url() . 'Data');
+            }
         } else {
             $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Hapus data GAGAL di lakukan</strong></div>");
             header('location:' . base_url() . 'Data');

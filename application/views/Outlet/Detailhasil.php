@@ -40,7 +40,7 @@
                                     <input type="text" class="form-control" readonly="" value="<?php echo $id_cabang; ?>"  >                        
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Cabang</label>
+                                    <label for="">Channel</label>
                                     <input type="text" class="form-control" readonly="" value="<?php echo $channel; ?>" id="" name="nama_outlet" >                        
                                 </div>
 

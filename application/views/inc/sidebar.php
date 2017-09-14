@@ -15,29 +15,19 @@
         </li>
         <li>
             <a href="<?php echo base_url(); ?>Cabang/InputCabang">
-                <i class="fa fa-circle-o"></i> <span>Input Data Cabang</span> 
+                <i class="fa fa-user-plus"></i> <span>Input Data Cabang</span> 
             </a>
         </li>
         <li>
             <a href="<?php echo base_url(); ?>Survei/Pertanyaan">
-                <i class="fa fa-circle-o"></i> <span>Pertanyaan Survei</span> 
+                <i class="fa fa-question-circle"></i> <span>Pertanyaan Survei</span> 
             </a>
         </li>
         <li>
-            <a href="<?php echo base_url(); ?>Rekap">
-                <i class="fa fa-tag"></i> <span>Hasil Survei</span> 
+            <a href="<?php echo base_url(); ?>Cabang/reset_password">
+                <i class="fa fa-key"></i> <span>Ubah Password</span> 
             </a>
         </li>
-<!--        <li>
-            <a href="<?php echo base_url(); ?>Data">
-                <i class="fa fa-user-secret"></i> <span>Rank</span> 
-            </a>
-        </li>-->
-<!--        <li>
-            <a href="<?php echo base_url(); ?>Survei/Draft">
-                <i class="fa fa-windows"></i> <span>Draft</span> 
-            </a>
-        </li>-->
         <li>
             <a href="<?php echo base_url(); ?>Data">
                 <i class="fa fa-database"></i> <span>Data Hasil Survei</span> 
@@ -45,15 +35,15 @@
         </li>
         <li>
             <a href="<?php echo base_url(); ?>Outlet/ListDataOutlet">
-                <i class="fa fa-database"></i> <span>List Data Outlet</span> 
+                <i class="fa fa-users"></i> <span>List Data Outlet</span> 
             </a>
         </li>
         <li>
             <a href="<?php echo base_url(); ?>Cabang/ListDataCabang">
-                <i class="fa fa-database"></i> <span>List Data Cabang</span> 
+                <i class="fa fa-user"></i> <span>List Data Cabang</span> 
             </a>
         </li>
-        
+
         <li>
             <a href="<?php echo base_url(); ?>login/logout">
                 <i class="fa fa-sign-out"></i> <span>Keluar</span></a>

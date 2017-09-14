@@ -16,10 +16,12 @@ class Model extends CI_Model {
         $query = $this->db->get_where('login', $data);
         return $query;
     }
+
     public function GetPertanyaan() {
         $data = $this->db->query('SELECT id_quesioner, pertanyaan FROM `quesioner`');
         return $data;
     }
+
     public function GetHitungOutlet() {
         $data = $this->db->query('select d.channel, count(*) as jumlah from data_outlet d, hasilsurvei h where h.id_outlet = d.id_outlet and d.tahun_survei = "2017" and Semester = "S1"');
         return $data;
@@ -40,10 +42,6 @@ class Model extends CI_Model {
         return $data;
     }
 
-    public function GetTotProduk() {
-        $data = $this->db->query('select * from hasilsurvei group by id_hasil ');
-        return $data;
-    }
 
     public function count_all() {
         return $this->db->count_all('hasilsurvei');
@@ -92,14 +90,30 @@ class Model extends CI_Model {
     }
 
     public function GetDetail($where = "") {
-        $data = $this->db->query(' SELECT h.*, q.*, c.*, s.*
-                                FROM hasilsurvei h, outlet q, cabang c, sales s ' . $where . 'and h.id_sales = s.id_sales');
+        $data = $this->db->query(' SELECT h.*,s.nama_sales,o.* FROM hasilsurvei h, sales s, outlet o '
+                . $where . 'and s.id_sales = h.id_sales and h.id_outlet = o.id_outlet');
         return $data;
     }
-     public function GetSales($where) {
+
+    public function GetSales($where) {
         $data = $this->db->query('SELECT * from sales where id_cabang = "' . $where . '" ');
         return $data;
     }
+
+    public function Ceksales($where) {
+        $data = $this->db->query('SELECT * from sales where id_sales = "' . $where . '" ');
+        return $data;
+    }
+
+    public function CekOutlet($where) {
+        $data = $this->db->query('SELECT * from outlet where id_outlet = "' . $where . '" ');
+        return $data;
+    }
+
+    public function CekCabang($where) {
+        $data = $this->db->query('SELECT * from cabang where id_cabang = "' . $where . '" ');
+        return $data;
+    }   
 
     public function Simpan($table, $data) {
         return $this->db->insert($table, $data);
@@ -118,10 +132,16 @@ class Model extends CI_Model {
         $this->db->update('hasilsurvei', $data);
     }
 
+    function UpdatePassword($data) {
+        $this->db->where('id_user', $data['id_user']);
+        $this->db->update('login', $data);
+    }
+
     function UpdateOutlet($data) {
         $this->db->where('id_outlet', $data['id_outlet']);
         $this->db->update('outlet', $data);
     }
+
     function UpdatePertanyaan($data) {
         $this->db->where('id_Quesioner', $data['id_Quesioner']);
         $this->db->update('quesioner', $data);
@@ -130,25 +150,6 @@ class Model extends CI_Model {
     function UpdateCabang($data) {
         $this->db->where('id_outlet', $data['id_outlet']);
         $this->db->update('cabang', $data);
-    }
-
-    function GetVisitor($where = "") {
-        return $this->db->query("select * from tb_visitor $where");
-    }
-
-    function GetProductView() {
-        return $this->db->query("select sum(counter) as totalview from tb_produk where status = 'publish'");
-    }
-
-    //batas query pengunjung
-
-    public function GetKate($where = "") {
-        $data = $this->db->query('select count(*) as totalkategori from tb_kategori ' . $where);
-        return $data;
-    }
-
-    function TotalKat() {
-        return $this->db->query("select count(*) as totalkategori from tb_produk group by id_kat; ");
     }
 
 }

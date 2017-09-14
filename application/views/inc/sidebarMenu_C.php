@@ -10,16 +10,6 @@
     <ul class="sidebar-menu">
         <li class="header">MENU</li>
         <li>
-            <a href="<?php echo base_url(); ?>Cabang">
-                <i class="fa fa-database"></i> <span>Lihat Data Survei</span> 
-            </a>
-        </li>
-        <li>
-            <a href="<?php echo base_url(); ?>Cabang/InputSales">
-                <i class="fa fa-users"></i> <span>Data Sales</span> 
-            </a>
-        </li>
-         <li>
             <a href="<?php echo base_url(); ?>Cabang/reset_password">
                 <i class="fa fa-key"></i> <span>Ubah Password</span> 
             </a>

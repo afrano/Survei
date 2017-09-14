@@ -11,6 +11,11 @@
                 <?php $this->load->view('inc/sidebar'); ?>
             </aside>
             <div class="content-wrapper">
+                <section class="content-header">
+                    <h1>
+                        <b>DATA MOM</b>
+                    </h1>
+                </section>
                 <section class="content">
                     <div class="row">
                         <div class="col-md-12">
@@ -22,46 +27,57 @@
                                 <div class="box-body">
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
-                                        <center><div class="alert-info"><br><h4><b>Data Cabang</b></h4><br></div></center><br>
+                                        <center><div class="alert-info"><br><h4><b>List MOM</b></h4><br></div></center><br>
                                         <tr>
                                             <th>NO</th>
-                                            <th>ID Cabang</th>
-                                            <th>Regional</th>
-                                            <th>Alamat</th>
-                                            <th>Telpon</th>
-                                            <th>AKSI</th>
+                                            <th>Cabang</th>
+                                            <th>Tahun</th>
+                                            <th>Bulan</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                             <?php
                                             $no = 0;
-                                            foreach ($data_cabang as $row) {
-                                                if($row['alamat_cabang']== NULL){
-                                                    $alamatcabang = '--';
-                                                }else{
-                                                    $alamatcabang = $row['alamat_cabang'];
-                                                }
-                                                if($row['telpon_cabang']== NULL){
-                                                    $telponcabang = '--';
-                                                }else{
-                                                    $telponcabang = $row['telpon_cabang'];
-                                                }
+                                            foreach ($data_survei as $row) {
                                                 $no++
                                                 ?>
                                                 <tr>
                                                     <td><?php echo $no; ?></td>    
-                                                    <td><?php echo $row['id_cabang']; ?></td>
-                                                    <td><?php echo $row['regional']; ?></td>
-                                                    <td><?php echo $alamatcabang; ?></td>
-                                                    <td><?php echo $telponcabang; ?></td>
+                                                    <td><?php echo $row['nama_outlet']; ?></td>
+                                                    <td><?php echo $row['tahun']; ?></td>
+                                                    <td><?php echo $row['semester']; ?></td>
                                                     <td>
-                                                        <!--<a class="btn btn-warning btn-sm" href="<?php echo base_url(); ?>Cabang/Edit/<?php echo $row['id_cabang']; ?>"><i class="fa fa-pencil"></i></a>-->
-                                                        <a onclick="return confirm('Hapus data??');" class="btn btn-danger btn-sm" href="<?php echo base_url(); ?>Cabang/HapusCabang/<?php echo $row['id_cabang']; ?>"><i class="fa fa-trash"></i></a>
+                                                        <a class="btn btn-warning btn-sm" href="<?php echo base_url(); ?>Data/Detail/<?php echo $row['id_hasil']; ?>"><i class="fa fa-eye"></i></a>
+                                                        <a onclick="return confirm('Hapus data??');" class="btn btn-danger btn-sm" href="<?php echo base_url(); ?>Data/Hapus/<?php echo $row['id_hasil']; ?>"><i class="fa fa-trash"></i></a>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
                                         </tbody>
                                     </table>
+                                    <form  role="form" action="<?php echo base_url(); ?>Data/export_excel" method="POST" enctype="multipart/form-data">
+                                        <table id="example1" class="table table-bordered table-striped">
+                                            <div class="col-lg-6">
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">                                                    
+                                                        <select name="semester" class="form-control" required="">
+                                                            <option value="">Pilih Periode</option>
+                                                            <option value="all">All</option>
+                                                            <option value="S1">S1</option>
+                                                            <option value="S2">S2</option>
+                                                        </select> 
+                                                    </div>
+                                                    <div class>
+                                                        <button type="submit" class="btn btn-primary btn-block btn-flat"><i class="fa fa-download"></i>&nbsp;  Export to Excel</button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <input type="number" min="2015" class="form-control" value="" id="" name="tahun" placeholder="Pilih Tahun Survei" required="">                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </table>
+                                    </form>
                                 </div>
                             </div>
                         </div>

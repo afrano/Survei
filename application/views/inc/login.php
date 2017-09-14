@@ -1,41 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Halaman Utama | Survei Enseval</title>
-        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-        <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
-        <link href="<?php echo base_url(); ?>assets/dist/css/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-    <header class="site-header">	
-        <nav class="navbar navbar-default">		
-            <div class="container">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a href="index.php" class="navbar-brand">
-                    <img src="<?php echo base_url(); ?>assets/img/Logoen.png" alt="" width="90" high="90" alt="Post" >
-                </a>
-                <div class="collapse navbar-collapse" id="bs-navbar-collapse">
-                    <ul class="nav navbar-nav main-navbar-nav">
-                        <li class="active"><?php echo anchor('index.php', '<b>Home</b>') ?></li>
-                        <li><?php echo anchor('http://www.enseval.com/tentang-kami/tata-kelola-perusahaan/struktur/', '<b>About Us</b>') ?></li>
-                        <li><?php echo anchor('login', '<b>Login</b>') ?></li>
-                        <li ><a href="<?php echo base_url(); ?>site/Aktivasi"><b>Aktivasi</b></a><li>
-                    </ul>   					
-                </div>
-            </div>			
-        </nav> 
-    </header>
-</head>
-<body class="login-page" style=" background-image: url(assets/img/Webpage-Enseval.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;padding: 0;">
-    <?php $this->load->view('incsite/sidebarEnseval'); ?>
-    <br>    
-</body>
-
-<script src="<?php echo base_url(); ?>assets/plugins/jQuery/jQuery-2.1.3.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>   
 <style>
     * {outline:none;}
     html, body {height: 100%;}
@@ -81,9 +43,6 @@
 
     @media screen and (min-width: 993px) {.main-navbar-nav .dropdown:hover > .dropdown-menu {display: block;}.main-navbar-nav .dropdown:hover > .dropdown-menu .dropdown:hover .dropdown-menu {left: 225px;top: 0;margin-top: -2px;}}
     @media screen and (max-width: 992px) {.main-navbar-nav > li {border-bottom: 1px solid #f3f3f3;}.main-navbar-nav > li:last-child {border-bottom: none;}.main-navbar-nav > li > a {padding-top: 12px;padding-bottom: 12px;}}
-    .hero_content {padding: 120px 0;}
-    .hero_content h1 {text-shadow: 1px 1px 2px rgba(0,0,0,0.75);color: #000000;font-weight: 700;font-size: 60px;}
-    .hero_content h2 {text-shadow: 1px 1px 2px rgba(0,0,0,0.25);color: #000000;font-weight: 700;font-size: 32px; margin-top: 0;width: 45%;line-height: 38px;}
 
     .navbar-brand {height: auto;padding: 0;}
 
@@ -92,4 +51,3 @@
     #copyright a {color: #fff;font-size: 22px;}
 
 </style>
-</html>

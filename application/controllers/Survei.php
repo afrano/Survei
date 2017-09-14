@@ -116,6 +116,7 @@ class Survei extends CI_Controller {
         $kepentingan18 = $_POST['Kepentingan18'];
         $kepentingan19 = $_POST['Kepentingan19'];
         $kepentingan20 = $_POST['Kepentingan20'];
+
         $data = array(
             'id_hasil' => $id_hasil,
             'tahun' => $tahun_survei,
@@ -167,12 +168,18 @@ class Survei extends CI_Controller {
 
         $result1 = $this->model->Simpan('hasilsurvei', $data);
         if ($result1 == 1) {
-            $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Simpan data BERHASIL dilakukan</strong></div>");
-            header('location:' . base_url() . 'Outlet');
+            redirect(base_url() . 'Survei/Terimakasih');
         } else {
             $this->session->set_flashdata("alert", "<div class='alert alert-danger'><strong>Simpan data GAGAL di lakukan</strong></div>");
-            header('location:' . base_url() . 'Outlet');
+            header('location:' . base_url() . 'Survei/Pertanyaan');
         }
+    }
+
+    public function Terimakasih() {
+        $data = array(
+            'nama' => $this->session->userdata('nama'),
+        );
+        $this->load->view('Pertanyaan/Terimakasih', $data);
     }
 
     function updatePertanyaan() {
