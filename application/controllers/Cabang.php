@@ -184,9 +184,8 @@ class Cabang extends CI_Controller {
             'id_sales' => $id_sales,
             'id_cabang' => $id_cabang,
         );
-
-        $Cek = 0;
-        $Cek = $this->model->Ceksales($id_sales)->result_array();
+        //  $Cek = 0;
+        //     $Cek = $this->model->Ceksales($id_sales)->result_array();
         if ($Cek == NULL) {
             $this->model->Simpan('sales', $data);
             $this->session->set_flashdata("sukses", "<div class='alert alert-success'><strong>Data Berhasil Disimpan</strong></div>");

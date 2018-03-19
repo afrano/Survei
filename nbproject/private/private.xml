@@ -3,9 +3,37 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/Web_Survei/index.php</file>
             <file>file:/C:/xampp/htdocs/Web_Survei/application/views/login/login.php</file>
-            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/login/login_1.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/site/Welcome.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/Hasil/Excel.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/Outlet.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/sidebarUser.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/Survei.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/Home.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/Hasil/data_survei.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/time.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/Pertanyaan/Backup.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/head2User.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/login.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/footer.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/sidebarEnseval.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/headEnseval.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/footer.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/sidebar.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/Cabang.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/footer2.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/incsite/head.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/Rekap.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/head2.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/models/m_login.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/login.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/MOM.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/sidebarMenu_C.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/head.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/site.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/models/model.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/controllers/Data.php</file>
+            <file>file:/C:/xampp/htdocs/Web_Survei/application/views/inc/sidebarCabang.php</file>
         </group>
     </open-files>
 </project-private>

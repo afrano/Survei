@@ -79,7 +79,7 @@
                                                             this.value = 'Tampilkan';
                                                         }" >
                                                         <font color="white"><b>&nbsp;&nbsp;&nbsp;<i class="fa fa-archive"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;PEMESANAN BARANG MELALUI SALESMAN</b></font></label></div>
-                                                        <tbody id="kategori1" style="display: none">
+                                                <tbody id="kategori1" style="display: none">
                                                 <td width="4%">1</td>
                                                 <td width="60%"> <?php echo $pertanyaan1; ?></td>
                                                 <td width="16%">
